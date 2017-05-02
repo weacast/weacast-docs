@@ -1,0 +1,22 @@
+# Contributing
+
+Just like Weacast itself, all of the documentation is open source and [available to edit on GitHub](https://github.com/weacast/weacast-docs).  If you see something that you can contribute, we would LOVE a pull request with your edits! To make this easy you can click the _"Edit this page"_ link at the top of the web docs.
+
+The docs are all written in [GitHub Flavored Markdown](https://help.github.com/articles/github-flavored-markdown/).  If you've used GitHub, it's pretty likely you've encountered it before.  You can become a pro in a few minutes by reading their [GFM Documentation page](https://help.github.com/articles/github-flavored-markdown/).
+
+### Organizing Files
+
+You'll notice that the [GitHub Repo](https://github.com/weacast/weacast-docs) is organized in a nice logical folder structure.  The first file in each chapter is named as a description of the entire chapter's topic.  For example, the content related to the API is located in `/api`. 
+
+### Introduction Page
+
+This is the root [README.md](https://github.com/weacast/weacast-docs/blob/master/README.md) file. It's intent is to give the reader an elevator pitch of what Weacast is and why we think it is useful.
+
+### Send a Pull Request
+So that's it. You make your edits, keep your files and the Table of Contents organized, and send us a pull request.
+
+### Enjoy the Offline Docs
+Moments after your edits are merged, they will be automatically published to the web, as a downloadable PDF, .mobi file (Kindle compatible), and ePub file (iBooks compatible).
+
+### Share
+We take pride in having great documentation and we are very appreciative of any help we can get. Please, let the world know you've contributed to the Weacast Book and let others know about your changes.
