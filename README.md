@@ -16,7 +16,7 @@ See what amazing things the Weacast Core Team and Community have built.
 [**Contributing**](./contributing/README.MD)<br/>
 Learn how you can contribute to this documentation.
 
-[**License**](./README.MD)
+[**License**](./LICENSE.MD)
 
 If you are looking for different formats we have the latest version of this doc available in:
 
