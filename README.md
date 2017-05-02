@@ -4,19 +4,19 @@
 
 > Open source app and services to expose weather forecast data.
 
-[**Guide**](./guide/readme.md)<br/>
+[**Guide**](./guides/README.MD)<br/>
 Get familiar with Weacast by building your first forecast server.
 
-[**API**](./api/readme.md)<br/>
+[**API**](./api/README.MD)<br/>
 Learn more about Weacast' Universal API and plugins.
 
-[**Ecosystem**](./ecosystem/readme.md)<br/>
+[**Ecosystem**](./ecosystem/README.MD)<br/>
 See what amazing things the Weacast Core Team and Community have built.
 
-[**Contributing**](./contributing/readme.md)<br/>
+[**Contributing**](./contributing/README.MD)<br/>
 Learn how you can contribute to this documentation.
 
-[**License**](./license.md)
+[**License**](./README.MD)
 
 If you are looking for different formats we have the latest version of this doc available in:
 
