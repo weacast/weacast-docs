@@ -14,3 +14,14 @@ Currently supported plugins are the following:
 * [ARPEGE](https://github.com/weacast/weacast-arpege) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
 * [AROME](https://github.com/weacast/weacast-arome) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
 * [GFS](https://github.com/weacast/weacast-gfs) model from [NOAA](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
+
+## What is inside ?
+
+Weacast is possible and mainly powered by the following stack:
+* [Feathers](https://feathersjs.com/) on the backend side
+* [Quasar](http://quasar-framework.org/) on the frontend side
+* [Leaflet](http://leafletjs.com/) for mapping
+* [Leaflet-velocity](https://github.com/danwild/leaflet-velocity) for wind visualization
+
+
+
