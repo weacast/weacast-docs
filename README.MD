@@ -10,7 +10,7 @@ This short video demonstrates how Weacast can be used to gather forecast data fr
 
 This short video demonstrates how Weacast can be used to explore forecast data and future wind prediction using a timeline widget
 
-[![Weacast video](./images/weacast-timeline.png)](https://www.youtube.com/watch?v=https://youtu.be/YcWIlnSbpoo)
+[![Weacast video](./images/weacast-timeline.png)](https://www.youtube.com/watch?v=YcWIlnSbpoo)
 
 [**Guide**](./guides/README.MD)<br/>
 Get familiar with Weacast by building your first forecast server.
