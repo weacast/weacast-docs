@@ -23,6 +23,16 @@ Then point your browser to [localhost:8081](http://localhost:8081).
 
 > If running Docker under Windows in a virtual machine first redirect the port 8081 of your virtual machine to your host
 
+You can also use [docker-compose](https://docs.docker.com/compose/) and the [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.yml).
+The following commands should do the job:
+```bash
+// Run the MongoDB and Weacast containers
+docker-compose up
+
+// Stop the MongoDB and Weacast containers
+docker-compose down
+```
+
 ### The hard way : from source code
 
 First you have to ensure the same [prerequisites](./DEVELOPMENT.MD#prerequisites) as for developing to build Weacast from source code. Then the following commands, assuming you have a MongoDB instance running on local host and default port (27017), should launch your local instance of Weacast:
