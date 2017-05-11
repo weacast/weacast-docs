@@ -4,9 +4,22 @@ The Weacast wep application includes the front-end side client as well as the ba
 
 ## The easy way : using Docker
 
-Weacast provides Docker images on the [Docker Hub](https://hub.docker.com/r/weacast/weacast/) to ease deploying your own server.
+> This requires you to [install Docker](https://docs.docker.com/engine/installation/), the world’s leading software container platform.
 
-To run correctly it has to be linked with a standard [MongoDB container](https://hub.docker.com/_/mongo/) for the database.
+Weacast provides Docker images on the [Docker Hub](https://hub.docker.com/r/weacast/weacast/) to ease deploying your own server. To run correctly it has to be linked with a standard [MongoDB container](https://hub.docker.com/_/mongo/) for the database. 
+
+The following commands should do the job:
+```bash
+// Run the MongoDB container
+docker run --name mongo-weacast -d mongo
+
+// Run the Weacast container
+docker run --name weacast -d -p 8081:8081 --link mongodb-weacast:mongodb weacast/weacast
+```
+
+Then point your browser to [localhost:8080](http://localhost:8080).
+
+> If running Docker under Windows in a virtual machine first redirect the port 8081 of your virtual machine to your host
 
 ## The hard way : from source code
 
