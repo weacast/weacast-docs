@@ -4,11 +4,11 @@ Weacast is powered by the following stack:
 
 If you are not familiar with those technologies and want to develop for Weacast, in addition to read the dedicated documentation, I recommand reading https://github.com/claustres/quasar-feathers-tutorial. Indeed, Weacast itself is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api), while Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html). 
 
-# Setup your development environment
+## Setup your development environment
 
-## Prerequisites
+### Prerequisites
 
-### Install Node.js
+#### Install Node.js
 
 [Node](https://nodejs.org/en/) is a server platform which runs JavaScript.
 It's lightweight and efficient.
@@ -17,7 +17,7 @@ It has the largest ecosystem of open source libraries in the world.
 - [Default install.](https://nodejs.org/en/)
 - [Specific versions.](https://nodejs.org/en/download/)
 
-### Install Git
+#### Install Git
 
 [git](https://git-scm.com/) is the version control system most frequently used in open source.
 There are many resources available for installing it.
@@ -26,7 +26,7 @@ There are many resources available for installing it.
 - [macOS.](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
 - [Windows.](https://www.atlassian.com/git/tutorials/install-git#windows)
 
-### Install MongoDB
+#### Install MongoDB
 
 [Mongo](https://www.mongodb.com/) is an open-source, document database designed for ease of development and scaling.
 
@@ -34,11 +34,11 @@ There are many resources available for installing it.
 - [macOS.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 - [Windows.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
-### Install Quasar CLI
+#### Install Quasar CLI
 
 Install the Quasar CLI : `$ npm install -g quasar-cli`
 
-## Weacast
+### Weacast
 
 While it is a WIP and not yet pushed to NPM, or when developing, please use the following process.
 
@@ -75,28 +75,28 @@ npm link weacast-arome
 
 ** Take care that a top-level plugin might depend on another plugin so you will have to link them together, for instance most forecast model plugins depend on the weacast-core plugin.
 
-# Run your development environment
+## Run your development environment
 
-## Weacast server
+### Weacast server
 
 The default Weacast server is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api).
 
-### Running for development
+#### Running for development
 Run the frontend Quasar app (from root project folder): `$ quasar dev`
 
 Then from the backend `api` folder run the server-side Feathers app: `$ npm run dev`
 
-### Building for production
+#### Building for production
 Build the frontend Quasar app (from root project folder): `$ quasar build`.
 
 Then from the backend `api` folder build the server-side Feathers app: `$ npm run build`
 
-### Running in production
+#### Running in production
 **Make sure you built your app first**
 
 From the backend `api` folder run the server-side Feathers app, this will also serve the frontend Quasar app : `$ npm run prod`
 
-## Plugins
+### Plugins
 
 Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html), so you will find most of the required information in the linked Feathers documentation. Typically for development you will do the following for each required plugins
 ```bash
