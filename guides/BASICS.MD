@@ -17,7 +17,7 @@ docker run --name mongo-weacast -d mongo
 docker run --name weacast -d -p 8081:8081 --link mongodb-weacast:mongodb weacast/weacast
 ```
 
-Then point your browser to [localhost:8080](http://localhost:8080).
+Then point your browser to [localhost:8081](http://localhost:8080).
 
 > If running Docker under Windows in a virtual machine first redirect the port 8081 of your virtual machine to your host
 
@@ -42,6 +42,8 @@ npm run build
 // Running the server
 npm run prod
 ```
+
+Then point your browser to [localhost:8081](http://localhost:8080).
 
 # Configuring
 
