@@ -1,6 +1,6 @@
 # Weacast
 
-[![Weacast logo](./images/weacast-logo-256.png)]
+![Weacast logo](./images/weacast-logo-256.png)
 
 > Open source app and services to expose weather forecast data
 
