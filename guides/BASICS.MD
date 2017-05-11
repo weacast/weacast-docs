@@ -13,7 +13,7 @@ Weacast provides Docker images on the [Docker Hub](https://hub.docker.com/r/weac
 The following commands should do the job:
 ```bash
 // Run the MongoDB container
-docker run --name mongo-weacast -d mongo
+docker run --name mongodb-weacast -d mongo
 
 // Run the Weacast container
 docker run --name weacast -d -p 8081:8081 --link mongodb-weacast:mongodb weacast/weacast
