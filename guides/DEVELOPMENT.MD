@@ -86,6 +86,8 @@ Run the frontend Quasar app (from root project folder): `$ quasar dev`
 
 Then from the backend `api` folder run the server-side Feathers app: `$ npm run dev`
 
+Then point your browser to [localhost:8080](http://localhost:8080).
+
 #### Building for production
 Build the frontend Quasar app (from root project folder): `$ quasar build`.
 
@@ -95,6 +97,8 @@ Then from the backend `api` folder build the server-side Feathers app: `$ npm ru
 **Make sure you built your app first**
 
 From the backend `api` folder run the server-side Feathers app, this will also serve the frontend Quasar app : `$ npm run prod`
+
+Then point your browser to [localhost:8081](http://localhost:8081).
 
 ### Plugins
 
