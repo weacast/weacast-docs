@@ -4,7 +4,7 @@ Weacast is powered by the following stack:
 
 If you are not familiar with those technologies and want to develop for Weacast, in addition to read the dedicated documentation, I recommand reading https://github.com/claustres/quasar-feathers-tutorial. Indeed, Weacast itself is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api), while Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html). 
 
-## Setup your development environment
+## Setup your environment
 
 ### Prerequisites
 
@@ -75,7 +75,7 @@ npm link weacast-arome
 
 ** Take care that a top-level plugin might depend on another plugin so you will have to link them together, for instance most forecast model plugins depend on the weacast-core plugin.
 
-## Run your development environment
+## Develop
 
 ### Weacast server
 
