@@ -26,6 +26,14 @@ There are many resources available for installing it.
 - [macOS.](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
 - [Windows.](https://www.atlassian.com/git/tutorials/install-git#windows)
 
+### Install MongoDB
+
+[Mongo](https://www.mongodb.com/) is an open-source, document database designed for ease of development and scaling.
+
+- [Linux.](https://docs.mongodb.com/manual/administration/install-on-linux/)
+- [macOS.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+- [Windows.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
+
 ### Install Quasar CLI
 
 Install the Quasar CLI : `$ npm install -g quasar-cli`
