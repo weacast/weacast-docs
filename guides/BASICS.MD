@@ -1,6 +1,8 @@
 # Deploying
 
-The Weacast wep application includes the front-end side client as well as the back-end services/API. 
+The Weacast wep application includes the front-end side client as well as the back-end services/API. Once run it will continuously gather forecast data from configured model providers.
+
+> After the first launch you will have to wait a few minutes before some data has been gathered and processed to be visible in the wep app user interface
 
 ## The easy way : using Docker
 
