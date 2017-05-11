@@ -10,5 +10,5 @@ The goal of this guide is to get you to the "A-ha!" moment as efficiently as pos
 
 ## [Weacast plugin development](./DEVELOPMENT.MD)
 
-In this guide you will learn how the primary parts of the core work together.  You'll also learn how to create your own plugin.
+In this guide you will learn how the primary parts of the core work together. You'll also learn how to create your own plugin.
 
