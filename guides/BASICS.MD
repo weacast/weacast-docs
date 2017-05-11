@@ -1,10 +1,10 @@
-# Deploying
+## Deploying
 
 The Weacast wep application includes the front-end side client as well as the back-end services/API. Once run it will continuously gather forecast data from configured model providers.
 
 > After the first launch you will have to wait a few minutes before some data has been gathered and processed to be visible in the wep app user interface
 
-## The easy way : using Docker
+### The easy way : using Docker
 
 > This requires you to [install Docker](https://docs.docker.com/engine/installation/), the world’s leading software container platform.
 
@@ -23,7 +23,7 @@ Then point your browser to [localhost:8081](http://localhost:8080).
 
 > If running Docker under Windows in a virtual machine first redirect the port 8081 of your virtual machine to your host
 
-## The hard way : from source code
+### The hard way : from source code
 
 First you have to ensure the same [prerequisites](./DEVELOPMENT.MD#prerequisites) as for developing to build Weacast from source code. Then the following commands, assuming you have a MongoDB instance running on local host and default port (27017), should launch your local instance of Weacast:
 
@@ -47,7 +47,7 @@ npm run prod
 
 Then point your browser to [localhost:8081](http://localhost:8080).
 
-# Configuring
+## Configuring
 
 Weacast configuration is based on [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `api/config` folder. The main properties are the following:
 * **db**
