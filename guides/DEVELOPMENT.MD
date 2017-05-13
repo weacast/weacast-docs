@@ -124,12 +124,12 @@ The same process applies when release a patch, minor or major version, i.e. the 
 * create a tag accordingly in the git repository and push it
 * generates the changelog in the git repository and push it
 
+> **Before you publish a plugin take care of updating the version of your dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core` for a plugin depending on the core plugin before publishing it**
+
 Depending on the release type the following command will do the job (where type is either `patch`, `minor`, `major`):
 ```bash
 npm run release:type
 ```
-
-> **Before you publish a plugin take care of updating the version of your dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core` for a plugin depending on the core plugin before publishing it
 
 > This requires you to have a NPM and GitHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
 
