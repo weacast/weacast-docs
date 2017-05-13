@@ -3,10 +3,11 @@
 Each forecast model exposes each element found in its [configuration](../guides/BASICS.MD#configuring) through a service named `forecast.name/element.name`. Although only web sockets are used on the client side, both the [REST](https://docs.feathersjs.com/api/rest.html) and the [Socket](https://docs.feathersjs.com/api/socketio.html) interfaces are configured.
 
 The common data model of an element is the following:
-*
-*
-*
-*
+* **runTime**
+* **forecastTime**
+* **minValue**
+* **maxValue**
+
 
 > Forecast element data are usually large so they are not returned by default, only metadata are
 
