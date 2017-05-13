@@ -43,14 +43,14 @@ Returns the path where downloaded/persited data are located for the element
 #### async .updateForecastData(mode)
 
 Launches the forecast data update process for the element depending on mode value:
-* **`once`** : will only perform data update for the current time
-* **`interval`** : will perform data update for the current time and schedule the update process at regular interval after each data gathering according to the `updateInterval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
+* **`'once'`** : will only perform data update for the current time
+* **`'interval'`** : will perform data update for the current time and schedule the update process at regular interval after each data gathering according to the `updateInterval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
-####  async refreshForecastData(datetime)
+####  async .refreshForecastData(datetime)
 
 Refreshes forecast data for the element based on the nearest run for the provided date/time. It will harvest data for each forecast time step available in the model according to the `lowerLimit`/`upperLimit` values in the [model configuration](../guides/BASICS.MD#backend-side).
 
-####  async harvestForecastTime(datetime, runTime, forecastTime)
+####  async .harvestForecastTime(datetime, runTime, forecastTime)
 
 Refreshes forecast data for the element based on the provided run and forecast date/time. If the run is not yet available through the provider it will try to use the previous one until the `oldestRunInterval` value in the [model configuration](../guides/BASICS.MD#backend-side) is reached.
 
