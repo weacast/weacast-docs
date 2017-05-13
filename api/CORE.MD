@@ -15,3 +15,9 @@ api.service('/forecasts').find()
   })
 })
 ```
+
+## Forecast element
+
+Each forecast model exposes a set of (forecast elements](./PLUGINS.MD#forecast-element) using a database adapter as an implementation of the [Feathers service interface](https://docs.feathersjs.com/api/services.html). Because we want to remain database-agnostic, just like [Feathers is](https://docs.feathersjs.com/guides/step-by-step/intro/not-worry.html#how-do-i-use-my-preferred-database), the database adapter to be used is only known at startup depending on your [configuration](../guides/BASICS.MD#configuring). 
+
+That's the reason why there is no static forecast element class in the core of Weacast, instead it provides an element mixin 
