@@ -38,12 +38,12 @@ This mixin includes the most basic functions shared by all forecast elements to 
 
 #### .getDataDirectory()
 
-Returns the path where downloaded/persited data are located for the element
+Returns the path where downloaded/persisted data are located for the element
 
 #### async .updateForecastData(mode)
 
-Launches the forecast data update process for the element depending on mode value:
-* **`'once'`** : will only perform data update for the current time
+Launches the forecast data update process for the element depending on the mode value:
+* **`'once'`** : will perform data update for the current time only
 * **`'interval'`** : will perform data update for the current time and schedule the update process at regular interval after each data gathering according to the `updateInterval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
 ####  async .refreshForecastData(datetime)
