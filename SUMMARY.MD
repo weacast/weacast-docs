@@ -9,6 +9,7 @@
   * Core
     * [Forecast model](api/FORECAST.MD)
     * [Forecast element](api/ELEMENT.MD)
+    * [Grid](api/GRID.MD)
   * Plugins
     * [Probe](api/PROBE.MD)
 * [Ecosystem](ecosystem/README.MD)
