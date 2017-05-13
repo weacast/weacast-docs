@@ -6,8 +6,11 @@
   * [The Basics](guides/BASICS.MD)
   * [Development](guides/DEVELOPMENT.MD)
 * [API](api/README.MD)
-  * [Core](api/CORE.MD)
-  * [Plugins](api/PLUGINS.MD)
+  * Core
+    * [Forecast model](api/FORECAST.MD)
+    * [Forecast element](api/ELEMENT.MD)
+  * Plugins
+    * [Probe](api/PROBE.MD)
 * [Ecosystem](ecosystem/README.MD)
 * [Contributing](contributing/README.MD)
 * [License](LICENSE.MD)
