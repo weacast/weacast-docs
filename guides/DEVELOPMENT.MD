@@ -73,7 +73,7 @@ npm link weacast-arome
 ...
 ```
 
-** Take care that a top-level plugin might depend on another plugin so you will have to link them together, for instance most forecast model plugins depend on the weacast-core plugin.
+> **Take care that a top-level plugin might depend on another plugin so you will have to link them together, for instance most forecast model plugins depend on the weacast-core plugin.**
 
 ## Develop
 
@@ -108,3 +108,42 @@ cd weacast-arpege
 npm install
 npm run watch
 ```
+
+## Publish
+
+### Prerequisites
+
+#### Install Change log generator
+
+This [gem](https://github.com/skywinder/github-changelog-generator) generates a change log file based on **tags**, **issues** and merged **pull requests** (and splits them into separate lists according to labels) from :octocat: GitHub Issue Tracker. This requires you to install (e.g. for Windows) [Ruby](http://rubyinstaller.org/downloads/) and its [DevKit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit).
+
+### Weacast plugins
+
+The same process applies when release a patch, minor or major version, i.e. the following tasks are done:
+* increase the package version number in the **package.json** file
+* create a tag accordingly in the git repository and push it
+* generates the changelog in the git repository and push it
+
+Depending on the release type the following command will do the job (where type is either `patch`, `minor`, `major`):
+```bash
+npm run release:type
+```
+
+> **Before you publish a plugin take care of updating the version of your dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core` for a plugin depending on the core plugin before publishing it
+
+> This requires you to have a NPM and GitHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
+
+### Weacast web app
+
+The same process as above apply for the Weacast web app when running this set of commands from the root directory. Because Weacast is also released as a Docker image you can build it like this 
+```bash
+docker build -t weacast/weacast .
+```
+Then release it:
+```bash
+docker login
+docker push weacast/weacast
+```
+
+> This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
+
