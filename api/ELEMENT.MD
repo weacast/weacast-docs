@@ -1,13 +1,15 @@
-# Forecast element API
+# Forecast element - Feathers API
 
-Each forecast model exposes each element found in its [configuration](../guides/BASICS.MD#configuring) through a service named `forecast.name/element.name`. Although only web sockets are used on the client side, both the [REST](https://docs.feathersjs.com/api/rest.html) and the [Socket](https://docs.feathersjs.com/api/socketio.html) interfaces are configured.
+Forecast models expose each element found in its [configuration](../guides/BASICS.MD#configuring) through a service named `forecast.name/element.name` implementing the [Feathers service interface](https://docs.feathersjs.com/api/services.html) for [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). Although only web sockets are used on the client side by default, both the [REST](https://docs.feathersjs.com/api/rest.html) and the [Socket](https://docs.feathersjs.com/api/socketio.html) interfaces are configured.
 
 The common data model of an element is the following:
-* **runTime**
-* **forecastTime**
-* **minValue**
-* **maxValue**
+* **runTime**: the date/time of the model run that produced the forecast data
+* **forecastTime** : the date/time of the forecast data
+* **minValue** : the minimum value of the element in the forecast data
+* **maxValue** : the maximum value of the element in the forecast data
+* **data** : the forecast data
 
+If the data store of the element is the database then the **data** property containing forecast data is stored in the model, otherwise if the data store is the file system it has an additional **filePath** property only used internally to retrieve the data on-the-fly.
 
 > Forecast element data are usually large so they are not returned by default, only metadata are
 
@@ -15,7 +17,7 @@ For exemple you can request the available forecast data for a given element like
 ```javascript
 import api from 'src/api'
 
-api.service('/' + forecast.name + '/' + element.name).find()
+api.service(forecast.name + '/' + element.name).find()
 .then(response => {
   // Do something with the element data
 })
@@ -49,7 +51,7 @@ You can skip pagination pagination and retrieve selected properties only:
 ```javascript
 import api from 'src/api'
 
-api.service('/' + forecast.name + '/' + element.name).find({
+api.service(forecast.name + '/' + element.name).find({
   query: {
     $paginate: false,
     $select: ['forecastTime']
@@ -81,7 +83,7 @@ To retrieve data for a given time you have to request it explicitely:
 ```javascript
 import api from 'src/api'
 
-api.service('/' + forecast.name + '/' + element.name).find({
+api.service(forecast.name + '/' + element.name).find({
   query: {
     time: new Date().toISOString(),
     $select: ['forecastTime', 'data']
@@ -106,6 +108,8 @@ Response:
    ]
  }
  ```
+ 
+# Forecast element - Weacast API
 
 Each forecast model exposes each element service using a database adapter as an implementation of the [Feathers service interface](https://docs.feathersjs.com/api/services.html). Because we want to remain database-agnostic, just like [Feathers is](https://docs.feathersjs.com/guides/step-by-step/intro/not-worry.html#how-do-i-use-my-preferred-database), the database adapter to be used is only known at startup depending on your [configuration](../guides/BASICS.MD#configuring). That's the reason why there is no static forecast element class in the core of Weacast, instead it provides a set of [functional mixins](https://github.com/daffl/uberproto#mixins) that will be applied on the instancied element service. 
 
@@ -115,11 +119,11 @@ This mixin includes the most basic functions shared by all forecast elements
 
 ### .getNearestRunTime(datetime)
 
-Returns the nearest weather prediction model run date/time for a given date/time
+Returns the nearest weather prediction model run date/time for a given date/time, it basically rounds the hours according to the `runInterval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
 ### .getNearestForecastTime(datetime)
 
-Returns the nearest weather prediction model forecast date/time step for a given date/time
+Returns the nearest weather prediction model forecast date/time step for a given date/time, it basically rounds the hours according to the `interval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
 ## Refresh element mixin
 
@@ -142,4 +146,12 @@ Refreshes forecast data for the element based on the nearest run for the provide
 ###  async .harvestForecastTime(datetime, runTime, forecastTime)
 
 Refreshes forecast data for the element based on the provided run and forecast date/time. If the run is not yet available through the provider it will try to use the previous one until the `oldestRunInterval` value in the [model configuration](../guides/BASICS.MD#backend-side) is reached.
+
+### async .refreshForecastTime(datetime, runTime, forecastTime)
+
+Download the forecast data for the given run/forecast date/time and process it, i.e. convert it if required then store it in the database.
+
+### async .downloadForecastTime(runTime, forecastTime)
+
+Download the forecast data for the given run/forecast date/time and returns the file path to the downloaded data.
 
