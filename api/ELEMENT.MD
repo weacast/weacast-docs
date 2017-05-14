@@ -113,7 +113,7 @@ Response:
 
 Each forecast model exposes each element service using a database adapter as an implementation of the [Feathers service interface](https://docs.feathersjs.com/api/services.html). Because we want to remain database-agnostic, just like [Feathers is](https://docs.feathersjs.com/guides/step-by-step/intro/not-worry.html#how-do-i-use-my-preferred-database), the database adapter to be used is only known at startup depending on your [configuration](../guides/BASICS.MD#configuring). That's the reason why there is no static forecast element class in the core of Weacast, instead it provides a set of [functional mixins](https://github.com/daffl/uberproto#mixins) that will be applied on the instancied element service. 
 
-## Basic element mixin
+## Basic element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
 This mixin includes the most basic functions shared by all forecast elements
 
@@ -125,7 +125,7 @@ Returns the nearest weather prediction model run date/time for a given date/time
 
 Returns the nearest weather prediction model forecast date/time step for a given date/time, it basically rounds the hours according to the `interval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
-## Refresh element mixin
+## Refresh element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
 This mixin includes the most basic functions shared by all forecast elements to help updating forecast data from providers.
 
