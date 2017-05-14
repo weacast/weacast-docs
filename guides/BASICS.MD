@@ -86,6 +86,7 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
   * **updateInterval** : the check period for data updates (default is every 15 minutes)
   * **elements** : an array of forecast elements that will be managed for this model, the common properties are the following
     * **name** : internal element name that will be used in path to reach the underlying service
+    * **dataStore** : data store to be used for the forecast data, could be `db` to store it directly in database or 'fs' to store it on the file system
 
 ### Frontend side
 
