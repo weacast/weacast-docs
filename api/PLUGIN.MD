@@ -20,7 +20,7 @@ This assumes you have created a *services* directory containing the required fil
 * *index.js*
 * *services*
   * *modelName*
-    * *modelName.hooks.js* : exporting the hooks of all your element services, 
+    * *modelName.hooks.js* : exporting the [hooks](./HOOKS.MD) of all your element services, 
     * *modelName.filters.js* : exporting the filters of all your element services, 
     * *modelName.service.js* : exporting the specific mixin associated to all your element services
 
