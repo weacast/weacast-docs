@@ -6,9 +6,9 @@ Weacast exposes the available forecast models found in the [configuration](../gu
 
 For exemple you can request the available forecasts like this:
 ```javascript
-import api from 'src/api'
+import app from 'src/api'
 
-api.service('/forecasts').find()
+app.getService('forecasts').find()
 .then(response => {
   response.data.forEach(forecast => {
     // Do something with the current forecast model
