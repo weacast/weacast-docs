@@ -53,7 +53,7 @@ You can skip pagination pagination and retrieve selected properties only:
 ```javascript
 import api from 'src/api'
 
-api.service(forecast.name + '/' + element.name).find({
+api.getService(forecast.name + '/' + element.name).find({
   query: {
     $paginate: false,
     $select: ['forecastTime']
@@ -85,7 +85,7 @@ To retrieve data for a given time you have to request it explicitely:
 ```javascript
 import api from 'src/api'
 
-api.service(forecast.name + '/' + element.name).find({
+api.getService(forecast.name + '/' + element.name).find({
   query: {
     time: new Date().toISOString(),
     $select: ['forecastTime', 'data']
