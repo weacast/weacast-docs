@@ -8,6 +8,6 @@
 
 [![Weacast video](./images/weacast-timeline.png)](https://www.youtube.com/watch?v=YcWIlnSbpoo)
 
-> This short video demonstrates how Weacast can be used to probe your own business data to find locations matching target weather conditions. Using runways data first are found airports with a target wind direction then runways with a target wind direction relative to their orientation.
+> This short video demonstrates how Weacast can be used to probe your own business data to find locations matching target weather conditions. Using runways data, first are found airports with a target wind direction, then runways with a target wind direction relative to their own orientation.
 
 [![Weacast video](./images/weacast-probe.png)](https://www.youtube.com/watch?v=4jvwNUbzuAY)
