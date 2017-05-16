@@ -7,6 +7,8 @@
 [**Showcase**](./SHOWCASE.MD)<br/>
 See some videos demonstrating how Weacast is cool and how it can be helpful.
 
+[![Weacast video](./images/weacast-timeline.png)](https://www.youtube.com/watch?v=YcWIlnSbpoo)
+
 [**Guide**](./guides/README.MD)<br/>
 Get familiar with Weacast by building your first forecast server.
 
