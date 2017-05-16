@@ -1,6 +1,7 @@
 # Summary
 
 * [Introduction](README.MD)
+* [Showcase](SHOWCASE.MD)
 * [Guides](guides/README.MD)
   * [About Weacast](guides/ABOUT.MD)
   * [The Basics](guides/BASICS.MD)
