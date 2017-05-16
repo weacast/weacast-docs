@@ -38,7 +38,7 @@ There are many resources available for installing it.
 
 Install the Quasar CLI : `$ npm install -g quasar-cli`
 
-### Weacast
+### Web app
 
 While it is a WIP and not yet pushed to NPM, or when developing, please use the following process.
 
@@ -58,6 +58,10 @@ git clone https://github.com/weacast/weacast-arome.git
 cd weacast-arome
 npm link
 
+git clone https://github.com/weacast/weacast-probe.git
+cd weacast-probe
+npm link
+
 ...
 ```
 
@@ -70,6 +74,7 @@ cd api
 npm link weacast-core
 npm link weacast-arpege
 npm link weacast-arome
+npm link weacast-probe
 ...
 ```
 
@@ -77,7 +82,7 @@ npm link weacast-arome
 
 ## Develop
 
-### Weacast server
+### Web app
 
 The default Weacast server is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api).
 
@@ -100,6 +105,13 @@ From the backend `api` folder run the server-side Feathers app, this will also s
 
 Then point your browser to [localhost:8081](http://localhost:8081).
 
+#### Running test
+
+From the backend `api` folder run the server-side tests : `$ npm run test`
+This will lint and fix issues in the code according to [JS standard](https://github.com/feross/standard), then execute tests using [Mocha](https://mochajs.org/) and compute code coverage using [Istanbul](https://istanbul.js.org/).
+
+> **We are looking for integrating frontend and end-to-end tests, please contribute !**
+
 ### Plugins
 
 Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html), so you will find most of the required information in the linked Feathers documentation. Typically for development you will do the following for each required plugins
@@ -109,6 +121,8 @@ npm install
 npm run watch
 ```
 
+To run the module tests (same as above) : `$ npm run test`
+
 ## Publish
 
 ### Prerequisites
@@ -117,25 +131,21 @@ npm run watch
 
 This [gem](https://github.com/skywinder/github-changelog-generator) generates a change log file based on **tags**, **issues** and merged **pull requests** (and splits them into separate lists according to labels) from :octocat: GitHub Issue Tracker. This requires you to install (e.g. for Windows) [Ruby](http://rubyinstaller.org/downloads/) and its [DevKit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit).
 
-### Weacast plugins
+### Web app
 
-The same process applies when release a patch, minor or major version, i.e. the following tasks are done:
-* increase the package version number in the **package.json** file
+The same process applies when releasing a patch, minor or major version, i.e. the following tasks are done:
+* increase the package version number in the **package.json** file (frontend and backend API)
 * create a tag accordingly in the git repository and push it
 * generates the changelog in the git repository and push it
 
-> **Before you publish a plugin take care of updating the version of your dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core` for a plugin depending on the core plugin before publishing it**
+> **Before you publish the web app take care of updating the version of all dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core weacast-arpege weacast-arome weacast-probe`**
 
 Depending on the release type the following command will do the job (where type is either `patch`, `minor`, `major`):
 ```bash
 npm run release:type
 ```
 
-> This requires you to have a NPM and GitHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
-
-### Weacast web app
-
-The same process as above apply for the Weacast web app when running this set of commands from the root directory. Because Weacast is also released as a Docker image you can build it like this 
+Because Weacast web app is also released as a Docker image you can build it like this 
 ```bash
 docker build -t weacast/weacast .
 ```
@@ -146,4 +156,13 @@ docker push weacast/weacast
 ```
 
 > This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
+
+### Plugins
+
+The same process applies as for the web app but in addition the module is published on the NPM registry.
+
+> This requires you to have a NPM and GitHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
+
+> **Before you publish a plugin take care of updating the version of your dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core` for a plugin depending on the core plugin before publishing it**
+
 
