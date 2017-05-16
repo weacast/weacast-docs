@@ -9,5 +9,6 @@
   * [Grid](/api/GRID.MD)
   * [Layers](/api/LAYERS.MD)
 * Plugins
-  * TODO
+  * [Forecast models](/api/PLUGIN.MD)
+  * [Probe](/api/PROBE.MD)
   
