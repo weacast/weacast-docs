@@ -16,10 +16,10 @@ await app.db.connect()
 
 Weacast provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
 ```javascript
-import { weacastApi } from 'weacast-core'
+import { weacast } from 'weacast-client'
 
-// Initialize app
-let api = weacastApi()
+// Initialize API wrapper
+let api = weacast()
 // Retrieve a given service
 let probes = api.getService('probes')
 ```
