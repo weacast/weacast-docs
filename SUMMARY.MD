@@ -13,7 +13,7 @@
     * [Forecast element](api/ELEMENT.MD)
     * [Hooks](api/HOOKS.MD)
     * [Grid](api/GRID.MD)
-    * [Layer](api/LAYERS.MD)
+    * [Layers](api/LAYERS.MD)
   * Plugins
     * [Forecast models](api/PLUGIN.MD)
     * [Probe](api/PROBE.MD)
