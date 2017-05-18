@@ -14,7 +14,9 @@ let grid = new Grid({
 let value = grid.interpolate(longitude, latitude)
 ```
 
-## Grid(options)
+## Grid API
+
+### Grid(options)
 
 Constructor of a grid object, required properties of the **options** object are the following:
 * **bounds** : the geographical bounds covered by the grid as an array of decimal values `[min longitude, min latitude, max longitude, max latitude]`,
@@ -23,11 +25,11 @@ Constructor of a grid object, required properties of the **options** object are 
 * **resolution** : the geographical resolution of the data grid as an array of decimal values `[longitude resolution, latitude resolution]`
 * **data** : the gridded data as a Javascript array
 
-## .interpolate(longitude, latitude)
+### .interpolate(longitude, latitude)
 
 Return the interpolated value at given longitude (in range [-180, 180]) and latitude (in range [-90, 90])
 
-## .resample(origin, resolution, size)
+### .resample(origin, resolution, size)
 
 Return the interpolated values for a new grid defined by:
 * **origin** : the geographical origin of the data grid as an array of decimal values `[longitude origin, latitude origin]`,
