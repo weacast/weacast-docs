@@ -1,4 +1,6 @@
-# Forecast element - Feathers API
+# Forecast element
+
+## Feathers API
 
 > On the client/server side the API is exposed using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api)
 
@@ -19,7 +21,7 @@ For exemple you can request the available forecast data for a given element like
 ```javascript
 import api from 'src/api'
 
-api.service(forecast.name + '/' + element.name).find()
+api.getService(forecast.name + '/' + element.name).find()
 .then(response => {
   // Do something with the element data
 })
@@ -49,7 +51,9 @@ Response:
 }
 ```
 
-You can skip pagination pagination and retrieve selected properties only:
+### Property selection
+
+You can skip pagination and retrieve selected properties only:
 ```javascript
 import api from 'src/api'
 
@@ -81,6 +85,8 @@ Response:
  ]
  ```
  
+### Data retrieval
+
 To retrieve data for a given time you have to request it explicitely:
 ```javascript
 import api from 'src/api'
@@ -110,50 +116,75 @@ Response:
    ]
  }
  ```
- 
-# Forecast element - Weacast API
+
+When no more query parameters are provided the data retrieved are the ones at the original resolution of the model. If you want to resample data at a lower resolution to improve bandwidth and performance you could add the target grid configuration as parameters:
+```javascript
+import api from 'src/api'
+
+api.getService(forecast.name + '/' + element.name).find({
+  query: {
+    time: new Date().toISOString(),
+    $select: ['forecastTime', 'data'],
+    oLon: origin[0], // Lo
+    oLat: origin[1],
+    sLon: size[0],
+    sLat: size[1],
+    dLon: resolution[0],
+    dLat: resolution[1],
+  }
+})
+.then(response => {
+  // Do something with the element data
+})
+```
+where:
+* **origin** is the geographical origin of the target data grid as an array of decimal values `[longitude origin, latitude origin]`,
+  * **size** is the size of the target data grid as an array of integer values `[width, height]`,
+  * **resolution** is the geographical resolution of the target data grid as an array of decimal values `[longitude resolution, latitude resolution]`
+
+## Weacast API
 
 Each forecast model exposes each element service using a database adapter as an implementation of the [Feathers service interface](https://docs.feathersjs.com/api/services.html). Because we want to remain database-agnostic, just like [Feathers is](https://docs.feathersjs.com/guides/step-by-step/intro/not-worry.html#how-do-i-use-my-preferred-database), the database adapter to be used is only known at startup depending on your [configuration](../guides/BASICS.MD#configuring). That's the reason why there is no static forecast element class in the core of Weacast, instead it provides a set of [functional mixins](https://github.com/daffl/uberproto#mixins) that will be applied on the instancied element service. 
 
-## Basic element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
+### Basic element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
 This mixin includes the most basic functions shared by all forecast elements
 
-### .getNearestRunTime(datetime)
+#### .getNearestRunTime(datetime)
 
 Returns the nearest weather prediction model run date/time for a given date/time, it basically rounds the hours according to the `runInterval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
-### .getNearestForecastTime(datetime)
+#### .getNearestForecastTime(datetime)
 
 Returns the nearest weather prediction model forecast date/time step for a given date/time, it basically rounds the hours according to the `interval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
-## Refresh element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
+### Refresh element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
 This mixin includes the most basic functions shared by all forecast elements to help updating forecast data from providers.
 
-### .getDataDirectory()
+#### .getDataDirectory()
 
 Returns the path where downloaded/persisted data are located for the element
 
-### async .updateForecastData(mode)
+#### async .updateForecastData(mode)
 
 Launches the forecast data update process for the element depending on the mode value:
 * **`'once'`** : will perform data update for the current time only
 * **`'interval'`** : will perform data update for the current time and schedule the update process at regular interval after each data gathering according to the `updateInterval ` value in the [model configuration](../guides/BASICS.MD#backend-side).
 
-###  async .refreshForecastData(datetime)
+####  async .refreshForecastData(datetime)
 
 Refreshes forecast data for the element based on the nearest run for the provided date/time. It will harvest data for each forecast time step available in the model according to the `lowerLimit`/`upperLimit` values in the [model configuration](../guides/BASICS.MD#backend-side).
 
-###  async .harvestForecastTime(datetime, runTime, forecastTime)
+####  async .harvestForecastTime(datetime, runTime, forecastTime)
 
 Refreshes forecast data for the element based on the provided run and forecast date/time. If the run is not yet available through the provider it will try to use the previous one until the `oldestRunInterval` value in the [model configuration](../guides/BASICS.MD#backend-side) is reached.
 
-### async .refreshForecastTime(datetime, runTime, forecastTime)
+#### async .refreshForecastTime(datetime, runTime, forecastTime)
 
 Download the forecast data for the given run/forecast date/time and process it, i.e. convert it if required then store it in the database.
 
-### async .downloadForecastTime(runTime, forecastTime)
+#### async .downloadForecastTime(runTime, forecastTime)
 
 Download the forecast data for the given run/forecast date/time and returns the file path to the downloaded data.
 
