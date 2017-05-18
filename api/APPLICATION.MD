@@ -1,24 +1,42 @@
 # Application setup
 
-Weacast provides some helpers to quickly initialize what is required for your [application](https://docs.feathersjs.com/api/application.html). The core feathers module provides the ability to initialize a new Weacast application instance attached to a database:
+## Backend
+
+Weacast provides a helper to quickly initialize what is required for your [server application](https://docs.feathersjs.com/api/application.html). The core module provides the ability to initialize a new Weacast application instance, attach it to the configured database and setup authentication:
 ```javascript
-import { weacast, Database } from 'weacast-core'
+import { weacast } from 'weacast-core'
 
 // Initialize app
 let app = weacast()
-// Initialize DB
-app.db = Database.create(app)
+// Connect to DB
+await app.db.connect()
 ```
 
-## .getService(name)
+## Client
+
+Weacast provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
+```javascript
+import { weacastApi } from 'weacast-core'
+
+// Initialize app
+let api = weacastApi()
+// Retrieve a given service
+let probes = api.getService('probes')
+```
+
+## Application API
+
+### .getService(name) - backend/client
 
 Retrieve the given service by name, should replace [Feathers service method](https://docs.feathersjs.com/api/application.html#servicepath) so that you are abstracted away from service path (i.e. API prefix) and only refer to it by internal name.
 
-## .getElementServices(name)
+> On the client side this is also used to instanciate the service on first call.
+
+### .getElementServices(name) - backend only
 
 Retrieve all forecast element services related to a forecast model (or all if not provided) instance by name.
 
-## .createService(name, app, modelsPath, servicesPath)
+### .createService(name, app, modelsPath, servicesPath) - backend only
 
 Create a new service attached to the application by name and given a set of directories where to find model/service
 
@@ -34,6 +52,7 @@ This assumes you have created a *models* and *services* directories containing t
     * *serviceName.filters.js* : exporting the [filters](https://docs.feathersjs.com/api/events.html#event-filtering) of your service, 
     * *serviceName.service.js* : exporting the specific mixin associated to your service (optionnal)
     
-## .createElementService(forecast, element, app, servicesPath)
+### .createElementService(forecast, element, app, servicesPath) - backend only
 
 Internally used by [forecast model plugins](./PLUGIN.MD), similar to above but using the built-in forecast element model.
+
