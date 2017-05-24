@@ -4,6 +4,8 @@ Probes are virtual sensors used to derive your own business focussed data by pro
 * **on-demand probing**, which allow to compute *on-demand* (e.g. by a request to the server) forecast element values for a given forecast time and a set of locations,
 * **probing stream**, which allow to make the Weacast server automatically and continuously compute forecast element values for a set of locations as new forecast data are gathered and then retrieve results *on-demand* (e.g. by a request to the server).
 
+> Probed values are computed using [interpolation](./GRID.MD#interpolatelongitude-latitude) of the forecast data
+
 On-demand probing is limited to a **small number of locations** (typically several hundreds) because results are directly returned in the request response. When you have a **large number of locations** (typically thounsands) you have to use probing streams. Indeed, it allows to paginate and filter the probe results according to various parameters such as spatial locations, forecast times, element values, etc. thus limiting the size of the data to be managed.
 
 > For now probes can only be specified using the [WGS 84 longitude-latitude CRS](https://en.wikipedia.org/wiki/World_Geodetic_System)
@@ -262,3 +264,43 @@ Response:
 
 ### Advanced probe results filtering
 
+Probe results are spatially indexed based on [MongoDB capabilities](https://docs.mongodb.com/manual/applications/geospatial-indexes/). So you can perform a spatial filter on your results like this:
+```javascript
+import api from 'src/api'
+
+api.getService('probe-results').find({
+  query: {
+    probeId: '59248de38bb91d28d8155b3c',
+    geometry: {
+      $near: {
+        $geometry: {
+          type: 'Point',
+          coordinates: [longitude, latitude]
+        },
+        $maxDistance: 10000 // in meters, i.e. 10 Kms around
+      }
+    }
+  }
+})
+.then(response => {
+  // Do something with the probe results
+})
+```
+
+You can also filter results according to the computed element values by using the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html), e.g. to get results with a wind speed between 2 m/s and 5 m/s:
+```javascript
+import api from 'src/api'
+
+api.getService('probe-results').find({
+  query: {
+    probeId: '59248de38bb91d28d8155b3c',
+    'properties.windSpeed': {
+      $gte: 2,
+      $lte: 5
+    }
+  }
+})
+.then(response => {
+  // Do something with the probe results
+})
+```
