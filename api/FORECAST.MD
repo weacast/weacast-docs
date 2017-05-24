@@ -1,6 +1,6 @@
 # Forecast model API
 
-> On the client/server side the API is exposed using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api), the [Feathers common database adapter API](https://docs.feathersjs.com/api/databases/common.html) and the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html)
+> On the client/server side the API is exposed using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api) and the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html)
 
 Weacast exposes the available forecast model instances found in the [configuration](../guides/BASICS.MD#configuring) at startup through the `forecasts` service. Although only web sockets are usually used on the client side, both the [REST](https://docs.feathersjs.com/api/rest.html) and the [Socket](https://docs.feathersjs.com/api/socketio.html) interfaces are configured.
 
