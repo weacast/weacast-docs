@@ -1,6 +1,6 @@
 # Forecast element
 
-> On the client/server side the API is exposed using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api)
+> On the client/server side the API is exposed using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api), the [Feathers common database adapter API](https://docs.feathersjs.com/api/databases/common.html) and the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html)
 
 Forecast models expose each element found in its [configuration](../guides/BASICS.MD#configuring) through a service named `forecast.name/element.name` implementing the [Feathers service interface](https://docs.feathersjs.com/api/services.html) for [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). Although only web sockets are usually used on the client side by default, both the [REST](https://docs.feathersjs.com/api/rest.html) and the [Socket](https://docs.feathersjs.com/api/socketio.html) interfaces are configured.
 
