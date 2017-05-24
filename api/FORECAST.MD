@@ -16,4 +16,4 @@ app.getService('forecasts').find()
 })
 ```
 
-> `update`, `patch`, `remove` methods are only allowed from the server side, clients can only `get`and `find` forecasts
+> `create`, `update`, `patch`, `remove` methods are only allowed from the server side, clients can only `get`and `find` forecasts
