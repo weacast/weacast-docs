@@ -131,7 +131,7 @@ api.getService(forecast.name + '/' + element.name).find({
   query: {
     time: new Date().toISOString(),
     $select: ['forecastTime', 'data'],
-    oLon: origin[0], // Lo
+    oLon: origin[0],
     oLat: origin[1],
     sLon: size[0],
     sLat: size[1],
