@@ -11,13 +11,13 @@ Weather prediction data are now available from the major meteorological agencies
 Weacast is **weather forecast model agnostic**, i.e. it mainly exposes a minimalistic framework where forecast data sources can be added on-demand to extend its capabilities in a plugin-like architecture. These data are then available in Weacast through simple REST services in JSON format and can be visualized using the built-in web app.
 
 Currently supported plugins are the following:
-* [ARPEGE](https://github.com/weacast/weacast-arpege) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
-* [AROME](https://github.com/weacast/weacast-arome) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
-* [GFS](https://github.com/weacast/weacast-gfs) model from [NOAA](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
+* [ARPEGE](../api/PLUGIN.MD#ARPEGE) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
+* [AROME](../api/PLUGIN.MD#AROME) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
+* [GFS](../api/PLUGIN.MD#GFS) model from [NOAA](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
 
 Weacast aims at going beyond providing crude forecast data and includes tools to derive your own business focussed data by:
-* [Probing](https://github.com/weacast/weacast-probe) forecast data to extract or analyze relevant data for your locations of interest (e.g. airports, cities, stores, etc.)
-* [Querying](https://github.com/weacast/weacast-query) your probed data to find which locations match specific weather conditions
+* [Probing](../api/PROBE.MD#probe-plugin) forecast data to extract or analyze relevant data for your locations of interest (e.g. airports, cities, stores, etc.)
+* [Querying](../api/PROBE.MD#probe-results) your probed data to find which locations match specific weather conditions
 
 ## What is inside ?
 
