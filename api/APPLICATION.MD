@@ -2,7 +2,7 @@
 
 ## Backend
 
-Weacast provides a helper to quickly initialize what is required for your [server application](https://docs.feathersjs.com/api/application.html). The core module provides the ability to initialize a new Weacast application instance, attach it to the configured database and setup authentication:
+Weacast [core module](https://github.com/weacast/weacast-core) provides a helper to quickly initialize what is required for your [server application](https://docs.feathersjs.com/api/application.html). The core module provides the ability to initialize a new Weacast application instance, attach it to the configured database and setup authentication:
 ```javascript
 import { weacast } from 'weacast-core'
 
@@ -14,7 +14,7 @@ await app.db.connect()
 
 ## Client
 
-Weacast provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
+Weacast [client module](https://github.com/weacast/weacast-client) provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
 ```javascript
 import { weacast } from 'weacast-client'
 
