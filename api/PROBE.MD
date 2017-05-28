@@ -210,7 +210,9 @@ The plugin exposes the available probe results through the `probe-results` servi
 
 ### Data model
 
-The common model for probe results is a [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2). Each result contains an additional property per probed element, according to its [configured name](../guides/BASICS.MD#configuring), storing the target element value.
+The common model for probe results is a [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2). Each result contains an additional property per probed element, according to its [configured name](../guides/BASICS.MD#configuring), storing the target element value. It also contains the following:
+* **runTime**: the date/time of the model run that produced the forecast data that has been used to produce the probe result
+* **forecastTime** : the date/time of the forecast data that has been used to produce the probe result
 
 > Probe results are usually numerous so you need to paginate/filter them
 
