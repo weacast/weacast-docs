@@ -20,6 +20,8 @@ This [plugin](https://github.com/weacast/weacast-arome) allows to gather data fr
 
 This [plugin](https://github.com/weacast/weacast-gfs) allows to gather data from the Global Forecast System (GFS), a weather forecast model produced by the National Centers for Environmental Prediction (NCEP). Dozens of atmospheric and land-soil variables are available through this dataset, from temperatures, winds, and precipitation to soil moisture and atmospheric ozone concentration. The entire globe is covered by the GFS at a base horizontal resolution of 18 miles (28 kilometers) between grid points, which is used by the operational forecasters who predict weather out to 16 days in the future.
 
+Data are downloaded using the [Operational Model Archive and Distribution System](http://nomads.ncep.noaa.gov/) of NOAA, and more specifically the [filter](http://nomads.ncep.noaa.gov/cgi-bin/filter_gfs_1p00.pl) interface generating data in the [GRIBV2](https://en.wikipedia.org/wiki/GRIB) file format then processed using the [weacast-grib2json](https://github.com/weacast/weacast-grib2json) tool.
+
 ## Create a new plugin
 
 > The simplest way to make a running plugin implementation is to copy existing forecast model plugins such as [ARPEGE](https://github.com/weacast/weacast-arpege)
