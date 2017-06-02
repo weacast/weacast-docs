@@ -7,7 +7,7 @@
 A Weacast map is based on a [Leaflet](http://leafletjs.com/) map object.
 
 This set of mixins is to be used to construct a new Weacast Map component and underlying Leaflet objects:
-* [Base](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.base.js) mixin simply initialize the underlying Leaflet map object and registered controls by other mixins
+* **Mandatory** [Base](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.base.js) mixin simply initialize the underlying Leaflet map object and registered controls by other mixins
 * [Base layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.base-layers.js) adds a base layer selector on the map using [Leaflet.Basemaps](https://github.com/consbio/Leaflet.Basemaps)
 * [Forecast layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.forecast-layers.js) adds a configured set of forecast layers to the map
 * [File layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.file-layers.js) adds a file-based layer (GeoJSON or KML) uploader to the map using [Leaflet.Basemaps](https://github.com/consbio/Leaflet.Basemaps)
