@@ -13,7 +13,9 @@
     * [Forecast element](api/ELEMENT.MD)
     * [Hooks](api/HOOKS.MD)
     * [Grid](api/GRID.MD)
-    * [Layers](api/LAYERS.MD)
+    * Client-specific
+      * [Layers](api/LAYERS.MD)
+      * [Mixins](api/MIXINS.MD)
   * Plugins
     * [Forecast models](api/PLUGIN.MD)
     * [Probe](api/PROBE.MD)
