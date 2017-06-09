@@ -62,27 +62,32 @@ Then point your browser to [localhost:8081](http://localhost:8080).
 ### Backend side
 
 Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `api/config` folder. The main properties are the following:
-* **apiPath** : the API path prefix,
+* **apiPath** : the API path prefix
+* **authentication** : object configuring [Feathers authentication](https://github.com/feathersjs/feathers-authentication#default-options) plus custom weacast options
+  * **defaultUsers** : the array of default users to be created on launch (format `{ email, password }`)
+* **logs** : object configuring the [winston](https://github.com/winstonjs/winston) loggers to be used - each key is a [transport name](https://github.com/winstonjs/winston/blob/master/docs/transports.md) which value is associated configuration options
 * **db**
   * **adapter** : the database adapter, default and recommanded is [`mongodb`](https://github.com/feathersjs/feathers-mongodb) although there is experimental support for [`nedb`](https://github.com/feathersjs/feathers-nedb) and [`levelup`](https://github.com/feathersjs/feathers-levelup)
   * **path** : folder where to store database data for embedded database such as [`nedb`](https://github.com/feathersjs/feathers-nedb) and [`levelup`](https://github.com/feathersjs/feathers-levelup)
   * **url** : database URL to access the Weacast database used by drivers such as [mongodb](https://github.com/mongodb/node-mongodb-native)
+* **probePath** : folder where default probe data files are stored
+* **defaultProbes** : the array of default probe streams to be created on launch (format `{ fileName, options }`)
 * **forecastPath** : folder where temporary or persistent forecast data files are stored
 * **forecasts** : an array of configuration objects for each registered forecast, the common properties are the following
   * **name** : internal model name that will be used in path to reach the underlying service
-  * **label** : the label for the model in the user interface,
-  * **description** : the description for the model in the user interface,
-  * **attribution** : the attribution of the data to be displayed when visualized,
-  * **model** : the model plugin to be used for this forecast,
-  * **bounds** : the geographical bounds covered by the model as an array of decimal values `[min longitude, min latitude, max longitude, max latitude]`,
-  * **origin** : the geographical origin of the data grid as an array of decimal values `[longitude origin, latitude origin]`,
-  * **size** : the size of the data grid as an array of integer values `[width, height]`,
-  * **resolution** : the geographical resolution of the data grid as an array of decimal values `[longitude resolution, latitude resolution]`,
-  * **runInterval** : the period between two forecast runs (in seconds) - it also defines at which hours of the day the forecast data are produced (e.g. `00:00 - 06:00 - 12:00 - 18:00` for a `3600` seconds period),
-  * **oldestRunInterval** : how long do the server go back in time when harvesting forecast data (in seconds),
-  * **interval** : the period between two forecast time steps (in seconds),
-  * **lowerLimit** : the offset from run time for the first forecast time step to be gathered (in seconds),
-  * **upperLimit** : the offset from run time for the last forecast time step to be gathered (in seconds),
+  * **label** : the label for the model in the user interface
+  * **description** : the description for the model in the user interface
+  * **attribution** : the attribution of the data to be displayed when visualized
+  * **model** : the model plugin to be used for this forecast
+  * **bounds** : the geographical bounds covered by the model as an array of decimal values `[min longitude, min latitude, max longitude, max latitude]`
+  * **origin** : the geographical origin of the data grid as an array of decimal values `[longitude origin, latitude origin]`
+  * **size** : the size of the data grid as an array of integer values `[width, height]`
+  * **resolution** : the geographical resolution of the data grid as an array of decimal values `[longitude resolution, latitude resolution]`
+  * **runInterval** : the period between two forecast runs (in seconds) - it also defines at which hours of the day the forecast data are produced (e.g. `00:00 - 06:00 - 12:00 - 18:00` for a `3600` seconds period)
+  * **oldestRunInterval** : how long do the server go back in time when harvesting forecast data (in seconds)
+  * **interval** : the period between two forecast time steps (in seconds)
+  * **lowerLimit** : the offset from run time for the first forecast time step to be gathered (in seconds)
+  * **upperLimit** : the offset from run time for the last forecast time step to be gathered (in seconds)
   * **updateInterval** : the check period for data updates (default is every 15 minutes)
   * **elements** : an array of forecast elements that will be managed for this model, the common properties are the following
     * **name** : internal element name that will be used in path to reach the underlying service
@@ -91,8 +96,17 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 ### Frontend side
 
 Weacast frontend configuration is based on the same underlying [tool](https://github.com/lorenwest/node-config) that powers [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `config` folder. The main properties are the following:
-* **apiPath** : the API path prefix,
-* **transport** : the transport to be used between frontend and backend, could be `http` for standard REST or `web-socket` for WebSockets,
-* **baseLayers** : the set of Leaflet layers to be shown in the base layer selector on the map
-
+* **apiPath** : the API path prefix
+* **transport** : the transport to be used between frontend and backend, could be `http` for standard REST or `web-socket` for WebSockets
+* **appName** : the name of the Weacast app
+* **logs**
+  * **level** : [log level](https://github.com/pimterry/loglevel#documentation) to be used 
+* **map**
+  * **seeker** : the name of the compoennt to be used to look for weather conditions in the app
+  * **mixins** : the set of [mixins](../api/MIXINS.MD) to be applied to the map (could be `base`, `baseLayers`, `forecastLayers`, `geojsonLayers`, `fileLayers`, `fullscreen`, `measure`, `scalebar`, etc.)
+  * **baseLayers** : the set of Leaflet layers to be shown in the base layer selector on the map
+  * **forecastLayers** : the set of Weacast forecast layers to be shown in the overlay layer selector on the map
+  * **featureStyle** : default style for GeoJson features in [Leaflet compatible format](http://leafletjs.com/reference-1.0.3.html#path-option)
+  * **pointStyle** : default style for GeoJson points in [Leaflet compatible format](http://leafletjs.com/reference-1.0.3.html#marker-option)
+  
 > The main difference with the backend configuration is that the actual frontend configuration is generated by WebPack at build time from the config files, so you will need to rebuild the app to see your changes applied
