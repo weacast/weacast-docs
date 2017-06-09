@@ -24,7 +24,7 @@ Weacast aims at going beyond providing crude forecast data and includes tools to
 Weacast is possible and mainly powered by the following stack:
 * [Feathers](https://feathersjs.com/) on the backend side
 * [Quasar](http://quasar-framework.org/) on the frontend side
-* [Leaflet](http://leafletjs.com/) for mapping
+* [Leaflet](http://leafletjs.com/) and [plugins](http://leafletjs.com/plugins.html) for mapping
 * [Leaflet-velocity](https://github.com/danwild/leaflet-velocity) for wind visualization
 * [Leaflet-timedimension](https://github.com/socib/Leaflet.TimeDimension) for time management
 
