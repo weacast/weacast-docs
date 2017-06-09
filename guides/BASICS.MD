@@ -105,7 +105,7 @@ Weacast frontend configuration is based on the same underlying [tool](https://gi
   * **seeker** : the name of the compoennt to be used to look for weather conditions in the app
   * **mixins** : the set of [mixins](../api/MIXINS.MD) to be applied to the map (could be `base`, `baseLayers`, `forecastLayers`, `geojsonLayers`, `fileLayers`, `fullscreen`, `measure`, `scalebar`, etc.)
   * **baseLayers** : the set of Leaflet layers to be shown in the base layer selector on the map
-  * **forecastLayers** : the set of Weacast forecast layers to be shown in the overlay layer selector on the map
+  * **forecastLayers** : the set of Weacast [forecast layers](../api/LAYERS.MD) to be shown in the overlay layer selector on the map
   * **featureStyle** : default style for GeoJson features in [Leaflet compatible format](http://leafletjs.com/reference-1.0.3.html#path-option)
   * **pointStyle** : default style for GeoJson points in [Leaflet compatible format](http://leafletjs.com/reference-1.0.3.html#marker-option)
   
