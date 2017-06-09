@@ -145,14 +145,14 @@ Depending on the release type the following command will do the job (where type 
 npm run release:type
 ```
 
-Because Weacast web app is also released as a Docker image you can build it like this 
+Because Weacast web app is also released as a Docker image you can build it like this (`version_tag` being the current version number like 1.1.2)
 ```bash
-docker build -t weacast/weacast .
+docker build -t weacast/weacast:version_tag .
 ```
 Then release it:
 ```bash
 docker login
-docker push weacast/weacast
+docker push weacast/weacast:version_tag
 ```
 
 > This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
