@@ -27,7 +27,7 @@ You can also use [docker-compose](https://docs.docker.com/compose/) and the [doc
 The following commands should do the job:
 ```bash
 // Run the MongoDB and Weacast containers
-docker-compose up
+docker-compose up -d
 
 // Stop the MongoDB and Weacast containers
 docker-compose down
