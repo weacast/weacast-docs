@@ -1,5 +1,7 @@
 # Showcase
 
+A [live demo](http://demo.weacast.xyz) is usually running at [demo.weacast.xyz](http://demo.weacast.xyz).
+
 ## Visualize forecast data
 
 > This short video demonstrates how Weacast can be used to gather forecast data from different models to visualize and predict wind in different locations.
