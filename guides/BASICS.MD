@@ -26,11 +26,14 @@ Then point your browser to [localhost:8081](http://localhost:8081).
 You can also use [docker-compose](https://docs.docker.com/compose/) and the [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.yml).
 The following commands should do the job:
 ```bash
+docker pull weacast/weacast
 // Run the MongoDB and Weacast containers
 docker-compose up -d
 
 // Stop the MongoDB and Weacast containers
 docker-compose down
+// Stop the MongoDB and Weacast containers erasing DB data
+docker-compose down -v
 ```
 
 ### The hard way : from source code
