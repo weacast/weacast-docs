@@ -1,6 +1,6 @@
 # Hooks
 
-Weacast provide a collection of common [hooks](https://docs.feathersjs.com/api/hooks.html) to be used by plugins.
+Weacast [core module](https://github.com/weacast/weacast-core) and [client module](https://github.com/weacast/weacast-client) provides a collection of common [hooks](https://docs.feathersjs.com/api/hooks.html) to be used by plugins or [client applications](https://docs.feathersjs.com/api/client.html).
 
 ## Data model management [source](https://github.com/weacast/weacast-core/blob/master/src/hooks/marshall.js)
 
@@ -34,10 +34,17 @@ Find the nearest forecast date/time corresponding to a requested date/time or da
 
 Discard or retrieve forecast data when required depending on the query parameters.
 
-## Logging [source](https://github.com/weacast/weacast-core/blob/master/src/hooks/logger.js)
+## Logging [core source](https://github.com/weacast/weacast-core/blob/master/src/hooks/logger.js), [client source](https://github.com/weacast/weacast-client/blob/master/src/hooks/logger.js)
 
 ### `log(hook)`
 
 Log error for each hook in error with error log level.
-Log information for each hook ran with verbose log level.
-Log detailed information for each hook ran with debug log level.
+Log information for each hook ran with verbose (respectively debug for client) log level.
+Log detailed information for each hook ran with debug (respectively trace for client) log level.
+
+## Events [source](https://github.com/weacast/weacast-client/blob/master/src/hooks/events.js)
+
+### `emit(hook)`
+
+Emit an event named `{hook_type}Hook` (e.g. `beforeHook` or `afterHook`) for each hook ran, the payload of the event being the hook object.
+
