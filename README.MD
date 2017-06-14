@@ -2,7 +2,7 @@
 
 ![Weacast logo](./images/weacast-logo-256.png)
 
-> Open source app and services to expose weather forecast data
+> Open source platform to gather, expose and make use of weather forecast data
 
 [**Showcase**](./SHOWCASE.MD)<br/>
 See some videos demonstrating how Weacast is cool and how it can be helpful.
