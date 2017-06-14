@@ -8,7 +8,7 @@ Weather prediction data are now available from the major meteorological agencies
 
 ## Weacast philosophy
 
-Weacast is **weather forecast model agnostic**, i.e. it mainly exposes a minimalistic framework where forecast data sources can be added on-demand to extend its capabilities in a plugin-like architecture. These data are then available in Weacast through simple REST services in JSON format and can be visualized using the built-in web app.
+Weacast is **weather forecast model agnostic**, i.e. it mainly exposes a minimalistic framework where forecast data sources can be added on-demand to extend its capabilities in a plugin-like architecture. These data are then available in Weacast through simple REST/Websocket services in JSON format and can be visualized using the built-in web app.
 
 Currently supported plugins are the following:
 * [ARPEGE](../api/PLUGIN.MD#arpege) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
