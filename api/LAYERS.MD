@@ -40,7 +40,7 @@ To be implemented by child classes, data contains an array of data array for eac
 
 To visualize forecast paired element as flow (e.g. wind direction), based on [leaflet-velocity](https://github.com/danwild/leaflet-velocity).
 
-[![Weacast flow layer](../images/flow-layer.png)]
+![Weacast flow layer](../images/flow-layer.png)
 
 ## HeatLayer [source](https://github.com/weacast/weacast-client/blob/master/src/layers/heat-layer.js)
 
@@ -50,6 +50,6 @@ To visualize forecast element scalar values (e.g. temperature) as a heatmap, bas
 
 To visualize forecast element scalar values (e.g. temperature) as a color image using [color maps](http://gka.github.io/chroma.js/#color-scales), based on [leaflet-canvaslayer-field](https://github.com/IHCantabria/Leaflet.CanvasLayer.Field).
 
-[![Weacast color layer](../images/color-layer.png)]
+![Weacast color layer](../images/color-layer.png)
 
 
