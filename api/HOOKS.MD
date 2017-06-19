@@ -53,22 +53,22 @@ Emit an event named `{hook_type}Hook` (e.g. `beforeHook` or `afterHook`) for eac
 ## Application
 
 The following hooks are globally executed on the [application](./APPLICATION.MD):
-![Application hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Application%20Hooks%20Diagram.svg)
+![Application hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Application%20Hooks%20Diagram.svg)
 
 ## Forecast service
 
 The following hooks are executed on the [Forecast model service](./FORECAST.MD):
-![Forecast hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Forecast%20Hooks%20Diagram.svg)
+![Forecast hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Forecast%20Hooks%20Diagram.svg)
 
 ## Forecast element services
 
 The following hooks are executed on each [Forecast element service](./ELEMENT.MD):
-![Element hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Element%20Hooks%20Diagram.svg)
+![Element hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Element%20Hooks%20Diagram.svg)
 
 ## Probe service
 
 The following hooks are executed on the [Probe service](./PROBE.MD#probes):
-![Probe hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Probe%20Hooks%20Diagram.svg)
+![Probe hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Probe%20Hooks%20Diagram.svg)
 
 Some additional hooks are provided by the [Probe module](./PROBE).
 
@@ -95,5 +95,5 @@ Remove all features of the input probe object when not explicitely required (str
 ## Probe results service
 
 The following hooks are executed on the [Probe results service](./PROBE.MD#probe-results):
-![Probe results hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Probe%20Results%20Hooks%20Diagram.svg)
+![Probe results hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Probe%20Results%20Hooks%20Diagram.svg)
 
