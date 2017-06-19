@@ -13,12 +13,12 @@
     * [Forecast element](api/ELEMENT.MD)
     * [Hooks](api/HOOKS.MD)
     * [Grid](api/GRID.MD)
-    * Client-specific
-      * [Layers](api/LAYERS.MD)
-      * [Mixins](api/MIXINS.MD)
   * Plugins
     * [Forecast models](api/PLUGIN.MD)
     * [Probe](api/PROBE.MD)
+  * Client-specific
+    * [Layers](api/LAYERS.MD)
+    * [Mixins](api/MIXINS.MD)
 * [Ecosystem](ecosystem/README.MD)
 * [Contributing](contributing/README.MD)
 * [License](LICENSE.MD)
