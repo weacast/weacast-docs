@@ -1,4 +1,4 @@
-# Forecast model API
+## Forecast model API
 
 > On the client/server side the API is exposed using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api) and the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html)
 
@@ -18,7 +18,7 @@ app.getService('forecasts').find()
 
 > `create`, `update`, `patch`, `remove` methods are only allowed from the server side, clients can only `get`and `find` forecasts
 
-# Forecast model hooks
+## Forecast model hooks
 
 The following [hooks](./HOOKS.MD) are executed on the Forecast model service:
 ![Forecast hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Forecast%20Hooks%20Diagram.svg)
