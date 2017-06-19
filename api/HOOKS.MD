@@ -51,20 +51,20 @@ Emit an event named `{hook_type}Hook` (e.g. `beforeHook` or `afterHook`) for eac
 ## Forecast service
 
 The following hooks are executed on the [Forecast model service](./FORECAST.MD):
-![Forecast hooks](../images/forecast-hooks.svg)
+![Forecast hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/forecast-hooks.svg)
 
 ## Forecast element services
 
 The following hooks are executed on each [Forecast element service](./ELEMENT.MD):
-![Element hooks](../images/element-hooks.svg)
+![Element hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/element-hooks.svg)
 
 ## Probe service
 
 The following hooks are executed on the [Probe service](./PROBE.MD#probes):
-![Probe hooks](../images/probe-hooks.svg)
+![Probe hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/probe-hooks.svg)
 
 ## Probe results service
 
 The following hooks are executed on the [Probe results service](./PROBE.MD#probe-results):
-![Probe results hooks](../images/probe-results-hooks.svg)
+![Probe results hooks](https://cdn.rawgit.com/weacast/weacast-docs/master/images/probe-results-hooks.svg)
 
