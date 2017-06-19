@@ -17,3 +17,8 @@ app.getService('forecasts').find()
 ```
 
 > `create`, `update`, `patch`, `remove` methods are only allowed from the server side, clients can only `get`and `find` forecasts
+
+# Forecast model hooks
+
+The following [hooks](./HOOKS.MD) are executed on the Forecast model service:
+![Forecast hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Forecast%20Hooks%20Diagram.svg)
