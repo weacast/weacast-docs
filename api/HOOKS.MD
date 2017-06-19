@@ -2,6 +2,8 @@
 
 Weacast [core module](https://github.com/weacast/weacast-core) and [client module](https://github.com/weacast/weacast-client) provides a collection of common [hooks](https://docs.feathersjs.com/api/hooks.html) to be used by plugins or [client applications](https://docs.feathersjs.com/api/client.html). They also rely on [Feathers common hooks](https://docs.feathersjs.com/api/hooks-common.html).
 
+> [Hooks](https://docs.feathersjs.com/api/hooks.html) are the main way to introduce business logic into applications and plugins so we recommand to understand them well first before reading this.
+
 ## Data model management [source](https://github.com/weacast/weacast-core/blob/master/src/hooks/marshall.js)
 
 ### .marshall(hook)
