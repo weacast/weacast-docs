@@ -56,3 +56,7 @@ This assumes you have created a *models* and *services* directories containing t
 
 Internally used by [forecast model plugins](./PLUGIN.MD), similar to above but using the built-in forecast element model.
 
+## Application Hooks
+
+The following hooks are globally executed on the [application](./APPLICATION.MD):
+![Application hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Application%20Hooks%20Diagram.svg)
