@@ -1,7 +1,7 @@
 # Global architecture
 
 The global architecture and the underlying technologies of Weacast are summarized in the following diagram:
-![Global architecture](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Global%20Architecture%20Diagram.svg)
+![Global architecture](https://cdn.rawgit.com/weacast/weacast-docs/0b3f8050e178fd29da0756097cafb0e5126e8080/images/Global%20Architecture%20Diagram.svg)
 
 # API
 
