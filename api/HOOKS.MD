@@ -48,3 +48,23 @@ Log detailed information for each hook ran with debug (respectively trace for cl
 
 Emit an event named `{hook_type}Hook` (e.g. `beforeHook` or `afterHook`) for each hook ran, the payload of the event being the hook object.
 
+## Forecast service
+
+The following hooks are executed on the [Forecast model service](./FORECAST.MD):
+![Forecast hooks](../images/forecast-hooks.png)
+
+## Forecast element services
+
+The following hooks are executed on each [Forecast element service](./ELEMENT.MD):
+![Element hooks](../images/element-hooks.png)
+
+## Probe service
+
+The following hooks are executed on the [Probe service](./PROBE.MD#probes):
+![Probe hooks](../images/probe-hooks.png)
+
+## Probe results service
+
+The following hooks are executed on the [Probe results service](./PROBE.MD#probe-results):
+![Probe results hooks](../images/probe-results-hooks.png)
+
