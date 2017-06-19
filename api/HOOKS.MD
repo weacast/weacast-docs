@@ -51,20 +51,20 @@ Emit an event named `{hook_type}Hook` (e.g. `beforeHook` or `afterHook`) for eac
 ## Forecast service
 
 The following hooks are executed on the [Forecast model service](./FORECAST.MD):
-![Forecast hooks](../images/forecast-hooks.png)
+![Forecast hooks](../images/forecast-hooks.svg)
 
 ## Forecast element services
 
 The following hooks are executed on each [Forecast element service](./ELEMENT.MD):
-![Element hooks](../images/element-hooks.png)
+![Element hooks](../images/element-hooks.svg)
 
 ## Probe service
 
 The following hooks are executed on the [Probe service](./PROBE.MD#probes):
-![Probe hooks](../images/probe-hooks.png)
+![Probe hooks](../images/probe-hooks.svg)
 
 ## Probe results service
 
 The following hooks are executed on the [Probe results service](./PROBE.MD#probe-results):
-![Probe results hooks](../images/probe-results-hooks.png)
+![Probe results hooks](../images/probe-results-hooks.svg)
 
