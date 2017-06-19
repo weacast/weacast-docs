@@ -8,10 +8,10 @@
   * [Development](guides/DEVELOPMENT.MD)
 * [API](api/README.MD)
   * Core
+    * [Hooks](api/HOOKS.MD)
     * [Application](api/APPLICATION.MD)
     * [Forecast model](api/FORECAST.MD)
     * [Forecast element](api/ELEMENT.MD)
-    * [Hooks](api/HOOKS.MD)
     * [Grid](api/GRID.MD)
   * Plugins
     * [Forecast models](api/PLUGIN.MD)
