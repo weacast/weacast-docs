@@ -1,3 +1,8 @@
+# Global architecture
+
+The global architecture and the underlying technologies of Weacast are summarized in the following diagram:
+![Global architecture](https://cdn.rawgit.com/weacast/weacast-docs/master/images/Global%20Architecture%20Diagram.svg)
+
 # API
 
 These sections detail the external (i.e. REST/Websocket) as well as the internal (ie Classes/Functions) [API](https://en.wikipedia.org/wiki/Application_programming_interface) of Weacast.
@@ -10,10 +15,12 @@ These sections detail the external (i.e. REST/Websocket) as well as the internal
   * [Forecast element](/api/ELEMENT.MD)
   * [Hooks](/api/HOOKS.MD)
   * [Grid](/api/GRID.MD)
-  * [Layers](/api/LAYERS.MD)
 * Plugins
   * [Forecast models](/api/PLUGIN.MD)
   * [Probe](/api/PROBE.MD)
+* Client-specific
+  * [Layers](/api/LAYERS.MD)
+  * [Mixins](/api/MIXINS.MD)
   
 ## Testing
 
