@@ -58,5 +58,5 @@ Internally used by [forecast model plugins](./PLUGIN.MD), similar to above but u
 
 ## Application Hooks
 
-The following hooks are globally executed on the [application](./APPLICATION.MD):
+The following hooks are globally executed on the application:
 ![Application hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Application%20Hooks%20Diagram.svg)
