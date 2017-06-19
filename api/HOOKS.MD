@@ -50,50 +50,10 @@ Discard or retrieve forecast data when required depending on the query parameter
 
 Emit an event named `{hook_type}Hook` (e.g. `beforeHook` or `afterHook`) for each hook ran, the payload of the event being the hook object.
 
-## Application
+## By type
 
-The following hooks are globally executed on the [application](./APPLICATION.MD):
-![Application hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Application%20Hooks%20Diagram.svg)
-
-## Forecast service
-
-The following hooks are executed on the [Forecast model service](./FORECAST.MD):
-![Forecast hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Forecast%20Hooks%20Diagram.svg)
-
-## Forecast element services
-
-The following hooks are executed on each [Forecast element service](./ELEMENT.MD):
-![Element hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Element%20Hooks%20Diagram.svg)
-
-## Probe service
-
-The following hooks are executed on the [Probe service](./PROBE.MD#probes):
-![Probe hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Probe%20Hooks%20Diagram.svg)
-
-Some additional hooks are provided by the [Probe module](./PROBE).
-
-### .marshallResultQuery(hook) [source](https://github.com/weacast/weacast-probe/blob/master/src/hooks/probing.js)
-
-Filter results to match the given probe object ID as query parameter.
-
-### .checkProbingType(hook) [source](https://github.com/weacast/weacast-probe/blob/master/src/hooks/probing.js)
-
-Check if the created probe in a on-demand or a streamed probe. In the first case it will avoid creating the probe object in the database as probed values are computed on-the-fly.
-
-### .performProbing(hook) [source](https://github.com/weacast/weacast-probe/blob/master/src/hooks/probing.js)
-
-Perform the probing operation, i.e. compute probed values from forecast data of each available forecast time (streamed probe) or for the given forecast time as query parameter (on-demand probe).
-
-### .removeResults(hook) [source](https://github.com/weacast/weacast-probe/blob/master/src/hooks/probing.js)
-
-Remove all results matching the input probe object when it is removed from the database (streamed probe only).
-
-### .removeFeatures(hook) [source](https://github.com/weacast/weacast-probe/blob/master/src/hooks/probing.js)
-
-Remove all features of the input probe object when not explicitely required (streamed probe only).
-
-## Probe results service
-
-The following hooks are executed on the [Probe results service](./PROBE.MD#probe-results):
-![Probe results hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Probe%20Results%20Hooks%20Diagram.svg)
-
+* [Application](./APPLICATION.MD#application-hooks)
+* [Forecast model service](./FORECAST.MD#forecast-model-hooks)
+* [Forecast element service](./ELEMENT.MD#forecast-element-hooks)
+* [Probe service](./PROBE.MD#probe-hooks)
+* [Probe results service](./PROBE.MD#probe-results-hooks)
