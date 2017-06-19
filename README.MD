@@ -13,7 +13,7 @@ See some videos demonstrating how Weacast is cool and how it can be helpful.
 Get familiar with Weacast by building your first forecast server.
 
 [**API**](./api/README.MD)<br/>
-Learn more about Weacast API and plugins.
+Learn more about Weacast architecture, API and plugins.
 
 [**Ecosystem**](./ecosystem/README.MD)<br/>
 See what amazing things the Weacast Core Team and Community have built.
