@@ -192,7 +192,7 @@ Download the forecast data for the given run/forecast date/time and process it, 
 
 Download the forecast data for the given run/forecast date/time and returns the file path to the downloaded data.
 
-# Forecast element hooks
+## Forecast element hooks
 
 The following [hooks](./HOOKS.MD) are executed on each Forecast element service:
 ![Element hooks](https://cdn.rawgit.com/weacast/weacast-docs/9d7ac840bd860ce612ffe098f1b8c1027de8d914/images/Element%20Hooks%20Diagram.svg)
