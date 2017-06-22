@@ -6,4 +6,4 @@ You might prefer to have a:
 * [component-oriented view](./COMPONENTS.MD) of the architecture
 * [data model-oriented view](./DATAMODEL.MD) of the architecture
 
-![Global architecture](https://cdn.rawgit.com/weacast/weacast-docs/d51cb85542a7ed898b18e8b77d061b250e10a4dd/images/Global%20Architecture%20Diagram.svg)
+![Global architecture](https://cdn.rawgit.com/weacast/weacast-docs/c52d6882fa887d3c3e53e14cb18920f586d7e4af/images/Global%20Architecture%20Diagram.svg)
