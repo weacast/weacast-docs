@@ -30,3 +30,11 @@ The properties of a probe object is described by the following data model:
 
 This data model is instanciated when forecast data are asked to be probed by the [Probe plugin](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html) and manipulated through the [Probes API](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html#probes-api).
 
+## Probe result data model
+
+The properties of a probe result object is described by the following data model:
+
+![Probe data model](https://cdn.rawgit.com/weacast/weacast-docs/3aa40aced838a266fac5646b21e4b64f05a28d3a/images/Probe%20Result%20Data%20Model%20Diagram.svg)
+
+This data model is instanciated when forecast data are probed by the [Probe plugin](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html) and manipulated through the [Probe results API](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html#probe-results-api).
+
