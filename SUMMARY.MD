@@ -9,6 +9,10 @@
 * [Architecture](architecture/README.MD)
   * [Component view](architecture/COMPONENTS.MD)
   * [Data model view](architecture/DATAMODEL.MD)
+    * [Forecast data model](architecture/DATAMODEL.MD#forecast-data-model)
+    * [Forecast element data model](architecture/DATAMODEL.MD#element-data-model)
+    * [Probe data model](architecture/DATAMODEL.MD#probe-data-model)
+    * [Probe result data model](architecture/DATAMODEL.MD#probe-result-data-model)
 * [API](api/README.MD)
   * Core
     * [Hooks](api/HOOKS.MD)
