@@ -18,6 +18,10 @@ app.getService('forecasts').find()
 
 > `create`, `update`, `patch`, `remove` methods are only allowed from the server side, clients can only `get`and `find` forecasts
 
+## Data model
+
+The common data model of a forecast model instance is defined by the [configuration](../guides/BASICS.MD#configuring).
+
 ## Forecast model hooks
 
 The following [hooks](./HOOKS.MD) are executed on the Forecast model service:
