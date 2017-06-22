@@ -7,7 +7,6 @@
   * [The Basics](guides/BASICS.MD)
   * [Development](guides/DEVELOPMENT.MD)
 * [Architecture](architecture/README.MD)
-  * [Global view](architecture/GLOBAL.MD)
   * [Component view](architecture/COMPONENTS.MD)
   * [Object view](architecture/OBJECTS.MD)
 * [API](api/README.MD)
