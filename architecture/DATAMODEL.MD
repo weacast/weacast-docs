@@ -1,6 +1,6 @@
 # Data model-oriented view of the architecture
 
-> According to Feathers philosophy each data model is manipulated using a [service interface](https://docs.feathersjs.com/api/services.html) to perform [CRUD operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete).
+> According to the [Feathers philosophy](https://docs.feathersjs.com/guides/about/philosophy.html) each data model is manipulated using a [service interface](https://docs.feathersjs.com/api/services.html) to perform [CRUD operations](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete). So this data model-oriented view is a service-oriented view in the same manner.
 
 ## Forecast data model
 
@@ -20,4 +20,11 @@ Each configured forecast model instance output hundreds of forecast elements (i.
 
 This data model is instanciated when forecast data are gathered by [Forecast model plugins](https://weacast.gitbooks.io/weacast-docs/api/PLUGIN.html) and manipulated through the [Forecast element API](https://weacast.gitbooks.io/weacast-docs/api/ELEMENT.html).
 
+## Probe data model
+
+The properties of a probe object is described by the following data model:
+
+![Probe data model](https://cdn.rawgit.com/weacast/weacast-docs/2724c914bb95d9167dd460b800ff1186dd3b31cb/images/Probe%20Data%20Model%20Diagram.svg)
+
+This data model is instanciated when forecast data are asked to be probed by the [Probe plugin](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html) and manipulated through the [Probes API](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html#probes-api).
 
