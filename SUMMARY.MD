@@ -8,7 +8,7 @@
   * [Development](guides/DEVELOPMENT.MD)
 * [Architecture](architecture/README.MD)
   * [Component view](architecture/COMPONENTS.MD)
-  * [Object view](architecture/OBJECTS.MD)
+  * [Data model view](architecture/DATAMODEL.MD)
 * [API](api/README.MD)
   * Core
     * [Hooks](api/HOOKS.MD)
