@@ -6,7 +6,7 @@
   * [About Weacast](guides/ABOUT.MD)
   * [The Basics](guides/BASICS.MD)
   * [Development](guides/DEVELOPMENT.MD)
-* Architecture
+* [Architecture](architecture/README.MD)
   * [Main concepts](architecture/DOMAINMODEL.MD#main-concepts)
     * [Forecast model](architecture/DOMAINMODEL.MD#forecast-model)
     * [Forecast element](architecture/DOMAINMODEL.MD#forecast-element)
