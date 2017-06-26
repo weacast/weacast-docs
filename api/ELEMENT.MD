@@ -10,16 +10,7 @@ Each forecast model instance exposes each element service using a database adapt
 
 ## Data model
 
-The common data model of a forecast element is the following:
-* **runTime**: the date/time of the model run that produced the forecast data
-* **forecastTime** : the date/time of the forecast data
-* **minValue** : the minimum value of the element in the forecast data
-* **maxValue** : the maximum value of the element in the forecast data
-* **data** : the forecast data for the element
-
-A forecast element will cover the period until the start of the next available forecast, what is called the Time To Live (or TTL in short), this is typically one or three hour(s) for much of forecast data. Once its validity has expired it is automatically removed from the database.
-
-If the data store of the element is the database then the **data** property containing forecast data is stored in the model, otherwise if the data store is the file system it has an additional **filePath** property only used internally to retrieve the data on-the-fly.
+The common data model of a forecast element is [detailed here](../architecture/DATAMODEL.MD#element-data-model).
 
 > Forecast element data are usually large so they are not returned by default, only metadata are
 
