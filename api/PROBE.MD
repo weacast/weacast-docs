@@ -14,7 +14,15 @@ On-demand probing is limited to a **small number of locations** (typically sever
 
 Forecast elements can be scalar value or axis component of vector value. This plugin can manage direction elements such as [wind direction](http://colaweb.gmu.edu/dev/clim301/lectures/wind/wind-uv.html) and compute for you the derived speed (vector norm) and direction (in degrees measured from the north) from the individual axis components.
 
-If an element name starts with a `u-` or (respectively `v-`) prefix it is assumed to be the u-axis (respectively v-axis) component of the direction named according to the element name suffix. As a consequence if you probe elements `u-wind` and `v-wind` the plugin will generate a derived `windDirection` and `windSpeed` value.
+If an element name starts with a `u-` or (respectively `v-`) prefix it is assumed to be the u-axis (respectively v-axis) component of the direction named according to the element name suffix. As a consequence if you probe elements `u-wind` and `v-wind` the plugin will generate a derived `windDirection` and `windSpeed` value for each of your locations.
+
+> Weacast specifies the [meteorological wind direction](http://mst.nerc.ac.uk/wind_vect_convs.html) (in degrees), i.e. the direction **from** which the wind is blowing. The speed is provided with the same unit as the underlying forecast model (usually in SI unit `m/s`).
+
+### Relative directions
+
+It is often usefull to get the direction of an element (e.g. wind) relatively to a given local orientation (e.g. the direction of runway in an airport). In this case Weacast can compute for you the relative direction of the element with respect to the orientation of your locations, assuming they have an attribute defining it as a [bearing or azimuth](http://mst.nerc.ac.uk/wind_vect_convs.html) in degrees. As a consequence if you probe elements `u-wind` and `v-wind` the plugin will generate a derived `windBearingDirection` value storing the relative direction of the wind w.r.t. your local orientation for each of your locations.
+
+> Weacast specifies the [relative wind vector azimuth](http://mst.nerc.ac.uk/wind_vect_convs.html) (in degrees), i.e. the direction **towards** which the wind is blowing w.r.t. the local orientation.
 
 ## Probes API
 
