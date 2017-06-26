@@ -7,7 +7,7 @@
   * [The Basics](guides/BASICS.MD)
   * [Development](guides/DEVELOPMENT.MD)
 * [Architecture](architecture/README.MD)
-  * [Main concepts](architecture/DOMAINMODEL.MD#main-concepts)
+  * [Main concepts](architecture/DOMAINMODEL.MD)
     * [Forecast model](architecture/DOMAINMODEL.MD#forecast-model)
     * [Forecast element](architecture/DOMAINMODEL.MD#forecast-element)
     * [Probe](architecture/DOMAINMODEL.MD#probe)
