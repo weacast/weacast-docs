@@ -33,5 +33,5 @@ The class diagram used to represent the domain model in the [Unified Modeling La
 
 ![Domain model](https://cdn.rawgit.com/weacast/weacast-docs/49febdcdf850d447be0e8a5bae335f4f75db6dd9/images/Domain%20Model%20Diagram.svg)
 
-You might want to look at a more detailed view of the [persisted data model](./DATAMODEL.MD).
+To get into the details of this model look at the [persisted data model](./DATAMODEL.MD) and the provided [API](../api/README.MD).
 
