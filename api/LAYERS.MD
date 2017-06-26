@@ -1,6 +1,12 @@
-# Layers
+Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to help visualize forecast data or probe results. Each layer type implements the [TimeDimension Layer interface](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayer).
 
-Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to manage the temporal evolution of forecast data. Each layer type implements the [TimeDimension Layer interface](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayer). Due to the possible large amount of forecast data it is recommanded to load data on-demand, although it is possible to have an internal data cache.
+# Feature Layers
+
+[Time-stamped GeoJson layers](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayergeojson) provide a generic way to visualize [GeoJSON features](https://geojson.org/geojson-spec.html#feature-objects) including temporal evolution. Because [probes](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-data-model) and [probe results](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-result-data-model) are internally modelled as GeoJSON features they can be used to visualize them. However Weacast does not make any assumption on how you want to visualize these data so you might have to manually process the retrieved probe results in order to add a `time` property on each feature corresponding to the `forecastTime` or the `runTime` for instance.
+
+# Forecast Data Layers
+
+Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to manage the temporal evolution of forecast data. Due to the possible large amount of forecast data it is recommanded to load data on-demand, although it is possible to have an internal data cache.
 
 ## ForecastLayer [source](https://github.com/weacast/weacast-client/blob/master/src/layers/forecast-layer.js)
 
