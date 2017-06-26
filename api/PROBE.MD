@@ -34,15 +34,7 @@ The plugin exposes the available probes through the `probes` service. Although o
 
 ### Data model
 
-The common model for on-demand or stream mode is a [GeoJSON feature collection](https://tools.ietf.org/html/rfc7946#section-3.3), where each [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) describes a location of interest.
-
-> For now only features with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2) are supported.
-
-The following additional properties of the GeoJSON collection allows to configure the probe:
-* **forecast**: the forecast model instance name to be probed according to the [configuration](../guides/BASICS.MD#configuring),
-* **elements**: array of names corresponding to the forecast element values to be probed in the forecast data (each element has to be declared in the the [configuration](../guides/BASICS.MD#configuring))
-
-> Features of the collection are usually numerous so they are not returned by default, you have to explicitely
+The common data model of a probe as used by the API is [detailed here](../architecture/DATAMODEL.MD#probe-data-model).
 
 ### Create probes
 
@@ -245,9 +237,7 @@ The plugin exposes the available probe results through the `probe-results` servi
 
 ### Data model
 
-The common model for probe results is a [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2). Each result contains an additional property per probed element, according to its [configured name](../guides/BASICS.MD#configuring), storing the target element value. It also contains the following:
-* **runTime**: the date/time of the model run that produced the forecast data that has been used to produce the probe result
-* **forecastTime** : the date/time of the forecast data that has been used to produce the probe result
+The common data model of probe results as used by the API is [detailed here](../architecture/DATAMODEL.MD#probe-result-data-model).
 
 > Probe results are usually numerous so you need to paginate/filter them
 
