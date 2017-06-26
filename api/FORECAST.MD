@@ -20,7 +20,7 @@ app.getService('forecasts').find()
 
 ## Data model
 
-The common data model of a forecast model instance is defined by the [configuration](../guides/BASICS.MD#configuring).
+The common data model of a forecast model instance as used by the API is [detailed here](../architecture/DATAMODEL.MD#forecast-data-model).
 
 ## Forecast model hooks
 
