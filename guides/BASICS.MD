@@ -76,25 +76,8 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 * **probePath** : folder where default probe data files are stored
 * **defaultProbes** : the array of default probe streams to be created on launch (format `{ fileName, options }`)
 * **forecastPath** : folder where temporary or persistent forecast data files are stored
-* **forecasts** : an array of configuration objects for each registered forecast, the common properties are the following
-  * **name** : internal model name that will be used in path to reach the underlying service
-  * **label** : the label for the model in the user interface
-  * **description** : the description for the model in the user interface
-  * **attribution** : the attribution of the data to be displayed when visualized
-  * **model** : the model plugin to be used for this forecast
-  * **bounds** : the geographical bounds covered by the model as an array of decimal values `[min longitude, min latitude, max longitude, max latitude]`
-  * **origin** : the geographical origin of the data grid as an array of decimal values `[longitude origin, latitude origin]`
-  * **size** : the size of the data grid as an array of integer values `[width, height]`
-  * **resolution** : the geographical resolution of the data grid as an array of decimal values `[longitude resolution, latitude resolution]`
-  * **runInterval** : the period between two forecast runs (in seconds) - it also defines at which hours of the day the forecast data are produced (e.g. `00:00 - 06:00 - 12:00 - 18:00` for a `3600` seconds period)
-  * **oldestRunInterval** : how long do the server go back in time when harvesting forecast data (in seconds)
-  * **interval** : the period between two forecast time steps (in seconds)
-  * **lowerLimit** : the offset from run time for the first forecast time step to be gathered (in seconds)
-  * **upperLimit** : the offset from run time for the last forecast time step to be gathered (in seconds)
-  * **updateInterval** : the check period for data updates (default is every 15 minutes)
-  * **elements** : an array of forecast elements that will be managed for this model, the common properties are the following
-    * **name** : internal element name that will be used in path to reach the underlying service
-    * **dataStore** : data store to be used for the forecast data, could be `db` to store it directly in database or 'fs' to store it on the file system
+* **forecasts** : an array of configuration objects for each registered forecast, which common properties are defined by the [Forecast data model](../architecture/DATAMODEL.MD#forecast-data-model)
+* **proxyTable**: a set of proxy rules typically used for [scaling](./architecture/GLOBAL.MD#architecture-at-scale)
 
 ### Frontend side
 
