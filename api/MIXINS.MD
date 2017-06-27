@@ -55,7 +55,10 @@ map: {
       radius: 6,
       color: 'red',
       fillOpacity: 0.5,
-      fillColor: 'green'
+      fillColor: 'green',
+      popup: {
+        excludedProperties: ['wikipedia']
+      }
     },
     // Default GeoJSON layer style for points in File Layers mixin
     pointStyle: {
