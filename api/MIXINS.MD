@@ -11,7 +11,13 @@ This set of mixins is to be used to construct a new Weacast Map component and un
 * [Base layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.base-layers.js) adds a base layer selector on the map using [Leaflet.Basemaps](https://github.com/consbio/Leaflet.Basemaps)
 * [Forecast layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.forecast-layers.js) adds a configured set of forecast layers to the map
 * [File layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.file-layers.js) adds a file-based layer (GeoJSON or KML) uploader to the map using [Leaflet.Basemaps](https://github.com/consbio/Leaflet.Basemaps)
+  * it will use the configured GeoJson style of the GeoJson layers mixin or you will have to implement a **getGeoJsonOptions()** method in your map component
 * [GeoJson layers](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.geojson-layers.js) adds methods to ease [GeoJson](http://leafletjs.com/reference-1.0.3.html#geojson) and [timestamped GeoJson](./LAYERS#feature-layers) layers addition to the map
+  * it will use the statically configured GeoJson style or you can implement the following methods on your map component to have dynamic styling of your features:
+    * **getFeaturePopup(feature, layer)** to provide an HTML [popup content](http://leafletjs.com/reference-1.1.0.html#popup) to bind
+    * **getFeatureTooltip(feature, layer)** to provide a [tooltip content](http://leafletjs.com/reference-1.1.0.html#tooltip) to bind
+    * **getFeatureStyle(feature)** to provide a [style object](http://leafletjs.com/reference-1.1.0.html#path-option) for your line/polygon features
+    * **getPointMarker(feature, latlng)** to provide a [marker object](http://leafletjs.com/reference-1.1.0.html#marker) for your point features
 * [Scalebar](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.scalebar.js) adds a [scalebar](http://leafletjs.com/reference-1.0.3.html#control-scale) on the map
 * [Measure](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.measure.js) adds a measure control on the map using [Leaflet.Measure](https://github.com/ljagis/leaflet-measure)
 * [Fullscreen](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.fullscreen.js) adds a fullscreen control on the map using [Leaflet.Fullscreen](https://github.com/Leaflet/Leaflet.fullscreen)
