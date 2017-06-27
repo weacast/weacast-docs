@@ -8,7 +8,7 @@ Using [map mixins](https://github.com/weacast/weacast-docs/blob/master/api/MIXIN
 
 ![Weacast feature layer](../images/feature-layer.png)
 
-Weacast also provides a convenient [wind barb](http://ww2010.atmos.uiuc.edu/(Gh)/guides/maps/sfcobs/wnd.rxml) icon based on [leaflet-windbarb](https://github.com/hulongping/windbarb) that can be used to symbolize wind like this:
+Weacast also provides a convenient [wind barb](http://weather.rap.ucar.edu/info/about_windbarb.html) icon based on [leaflet-windbarb](https://github.com/hulongping/windbarb) that can be used to symbolize wind like this:
 
 ![Weacast windbarb layer](../images/windbarb-layer.png)
 
