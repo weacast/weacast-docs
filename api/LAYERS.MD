@@ -52,7 +52,9 @@ To visualize forecast paired element as flow (e.g. wind direction), based on [le
 
 To visualize forecast element scalar values (e.g. temperature) as a heatmap, based on [leaflet-heatmap](https://www.patrick-wied.at/static/heatmapjs/example-heatmap-leaflet.html).
 
-## ColorLayer [source](https://github.com/weacast/weacast-client/blob/color-layer/src/layers/color-layer.js)
+![Weacast heat layer](../images/heat-layer.png)
+
+## ColorLayer [source](https://github.com/weacast/weacast-client/blob/master/src/layers/color-layer.js)
 
 To visualize forecast element scalar values (e.g. temperature) as a color image using [color maps](http://gka.github.io/chroma.js/#color-scales), based on [leaflet-canvaslayer-field](https://github.com/IHCantabria/Leaflet.CanvasLayer.Field).
 
