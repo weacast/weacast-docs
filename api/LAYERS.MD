@@ -2,9 +2,13 @@ Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to help visual
 
 # Feature Layers
 
-[Time-stamped GeoJson layers](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayergeojson) provide a generic way to visualize [GeoJSON features](https://geojson.org/geojson-spec.html#feature-objects) including temporal evolution. Because [probes](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-data-model) and [probe results](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-result-data-model) are internally modelled as GeoJSON features they can be used to visualize them. However Weacast does not make any assumption on how you want to visualize these data so you might have to manually process the retrieved probe results in order to add a `time` property on each feature corresponding to the `forecastTime` or the `runTime` for instance. Using [map mixins](https://github.com/weacast/weacast-docs/blob/master/api/MIXINS.MD#map-mixins) configuration options you can easily customize your probe results visualization like this:
+[Time-stamped GeoJson layers](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayergeojson) provide a generic way to visualize [GeoJSON features](https://geojson.org/geojson-spec.html#feature-objects) including temporal evolution. Because [probes](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-data-model) and [probe results](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-result-data-model) are internally modelled as GeoJSON features they can be used to visualize them. However Weacast does not make any assumption on how you want to visualize these data so you might have to manually process the retrieved probe results in order to add a `time` property on each feature corresponding to the `forecastTime` or the `runTime` for instance. Using [map mixins](https://github.com/weacast/weacast-docs/blob/master/api/MIXINS.MD#map-mixins) configuration options you can easily customize your probe results visualization to get something like this:
 
 ![Weacast feature layer](../images/feature-layer.png)
+
+Weacast also provides a convenient [wind barb](http://ww2010.atmos.uiuc.edu/(Gh)/guides/maps/sfcobs/wnd.rxml) icon based on [leaflet-windbarb](https://github.com/hulongping/windbarb) that can be used to symbolize wind like this:
+
+![Weacast windbarb layer](../images/windbarb-layer.png)
 
 # Forecast Data Layers
 
