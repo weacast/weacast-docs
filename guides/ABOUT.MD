@@ -25,7 +25,9 @@ Weacast is possible and mainly powered by the following stack:
 * [Feathers](https://feathersjs.com/) on the backend side
 * [Quasar](http://quasar-framework.org/) on the frontend side
 * [Leaflet](http://leafletjs.com/) and [plugins](http://leafletjs.com/plugins.html) for mapping
-* [Leaflet-velocity](https://github.com/danwild/leaflet-velocity) for wind visualization
 * [Leaflet-timedimension](https://github.com/socib/Leaflet.TimeDimension) for time management
+* [Leaflet-velocity](https://github.com/danwild/leaflet-velocity) for wind visualization
+* [Leaflet-canvaslayer-field](https://github.com/IHCantabria/Leaflet.CanvasLayer.Field) for color map visualization
+* [Leaflet-windbarb](https://github.com/hulongping/windbarb) for [wind barbs](https://en.wikipedia.org/wiki/Station_model)
 
 
