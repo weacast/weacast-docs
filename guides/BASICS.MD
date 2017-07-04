@@ -88,7 +88,7 @@ Weacast frontend configuration is based on the same underlying [tool](https://gi
 * **logs**
   * **level** : [log level](https://github.com/pimterry/loglevel#documentation) to be used 
 * **map**
-  * **seeker** : the name of the compoennt to be used to look for weather conditions in the app
+  * **seeker** : the name of the component to be used to look for weather conditions in the app
   * **mixins** : the set of [mixins](../api/MIXINS.MD) to be applied to the map (could be `base`, `baseLayers`, `forecastLayers`, `geojsonLayers`, `fileLayers`, `fullscreen`, `measure`, `scalebar`, etc.)
   * **baseLayers** : the set of Leaflet layers to be shown in the base layer selector on the map
   * **forecastLayers** : the set of Weacast [forecast layers](../api/LAYERS.MD) to be shown in the overlay layer selector on the map
