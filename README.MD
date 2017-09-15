@@ -23,6 +23,14 @@ Learn how you can contribute to this documentation.
 
 [**License**](./LICENSE.MD)
 
+**Trusted by**
+
+<a href="http://www.airbus.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Airbus_logo_2017.png" width="256"></a>
+
+**Sponsored by**
+
+[![Kalisio logo](https://github.com/kalisio/kDocs/blob/master/images/kalisio-banner-250x96.png)](http://www.kalisio.xyz)
+
 If you are looking for different formats we have the latest version of this doc available in:
 
 * [PDF](https://www.gitbook.com/download/pdf/book/weacast/weacast-docs)
