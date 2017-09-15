@@ -26,12 +26,14 @@ Learn how you can contribute to this documentation.
 **Trusted by**
 
 <p align="center">
-  <a href="http://www.airbus.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Airbus_logo_2017.png" width="256"></a>
+  <a href="http://www.airbus.com/"><img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Airbus_logo_2017.png" width="256"/></a>
 </p>
 
 **Sponsored by**
 
-[![Kalisio logo](https://github.com/kalisio/kDocs/blob/master/images/kalisio-banner-250x96.png?style=centerme)](http://www.kalisio.xyz)
+<p align="center">
+  <a href="http://www.kalisio.xyz"><img src="https://github.com/kalisio/kDocs/blob/master/images/kalisio-banner-250x96.png" width="256"/></a>
+</p>
 
 If you are looking for different formats we have the latest version of this doc available in:
 
