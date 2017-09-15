@@ -1,6 +1,6 @@
 # Weacast
 
-![Weacast logo](./images/weacast-logo-256.png)
+[![Weacast logo](./images/weacast-logo-256.png)](https://github.com/weacast)
 
 > Open source platform to gather, expose and make use of weather forecast data
 
