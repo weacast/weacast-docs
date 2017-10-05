@@ -1,6 +1,6 @@
 Weacast is powered by the following stack:
-* [Feathers](https://feathersjs.com/) on the backend side
-* [Quasar](http://quasar-framework.org/) on the frontend side
+* [Feathers](https://feathersjs.com/) on the backend side (version 2.x)
+* [Quasar](http://quasar-framework.org/) on the frontend side (version 0.13.x)
 
 If you are not familiar with those technologies and want to develop for Weacast, in addition to read the dedicated documentation, I recommand reading https://github.com/claustres/quasar-feathers-tutorial. Indeed, Weacast itself is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api), while Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html). 
 
@@ -8,7 +8,7 @@ If you are not familiar with those technologies and want to develop for Weacast,
 
 ### Prerequisites
 
-#### Install Node.js
+#### Install Node.js (version 7.x)
 
 [Node](https://nodejs.org/en/) is a server platform which runs JavaScript.
 It's lightweight and efficient.
@@ -28,7 +28,7 @@ There are many resources available for installing it.
 - [macOS.](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
 - [Windows.](https://www.atlassian.com/git/tutorials/install-git#windows)
 
-#### Install MongoDB
+#### Install MongoDB (version 3.x)
 
 [Mongo](https://www.mongodb.com/) is an open-source, document database designed for ease of development and scaling.
 
