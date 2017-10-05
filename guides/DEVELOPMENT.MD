@@ -36,6 +36,12 @@ There are many resources available for installing it.
 - [macOS.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 - [Windows.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
 
+#### Install Yarn
+
+Due to some [changes](http://codetunnel.io/npm-5-changes-to-npm-link/) in the way `npm` manages linked modules we prefer to use [Yarn](https://yarnpkg.com) as a package manager.
+
+[Install Yarn](https://yarnpkg.com/en/docs/install) on your platform.
+
 #### Install Quasar CLI
 
 Install the Quasar CLI : `$ npm install -g quasar-cli`
@@ -44,39 +50,39 @@ Install the Quasar CLI : `$ npm install -g quasar-cli`
 
 While it is a WIP and not yet pushed to NPM, or when developing, please use the following process.
 
-First clone all the plugins you need and use [npm link](https://docs.npmjs.com/cli/link) to make them globally available to your Node.js installation:
+First clone all the plugins you need and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make them globally available to your Node.js installation:
 
 ```bash
 // Clone and link the plugins
 git clone https://github.com/weacast/weacast-core.git
 cd weacast-core
-npm link
+yarn/npm link
 
 git clone https://github.com/weacast/weacast-arpege.git
 cd weacast-arpege
-npm link
+yarn/npm link
 
 git clone https://github.com/weacast/weacast-arome.git
 cd weacast-arome
-npm link
+yarn/npm link
 
 git clone https://github.com/weacast/weacast-probe.git
 cd weacast-probe
-npm link
+yarn/npm link
 
 ...
 ```
 
-Then clone the main Weacast repository and use [npm link](https://docs.npmjs.com/cli/link) to make Node.js pointing to the previously cloned modules instead of those installed by npm, e.g. :
+Then clone the main Weacast repository and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make Node.js pointing to the previously cloned modules instead of those installed by npm, e.g. :
 ```bash
 // Clone and link plugins to weacast server
 git clone https://github.com/weacast/weacast.git
 cd weacast
 cd api
-npm link weacast-core
-npm link weacast-arpege
-npm link weacast-arome
-npm link weacast-probe
+yarn/npm link weacast-core
+yarn/npm link weacast-arpege
+yarn/npm link weacast-arome
+yarn/npm link weacast-probe
 ...
 ```
 
