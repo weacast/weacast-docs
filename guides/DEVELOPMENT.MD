@@ -8,7 +8,7 @@ If you are not familiar with those technologies and want to develop for Weacast,
 
 ### Prerequisites
 
-#### Install Node.js (version 7.x)
+#### Install Node.js
 
 [Node](https://nodejs.org/en/) is a server platform which runs JavaScript.
 It's lightweight and efficient.
@@ -19,6 +19,8 @@ It has the largest ecosystem of open source libraries in the world.
 
 **In order to be able to switch easily between different versions of Node.js we recommand to use a version manager like [n](https://github.com/tj/n)/[nvm](https://github.com/creationix/nvm) under Linux/Mac or [nvm](https://github.com/coreybutler/nvm-windows) under Windows.**
 
+> **Weacast modules are expected to work with Node.js version 7.x**
+
 #### Install Git
 
 [git](https://git-scm.com/) is the version control system most frequently used in open source.
@@ -28,13 +30,15 @@ There are many resources available for installing it.
 - [macOS.](https://www.atlassian.com/git/tutorials/install-git#mac-os-x)
 - [Windows.](https://www.atlassian.com/git/tutorials/install-git#windows)
 
-#### Install MongoDB (version 3.x)
+#### Install MongoDB
 
 [Mongo](https://www.mongodb.com/) is an open-source, document database designed for ease of development and scaling.
 
 - [Linux.](https://docs.mongodb.com/manual/administration/install-on-linux/)
 - [macOS.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 - [Windows.](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-windows/)
+
+> **Weacast modules are expected to work with MongoDB version 3.x**
 
 #### Install Yarn
 
@@ -119,6 +123,10 @@ From the backend `api` folder run the server-side tests : `$ npm run test`
 This will lint and fix issues in the code according to [JS standard](https://github.com/feross/standard), then execute tests using [Mocha](https://mochajs.org/) and compute code coverage using [Istanbul](https://istanbul.js.org/).
 
 > **We are looking for integrating frontend and end-to-end tests, please contribute !**
+
+#### Debug
+
+Use [Chrome DevTools](https://medium.com/@paul_irish/debugging-node-js-nightlies-with-chrome-devtools-7c4a1b95ae27).
 
 ### Plugins
 
