@@ -65,8 +65,11 @@ Then point your browser to [localhost:8081](http://localhost:8080).
 ### Backend side
 
 Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `api/config` folder. The main properties are the following:
+* **host**: host name
+* **port**: port on which the app is running
+* **https**: object configuring [HTTPS](/guides/BASICS.MD#configuring) key file, certificate file and running port
 * **apiPath** : the API path prefix
-* **authentication** : object configuring [Feathers authentication](https://github.com/feathersjs/feathers-authentication#default-options) plus custom weacast options
+* **authentication** : object configuring [Feathers authentication](https://github.com/feathersjs/feathers-authentication#default-options) plus custom weacast options, for OAuth2 providers add a `github`, `google` or `oidc` entry.
   * **defaultUsers** : the array of default users to be created on launch (format `{ email, password }`)
 * **logs** : object configuring the [winston](https://github.com/winstonjs/winston) loggers to be used - each key is a [transport name](https://github.com/winstonjs/winston/blob/master/docs/transports.md) which value is associated configuration options
 * **db**
@@ -83,10 +86,12 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 
 Weacast frontend configuration is based on the same underlying [tool](https://github.com/lorenwest/node-config) that powers [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `config` folder. The main properties are the following:
 * **apiPath** : the API path prefix
-* **transport** : the transport to be used between frontend and backend, could be `http` for standard REST or `web-socket` for WebSockets
+* **transport** : the transport to be used between frontend and backend, could be `http` for standard REST or `websocket` for WebSockets
 * **appName** : the name of the Weacast app
 * **logs**
   * **level** : [log level](https://github.com/pimterry/loglevel#documentation) to be used 
+* **login**
+  * **providers** : the array of OAuth2 providers to be used on the sign in screen, e.g. `['google', 'github']`
 * **map**
   * **seeker** : the name of the component to be used to look for weather conditions in the app
   * **mixins** : the set of [mixins](../api/MIXINS.MD) to be applied to the map (could be `base`, `baseLayers`, `forecastLayers`, `geojsonLayers`, `fileLayers`, `fullscreen`, `measure`, `scalebar`, etc.)
