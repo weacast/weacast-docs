@@ -10,6 +10,21 @@ let app = weacast()
 await app.db.connect()
 ```
 
+### Authentication
+
+Weacast includes a built-in local authentication strategy based on the [Feathers authentication module](https://docs.feathersjs.com/api/authentication/server.html). It also automatically configures the [Feathers OAuth2 plugin](https://docs.feathersjs.com/api/authentication/oauth2.html) for [GitHub](https://github.com/jaredhanson/passport-github), [Google](https://github.com/jaredhanson/passport-google-oauth2) and [OpenID Connect](https://github.com/kalisio/passport-openidconnect) if you provide them in your [configuration file](../guides/BASICS.MD#configuring).
+
+### HTTPS support
+
+Adding the right configuration like below you can easily Weacast run under [HTTPS](https://docs.feathersjs.com/api/express.html#https):
+```javascript
+https: {
+  key: path.join(__dirname, 'server.key'),
+  cert: path.join(__dirname, 'server.crt'),
+  port: process.env.HTTPS_PORT || 8084
+}
+```
+
 ## Client setup
 
 Weacast [client module](https://github.com/weacast/weacast-client) provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
