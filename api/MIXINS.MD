@@ -21,6 +21,7 @@ This set of mixins is to be used to construct a new Weacast Map component and un
 * [Scalebar](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.scalebar.js) adds a [scalebar](http://leafletjs.com/reference-1.0.3.html#control-scale) on the map
 * [Measure](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.measure.js) adds a measure control on the map using [Leaflet.Measure](https://github.com/ljagis/leaflet-measure)
 * [Fullscreen](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.fullscreen.js) adds a fullscreen control on the map using [Leaflet.Fullscreen](https://github.com/Leaflet/Leaflet.fullscreen)
+* [Legend](https://github.com/weacast/weacast-client/blob/master/src/mixins/map/mixin.legend.js) adds a legend control on the map using [Leaflet.Legend](https://github.com/mikeskaug/Leaflet.Legend), **the legend is attached to the last forecast layer that has been made visible**
 
 A Weacast map relies on a configuration object detailing mixins to be used with their options like this:
 ```javascript
@@ -28,7 +29,7 @@ module.exports = {
   ...
 map: {
     // Mixins to be applied to map
-    mixins: [ 'base', 'baseLayers', 'forecastLayers', 'geojsonLayers', 'fileLayers', 'fullscreen', 'measure', 'scalebar' ],
+    mixins: [ 'base', 'baseLayers', 'forecastLayers', 'geojsonLayers', 'fileLayers', 'fullscreen', 'measure', 'scalebar', 'legend' ],
     // Config for Base Layers mixin
     baseLayers: [
       {
