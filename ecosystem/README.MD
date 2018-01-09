@@ -11,6 +11,12 @@ If you want some help or participate to the development of Weacast contact us on
 
 Submit yours by creating a pull request.
 
+### XWind
+
+The XWind application has been deployed at [Airbus](http://www.airbus.com/) to support Flight Testing. This application aims at helping users to plan flight tests optimally by quickly identify airport runways matching specific business conditions (such as [cross-wind](https://oppositelock.kinja.com/watch-the-airbus-a350xwb-demonstrate-extreme-crosswind-1601924648)) based on weather forecast data.
+
+[Watch the video](https://drive.google.com/open?id=16_vEOtqmVVl-vE2bW9qYOLsF6Tar3t_S)
+
 ## Starters, Examples and Tutorials
 
 Submit yours by creating a pull request.
