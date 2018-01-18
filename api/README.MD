@@ -2,6 +2,8 @@
 
 These sections detail the external (i.e. REST/Websocket) as well as the internal (ie Classes/Functions) [API](https://en.wikipedia.org/wiki/Application_programming_interface) of Weacast.
 
+You might read this [introduction article](https://blog.feathersjs.com/feathersjs-in-production-configuration-api-prefixing-logging-and-error-catching-2a80e044e233) about using Feathers in production because it has been used as a guideline for the development Weacast.
+
 > **All dates/times in Weacast are managed as [moment](https://momentjs.com) objects and expressed in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time).**
 
 * Core
