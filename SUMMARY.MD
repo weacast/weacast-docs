@@ -20,6 +20,7 @@
     * [Forecast element data model](architecture/DATAMODEL.MD#element-data-model)
     * [Probe data model](architecture/DATAMODEL.MD#probe-data-model)
     * [Probe result data model](architecture/DATAMODEL.MD#probe-result-data-model)
+  * [Dynamic view](architecture/DYNAMIC.MD)
 * [API](api/README.MD)
   * Core
     * [Hooks](api/HOOKS.MD)
