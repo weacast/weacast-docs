@@ -2,4 +2,4 @@
 
 The typical sequence of events that follow on from one component/interface of the architecture to another and the main data flows between components/interfaces of Weacast are summarized in the following diagram.
 
-![Dynamic architecture view](https://cdn.rawgit.com/weacast/weacast-docs/1fd66f8b733e3de7a78cc13750dca62911d48dba/images/ETL%20Sequence%20Diagram.svg)
+![Dynamic architecture view](https://cdn.rawgit.com/weacast/weacast-docs/74e9ae024845d99d4269ac7ce2359c21b43dc3a5/images/ETL%20Sequence%20Diagram.svg)
