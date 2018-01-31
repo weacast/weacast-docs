@@ -36,6 +36,14 @@ docker-compose down
 docker-compose down -v
 ```
 
+In production for our [demo app](http://demo.weacast.xyz/) we use [nginx-proxy](https://github.com/jwilder/nginx-proxy) to help us mapping the domain to the web app. Using `docker-compose` this requires to connect the Weacast network to the reverse proxy (https://github.com/jwilder/nginx-proxy#multiple-networks) first.
+```
+docker network create weacast_weacast
+docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name rproxy jwilder/nginx-proxy
+docker network connect weacast_weacast rproxy
+docker-compose up -d
+```
+
 ### The hard way : from source code
 
 First you have to ensure the same [prerequisites](./DEVELOPMENT.MD#prerequisites) as for developing to build Weacast from source code. Then the following commands, assuming you have a MongoDB instance running on local host and default port (27017), should launch your local instance of Weacast:
