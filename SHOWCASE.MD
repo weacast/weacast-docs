@@ -14,6 +14,8 @@ On [our demo](http://demo.weacast.xyz) weather data is gathered from the GFS (NC
 
 Using the playback buttons at the bottom of the map you can navigate among available forecast times and see the map change. On the side menu you can select the currently visualized weather forecast model. Last but not least, using the search button on the map you will be able to find the airport matching best specific wind conditions based on the probed data. You can also probe your own data by importing a GeoJSON file containing a collection of points, each location will be probed for the current forecast time.
 
+![Live demo](https://cdn.rawgit.com/weacast/weacast-docs/87ad1c832f89625d7ee8b8732c672a6e89d25050/images/Demo-GUI.png)
+
 ## Visualize forecast data
 
 > This short video demonstrates how Weacast can be used to gather forecast data from different models to visualize and predict wind in different locations.
