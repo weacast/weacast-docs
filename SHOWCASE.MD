@@ -2,6 +2,8 @@
 
 A [live demo](http://demo.weacast.xyz) is usually running at [demo.weacast.xyz](http://demo.weacast.xyz). Have also a look to our list of known [production applications](https://weacast.gitbooks.io/weacast-docs/content/ecosystem/#production-applications).
 
+## Live demo
+
 On the demo weather data is gathered from the GFS (NCEP), ARPEGE and AROME (Météo France) forecast models. The map shows:
 * wind u/v-components (i.e. speed and direction) using a [flow layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#flowlayer-source)
 * wind gust (i.e. max speed) using a [heat layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#heatlayer-source) or a [color layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#colorlayer-source)
