@@ -28,6 +28,6 @@ Weacast is possible and mainly powered by the following stack:
 * [Leaflet-timedimension](https://github.com/socib/Leaflet.TimeDimension) for time management
 * [Leaflet-velocity](https://github.com/danwild/leaflet-velocity) for wind visualization
 * [Leaflet-canvaslayer-field](https://github.com/IHCantabria/Leaflet.CanvasLayer.Field) for color map visualization
-* [Leaflet-windbarb](https://github.com/hulongping/windbarb) for [wind barbs](https://en.wikipedia.org/wiki/Station_model)
+* [Leaflet-windbarb](https://github.com/JoranBeaufort/Leaflet.windbarb) for [wind barbs](https://en.wikipedia.org/wiki/Station_model)
 
 
