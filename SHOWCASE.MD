@@ -12,7 +12,7 @@ On [our demo](http://demo.weacast.xyz) weather data is gathered from the GFS (NC
 
 > Note: the heat layer is only well-configured for 0.1° model resolution, the additional ARPEGE layers might not be available depending on your current forecast time and model resolution
 
-Using the playback buttons at the bottom of the map you can navigate among available forecast times and see the map change. On the side menu you can select the currently visualized weather forecast model. Last but not least, using the search button on the map you will be able to find the airport matching best specific wind conditions based on the probed data. You can also probe your own data by importing a GeoJSON file containing a collection of points, each location will be probed for the current forecast time.
+Using the playback buttons at the bottom of the map you can navigate among available forecast times and see the map change. On the side menu you can select the currently visualized weather forecast model. Last but not least, using the search button on the map you will be able to find the airport matching best specific wind conditions (i.e. speed/direction) based on the probed data. The analysis uses the [same weight](https://github.com/weacast/weacast/blob/master/src/components/WindSeeker.vue#L125) for both speed and direction differences so that it might result in a good match on speed **and/or** direction depending on the weather. You can also probe your own data by importing a GeoJSON file containing a collection of points, each location will be probed for the current forecast time.
 
 ![Live demo](https://cdn.rawgit.com/weacast/weacast-docs/87ad1c832f89625d7ee8b8732c672a6e89d25050/images/Demo-GUI.png)
 
