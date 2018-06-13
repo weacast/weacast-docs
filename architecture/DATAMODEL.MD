@@ -28,6 +28,9 @@ The details of each property are the following:
 * **lowerLimit** : the offset from run time for the first forecast time step to be gathered (in seconds)
 * **upperLimit** : the offset from run time for the last forecast time step to be gathered (in seconds)
 * **updateInterval** : the check period for data updates (default is every 15 minutes)
+  * if `< 0` no update will be performed, you need to trigger it manually by calling `updateForecastData()` on the associated element service
+  * if `= 0` a single update will be performed when launching the server
+  * if `> 0` an update every N seconds will be performed as long as the server runs
 * **elements** : an array of forecast elements that will be managed for this model, the common properties are the following
   * **name** : internal element name that will be used in path to reach the underlying service
   * **dataStore** : data store to be used for the forecast data, could be
