@@ -134,15 +134,14 @@ Because Weacast web app is also released as a Docker image you can build it like
 ```bash
 docker build -f dockerfile.dev -t weacast/weacast-dev .
 ```
-Then release it if you'd like as current dev version:
+Then test it like it:
+```
+docker-compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+```
+Then release it if you'd like as current dev version to share progress with others:
 ```bash
 docker login
 docker push weacast/weacast-dev
-```
-And tag it (`version_tag` being the current development version number like `1.1.2`)
-```bash
-docker tag weacast/weacast-dev weacast/weacast-dev:version_tag
-docker push weacast/weacast-dev:version_tag
 ```
 
 > When building the image all modules are retrieved from their respective repository (master branch), only the local source code of the web app is pushed into the image
