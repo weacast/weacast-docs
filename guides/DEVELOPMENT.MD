@@ -128,6 +128,27 @@ This will lint and fix issues in the code according to [JS standard](https://git
 
 Use [Chrome DevTools](https://medium.com/@paul_irish/debugging-node-js-nightlies-with-chrome-devtools-7c4a1b95ae27).
 
+#### Testing Docker image
+
+Because Weacast web app is also released as a Docker image you can build it like this:
+```bash
+docker build -f dockerfile.dev -t weacast/weacast-dev .
+```
+Then release it if you'd like as current dev version:
+```bash
+docker login
+docker push weacast/weacast-dev
+```
+And tag it (`version_tag` being the current development version number like `1.1.2`)
+```bash
+docker tag weacast/weacast-dev weacast/weacast-dev:version_tag
+docker push weacast/weacast-dev:version_tag
+```
+
+> When building the image all modules are retrieved from their respective repository (master branch), only the local source code of the web app is pushed into the image
+
+> This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
+
 ### Plugins
 
 Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html), so you will find most of the required information in the linked Feathers documentation. Typically for development you will do the following for each required plugins so that the module is re-compiled on each file change:
