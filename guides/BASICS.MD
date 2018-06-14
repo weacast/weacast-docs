@@ -77,7 +77,7 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 * **port**: port on which the app is running
 * **https**: object configuring [HTTPS](/guides/BASICS.MD#configuring) key file, certificate file and running port
 * **apiPath** : the API path prefix
-* **authentication** : object configuring [Feathers authentication](https://github.com/feathersjs/feathers-authentication#default-options) plus custom weacast options, for OAuth2 providers add a `github`, `google` or `oidc` entry.
+* **authentication** : object configuring [Feathers authentication](https://github.com/feathersjs/feathers-authentication#default-options) plus custom weacast options, for OAuth2 providers add a `github`, `google`, `cognito` or `oidc` entry.
   * **defaultUsers** : the array of default users to be created on launch (format `{ email, password }`)
 * **logs** : object configuring the [winston](https://github.com/winstonjs/winston) loggers to be used - each key is a [transport name](https://github.com/winstonjs/winston/blob/master/docs/transports.md) which value is associated configuration options
 * **db**
