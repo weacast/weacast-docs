@@ -4,13 +4,13 @@ A live demo is usually running at [demo.weacast.xyz](http://demo.weacast.xyz). H
 
 ## Live demo
 
-On [our demo](http://demo.weacast.xyz) weather data is gathered from the GFS (NCEP), ARPEGE and AROME (Météo France) forecast models. The map shows:
+On [our demo](http://demo.weacast.xyz) weather data is gathered from the GFS (NCEP) and ARPEGE (Météo France) forecast models. The map shows:
 * wind u/v-components (i.e. speed and direction) using a [flow layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#flowlayer-source)
 * wind gust (i.e. max speed) using a [heat layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#heatlayer-source) or a [color layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#colorlayer-source)
 * a worldwide set of airports used to [probe](https://weacast.gitbooks.io/weacast-docs/content/architecture/DOMAINMODEL.html#probe) forecast data at these locations
 * some additional layers from ARPEGE (Météo France) forecast model
 
-> Note: the heat layer is only well-configured for 0.1° model resolution, the additional ARPEGE layers might not be available depending on your current forecast time and model resolution
+> Note: the additional ARPEGE layers might not be available depending on your current forecast time
 
 Using the playback buttons at the bottom of the map you can navigate among available forecast times and see the map change. On the side menu you can select the currently visualized weather forecast model. Last but not least, using the search button on the map you will be able to find the airport matching best specific wind conditions (i.e. speed/direction) based on the probed data. The analysis uses the [same weight](https://github.com/weacast/weacast/blob/master/src/components/WindSeeker.vue#L125) for both speed and direction differences so that it might result in a good match on speed **and/or** direction depending on the weather. You can also probe your own data by importing a GeoJSON file containing a collection of points, each location will be probed for the current forecast time.
 
