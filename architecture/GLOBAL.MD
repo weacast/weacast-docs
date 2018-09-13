@@ -10,9 +10,19 @@ You might prefer to have a:
 
 ## Architecture at scale
 
-Although the typical architecture presented previously can be deployed in a single-server environment Weacast has been developed as a loosely coupled set of modules to prevent it being a [monolithic piece of software](http://whatis.techtarget.com/definition/monolithic-architecture). The built-in [service layer](https://docs.feathersjs.com/guides/about/philosophy.html#services) helps decoupling the business logic from how it is being accessed based on a [simple and unambiguous interface](https://docs.feathersjs.com/guides/about/philosophy.html#uniform-interfaces). Weacast can thus be deployed in a [microservice architectural style](http://searchmicroservices.techtarget.com/definition/microservices), which is typically used to provide high availability. The idea is to deploy different Weacast instances on different *logical hosts* (can be physical machines as well as containers or virtual machines) each running a different forecast model or the probe plugin for instance.
+Although the typical architecture presented previously can be deployed in a single-server environment Weacast has been developed as a loosely coupled set of modules to prevent it being a [monolithic piece of software](http://whatis.techtarget.com/definition/monolithic-architecture). The built-in [service layer](https://docs.feathersjs.com/guides/about/philosophy.html#services) helps decoupling the business logic from how it is being accessed based on a [simple and unambiguous interface](https://docs.feathersjs.com/guides/about/philosophy.html#uniform-interfaces). Weacast can thus be deployed in a [microservice architectural style](http://searchmicroservices.techtarget.com/definition/microservices), which is typically used to provide high availability. The idea is to deploy different Weacast instances on different *logical hosts* (can be physical machines as well as containers or virtual machines) each running a different forecast model or the probe plugin for instance. However, you will have to face some [scaling configuration issues](https://docs.feathersjs.com/guides/advanced/scaling.html) first. You also have to setup the underlying logical infrastructure. To achieve high availability, different strategies may be used. 
 
-However, you will have to face some [scaling configuration issues](https://docs.feathersjs.com/guides/advanced/scaling.html) first. You also have to setup the underlying logical infrastructure. It is recommanded to have a single source of truth (SSOT) for your data (i.e. a single database), simplifying authentication, which requires you to setup a [MongoDB replica set](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/) and configure the DB URL [accordingly](http://mongodb.github.io/node-mongodb-native/2.0/reference/connecting/connection-settings/). Then you should make each instance aware of others instances to [synchronize service events](https://github.com/feathersjs/feathers-sync). At last, you should deploy a frontend application serving as an [API gateway](http://microservices.io/patterns/apigateway.html). To configure the proxy rules, edit the `proxyTable` option in your configuration. The frontend server is using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) for proxying, so you should refer to its docs for a detailed usage but here's a simple example:
+> It is recommanded to have a single source of truth (SSOT) for your data (i.e. a single database), simplifying authentication, which requires you to setup a [MongoDB replica set](https://docs.mongodb.com/manual/tutorial/deploy-replica-set/) at scale and configure the DB URL [accordingly](http://mongodb.github.io/node-mongodb-native/2.0/reference/connecting/connection-settings/). 
+
+### Monolithic application
+
+This is the easiest strategy, you can rely on Cloud-ready solutions like [Kaabah](https://kalisio.github.io/kaabah/) to replicate and load-balance the different instances of your application and simply use [feathers-sync](https://github.com/feathersjs-ecosystem/feathers-sync) to synchronize service events.
+
+> This approach is something between the true monolith and the true microservices architecture, i.e. you scale your entire application but not its underlying services according to their workload.
+
+### Distributed application
+
+You can split up your Weacast API manually on a per-responsibility basis (e.g. each forecast model on a dedicated instance) and just communicate with each other through Feathers clients using all the infrastructure that is already in place. You could also deploy a frontend application serving as an [API gateway](http://microservices.io/patterns/apigateway.html). To configure the proxy rules, edit the `proxyTable` option in your configuration. The frontend server is using [http-proxy-middleware](https://github.com/chimurai/http-proxy-middleware) for proxying, so you should refer to its docs for a detailed usage but here's a simple example:
 
 ``` js
 // config/default.js
@@ -33,5 +43,11 @@ module.exports = {
 
 The above example will proxy the request `/api/service/1` to `http://my.service.com/api/1`.
 
+However, all of this requires manual work, creates a tight coupling with your underlying infrastructure and will not allow auto-scaling unless you have some discovery mechanism. You can make each instance automatically aware of others instances to distribute services and related events using [feathers-distributed](https://github.com/kalisio/feathers-distributed). 
 
+### Distributed forecast data processing
+
+Because the most consuming part of a Weacast application is usually the gathering and processing of forecast model data, the [weacast-loader](https://github.com/weacast/weacast-loader) module provides you with a set of download services available as Docker containers out-of-the-box. You can rely on Cloud-ready solutions like [Kaabah](https://kalisio.github.io/kaabah/) to easily distribute/replicate these services on your cluster. Your Weacast application server can then only focus on forecast data retrieval for clients and can be scaled if necessary like a monolith application. The typical global architecture of such an approach is summarized in the following diagram.
+
+![Global architecture](https://cdn.rawgit.com/weacast/weacast-docs/35e7f2f184c7c67a15f77c2712cb00c1f9f339ef/images/Global%20Architecture%20Diagram%20V2.png)
 
