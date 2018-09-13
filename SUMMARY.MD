@@ -30,6 +30,7 @@
     * [Grid](api/GRID.MD)
   * Plugins
     * [Forecast models](api/PLUGIN.MD)
+    * [Forecast data loaders](api/PLUGIN.MD)
     * [Probe](api/PROBE.MD)
   * Client-specific
     * [Layers](api/LAYERS.MD)
