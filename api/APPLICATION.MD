@@ -12,7 +12,7 @@ await app.db.connect()
 
 ### Authentication
 
-Weacast includes a built-in local authentication strategy based on the [Feathers authentication module](https://docs.feathersjs.com/api/authentication/server.html). It also automatically configures the [Feathers OAuth2 plugin](https://docs.feathersjs.com/api/authentication/oauth2.html) for [GitHub](https://github.com/jaredhanson/passport-github), [Google](https://github.com/jaredhanson/passport-google-oauth2) and [OpenID Connect](https://github.com/kalisio/passport-openidconnect) if you provide them in your [configuration file](../guides/BASICS.MD#configuring).
+Weacast includes a built-in local authentication strategy based on the [Feathers authentication module](https://docs.feathersjs.com/api/authentication/server.html). It also automatically configures the [Feathers OAuth2 plugin](https://docs.feathersjs.com/api/authentication/oauth2.html) for [GitHub](https://github.com/jaredhanson/passport-github), [Google](https://github.com/jaredhanson/passport-google-oauth2), [OpenID Connect](https://github.com/kalisio/passport-openidconnect) and [Congnito](https://github.com/bainweb/passport-oauth2-cognito) if you provide them in your [configuration file](../guides/BASICS.MD#configuring).
 
 You can read [this article](https://blog.feathersjs.com/how-to-setup-oauth-flow-with-featherjs-522bdecb10a8) to learn more about the underlying process.
 
@@ -57,16 +57,16 @@ Create a new service attached to the application by name and given a set of dire
 
 This assumes you have created a *models* and *services* directories containing the required files to declare your service, e.g. your folder/file hierarchy should look like this:
 * *index.js*
-* *models* : constains one file per database adapter you'd like to support
-  * *serviceName.model.mongodb.js* : exporting the data model managed by your service in [MongoDB](https://docs.feathersjs.com/api/databases/mongodb.html), 
-  * *serviceName.model.levelup.js* : exporting the data model managed by your service in [LevelUP](https://github.com/feathersjs/feathers-levelup), 
-  * *serviceName.model.nedb.js* : exporting the data model managed by your service in [NeDB](https://docs.feathersjs.com/api/databases/nedb.html)
+* *models* : constains one file per database adapter you'd like to support, e.g.
+  * *serviceName.model.mongodb.js* : exporting the data model managed by your service in [MongoDB](https://docs.feathersjs.com/api/databases/mongodb.html)
 * *services*
   * *serviceName*
     * *serviceName.hooks.js* : exporting the [hooks](https://docs.feathersjs.com/api/hooks.html) of your service, 
     * *serviceName.filters.js* : exporting the [filters](https://docs.feathersjs.com/api/events.html#event-filtering) of your service, 
     * *serviceName.service.js* : exporting the specific mixin associated to your service (optionnal)
     
+> Only [MongoDB](https://docs.feathersjs.com/api/databases/mongodb.html) is officially supported right now although we had an experimental attempt with [LevelUP](https://github.com/feathersjs/feathers-levelup) as well. Please contact us if you'd like to support more adapters.
+  
 ### .createElementService(forecast, element, app, servicesPath) - backend only
 
 Internally used by [forecast model plugins](./PLUGIN.MD), similar to above but using the built-in forecast element model.
