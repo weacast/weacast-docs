@@ -78,12 +78,3 @@ Return the target file name where to download the forecast data of the element a
 ### async .convertForecastTime(runTime, forecastTime)
 
 Performs the conversion from the provider input data format to the output Weacast format (usually JSON). Should return a promise resolved as crude data array.
-
-# [Forecast data download services](https://github.com/weacast/weacast-loader)
-
-Forecast model plugins are modules that need to be either integrated in a monolithic Weacast application or deployed as independent micro-service like applications to be interconnected, see the [architecture section](../architecture/GLOBAL.MD#architecture-at-scale).
-
-Because the most consuming part of a Weacast application is usually the gathering and processing of forecast model data, the [weacast-loader](https://github.com/weacast/weacast-loader) module provides you with a set of download services available as Docker containers out-of-the-box. These services perform the same data processing workflow than the [ARPEGE](./PLUGIN.MD#arpege), [AROME](./PLUGIN.MD#arome) and [GFS](./PLUGIN.MD#gfs) plugins, based on [Krawler](https://kalisio.github.io/krawler/). This means that your Weacast application doesn't need to integrate these plugins anymore, the running download services will feed the database as usual in the background.
-
-
-
