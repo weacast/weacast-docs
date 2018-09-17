@@ -87,3 +87,6 @@ The common model for probe results is a [GeoJSON feature](https://tools.ietf.org
 * **runTime**: the date/time of the model run that produced the forecast data that has been used to produce the probe result
 * **forecastTime** : the date/time of the forecast data that has been used to produce the probe result
 
+## Alert data model
+
+Coming soon !
