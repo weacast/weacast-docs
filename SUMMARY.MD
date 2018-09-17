@@ -12,6 +12,7 @@
     * [Forecast element](architecture/DOMAINMODEL.MD#forecast-element)
     * [Probe](architecture/DOMAINMODEL.MD#probe)
     * [Probe result](architecture/DOMAINMODEL.MD#probe-results-querying)
+    * [Alert](architecture/DOMAINMODEL.MD#alert)
     * [Domain model](architecture/DOMAINMODEL.MD#domain-model)
   * [Global architecture](architecture/GLOBAL.MD)
   * [Component view](architecture/COMPONENTS.MD)
@@ -20,6 +21,7 @@
     * [Forecast element data model](architecture/DATAMODEL.MD#element-data-model)
     * [Probe data model](architecture/DATAMODEL.MD#probe-data-model)
     * [Probe result data model](architecture/DATAMODEL.MD#probe-result-data-model)
+    * [Alert data model](architecture/DATAMODEL.MD#alert-data-model)
   * [Dynamic view](architecture/DYNAMIC.MD)
 * [API](api/README.MD)
   * Core
@@ -32,6 +34,7 @@
     * [Forecast models](api/PLUGIN.MD)
     * [Forecast data loaders](api/LOADER.MD)
     * [Probe](api/PROBE.MD)
+    * [Alert](api/ALERT.MD)
   * Client-specific
     * [Layers](api/LAYERS.MD)
     * [Mixins](api/MIXINS.MD)
