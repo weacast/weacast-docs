@@ -25,6 +25,10 @@ While on-demand probing directly returns the results you asked for, probing stre
 * **comparison operators**: to find all results where the target element value is less, less or equal, greater, greater or equal than a given value;
 * **spatial operators**: to find all results located within a given geometry on the ground (e.g. in a given radius around a point).
 
+## Alert
+
+**Alerts** are user-defined conditions automatically and continuously evaluated on streamed probe results as new forecast data are gathered. It can be viewed as an automated query of the results that will raise an event whenever a matching result is found. 
+
 # Domain model
 
 The **domain model** is a set of high-level abstractions that describes selected aspects of a sphere of activity, more specifically [numerical weather prediction](https://en.wikipedia.org/wiki/Numerical_weather_prediction) for Weacast. It is a representation of meaningful real-world concepts pertinent to the domain that are modeled in the software. The concepts include the data involved in the business and rules the business uses in relation to that data.
