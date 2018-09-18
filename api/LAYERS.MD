@@ -68,4 +68,12 @@ To visualize forecast element scalar values (e.g. temperature) as a color image 
 
 ![Weacast color layer](../images/color-layer.png)
 
+## ScalarLayer [source](https://github.com/weacast/weacast-client/blob/master/src/layers/scalar-layer.js)
+
+To visualize forecast element scalar values (e.g. temperature) as a structured mesh using [color maps](http://gka.github.io/chroma.js/#color-scales), based on [leaflet-pixi-overlay](https://github.com/manubb/Leaflet.PixiOverlay). It provides 2 ways of rendering the data: 
+* As gridded based rendering to visualize the raw data. To each cell of the grid is assigned a data.
+![Weacast raw scalar layer](../images/scalar-layer-raw.png)
+* An interpolated based rendering to visualize the data as color image.
+![Weacast interpolated scalar layer](../images/scalar-layer-interpolated.png)
+
 
