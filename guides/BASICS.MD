@@ -44,7 +44,7 @@ docker network connect weacast_weacast rproxy
 docker-compose up -d
 ```
 
-The demo app can either work as a monolithic application using [forecast model plugins](../api/PLUGIN.MD) (default mode) or with independent data download services available as Docker containers, for more details see the [architecture section](../architecture/GLOBAL.MD). To deploy the download services set the `USE_LOADER` environment variable to `true` and use the additional [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.loader.yml):
+The demo app can either work as a monolithic application using [forecast model plugins](../api/PLUGIN.MD) (default mode) or with independent [data download services](../api/LOADER.MD) available as Docker containers, for more details see the [architecture section](../architecture/GLOBAL.MD). To deploy the download services set the `USE_LOADER` environment variable to `true` and use the additional [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.loader.yml):
 ```bash
 // Pull generic download services images
 docker pull weacast/weacast-arpege
