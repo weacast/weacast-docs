@@ -44,6 +44,27 @@ docker network connect weacast_weacast rproxy
 docker-compose up -d
 ```
 
+The demo app can either work as a monolithic application using [forecast model plugins](../api/PLUGIN.MD) (default mode) or with independent data download services available as Docker containers, for more details see the [architecture section](../architecture/GLOBAL.MD). To deploy the download services set the `USE_LOADER` environment variable to `true` and use the additional [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.loader.yml):
+```bash
+// Pull generic download services images
+docker pull weacast/weacast-arpege
+docker pull weacast/weacast-gfs
+// Build download services
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml build weacast-arpege-world  weacast-arpege-europe  weacast-arome-france weacast-gfs-world
+// Run all download services, MongoDB and Weacast containers
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml up -d
+// Run specific download services
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml up -d weacast-arpege-world weacast-gfs-world
+
+// Stop all download services, MongoDB and Weacast containers
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml down
+// Stop all download services, MongoDB and Weacast containers erasing DB data
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml down -v
+// Stop specific download services
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml stop weacast-arpege-world weacast-gfs-world
+docker-compose -f docker-compose.yml -f docker-compose.loader.yml rm -f weacast-arpege-world weacast-gfs-world
+```
+
 ### The hard way : from source code
 
 First you have to ensure the same [prerequisites](./DEVELOPMENT.MD#prerequisites) as for developing to build Weacast from source code. Then the following commands, assuming you have a MongoDB instance running on local host and default port (27017), should launch your local instance of Weacast:
