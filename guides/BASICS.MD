@@ -36,6 +36,8 @@ docker-compose down
 docker-compose down -v
 ```
 
+#### Domain binding
+
 In production for our [demo app](http://demo.weacast.xyz/) we use [nginx-proxy](https://github.com/jwilder/nginx-proxy) to help us mapping the domain to the web app. Using `docker-compose` this requires to connect the Weacast network to the reverse proxy (https://github.com/jwilder/nginx-proxy#multiple-networks) first.
 ```
 docker network create weacast_weacast
@@ -43,6 +45,8 @@ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name rproxy
 docker network connect weacast_weacast rproxy
 docker-compose up -d
 ```
+
+#### Using data loaders
 
 The demo app can either work as a monolithic application using [forecast model plugins](../api/PLUGIN.MD) (default mode) or with independent [data download services](../api/LOADER.MD) available as Docker containers, for more details see the [architecture section](../architecture/GLOBAL.MD). To deploy the download services set the `USE_LOADER` environment variable to `true` and use the additional [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.loader.yml):
 ```bash
