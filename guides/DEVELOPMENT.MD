@@ -204,6 +204,16 @@ docker push weacast/weacast:version_tag
 
 > This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
 
+When testing in development you can build a Docker image that will automatically use the master branch of all modules like this:
+```bash
+docker build -t weacast/weacast-dev -f dockerfile.dev .
+```
+Then release it as latest dev version:
+```bash
+docker login
+docker push weacast/weacast-dev
+```
+
 ### Plugins
 
 The same process applies as for the web app but in addition the module is published on the NPM registry.
