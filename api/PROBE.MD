@@ -95,6 +95,18 @@ Response:
   ]
 }
 ```
+
+The forecast time can also be a range to be specicified using comparison operators, e.g.:
+```
+query: {
+  forecastTime: {
+    $gte: '2017-05-24T12:00:00.000Z',
+    $lte: '2017-05-25T12:00:00.000Z'
+}
+```
+
+> In this case the feature properties in the response will be arrays of value ordered by forecast times instead of single values.
+
 A streamed probe is automatically created if you do not provide the `forecastTime` in the query, you then have to use the [probe results API](./PROBE.html#probe-results) to retrieve element values.
 
 ### Available probes
