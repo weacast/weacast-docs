@@ -96,7 +96,7 @@ Response:
 }
 ```
 
-The forecast time can also be a range to be specicified using comparison operators, e.g.:
+The forecast time can also be a range to be specified using comparison operators, e.g.:
 ```
 query: {
   forecastTime: {
