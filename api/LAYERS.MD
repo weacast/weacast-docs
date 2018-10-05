@@ -64,6 +64,8 @@ To visualize forecast element scalar values (e.g. temperature) as a heatmap, bas
 
 ## ColorLayer [source](https://github.com/weacast/weacast-client/blob/master/src/layers/color-layer.js)
 
+> DEPRECATED: use the [ScalarLayer](./LAYERS#scalarlayer-source)
+
 To visualize forecast element scalar values (e.g. temperature) as a color image using [color maps](http://gka.github.io/chroma.js/#color-scales), based on [leaflet-canvaslayer-field](https://github.com/IHCantabria/Leaflet.CanvasLayer.Field).
 
 ![Weacast color layer](../images/color-layer.png)
