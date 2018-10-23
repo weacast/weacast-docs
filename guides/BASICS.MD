@@ -106,7 +106,7 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
   * **defaultUsers** : the array of default users to be created on launch (format `{ email, password }`)
 * **logs** : object configuring the [winston](https://github.com/winstonjs/winston) loggers to be used - each key is a [transport name](https://github.com/winstonjs/winston/blob/master/docs/transports.md) which value is associated configuration options
 * **db**
-  * **adapter** : the database adapter, default and recommanded is [`mongodb`](https://github.com/feathersjs/feathers-mongodb) although there is experimental support for [`nedb`](https://github.com/feathersjs/feathers-nedb) and [`levelup`](https://github.com/feathersjs/feathers-levelup)
+  * **adapter** : the database adapter, only [`mongodb`](https://github.com/feathersjs/feathers-mongodb) is officially supported right now
   * **path** : folder where to store database data for embedded database such as [`nedb`](https://github.com/feathersjs/feathers-nedb) and [`levelup`](https://github.com/feathersjs/feathers-levelup)
   * **url** : database URL to access the Weacast database used by drivers such as [mongodb](https://github.com/mongodb/node-mongodb-native)
 * **probePath** : folder where default probe data files are stored
@@ -114,6 +114,8 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 * **forecastPath** : folder where temporary or persistent forecast data files are stored
 * **forecasts** : an array of configuration objects for each registered forecast, which common properties are defined by the [Forecast data model](../architecture/DATAMODEL.MD#forecast-data-model)
 * **proxyTable**: a set of proxy rules typically used for [scaling](./architecture/GLOBAL.MD#architecture-at-scale)
+
+> Only [MongoDB](https://docs.feathersjs.com/api/databases/mongodb.html) is officially supported right now although we had an experimental attempt with [LevelUP](https://github.com/feathersjs/feathers-levelup) as well. Please contact us if you'd like to support more adapters.
 
 ### Frontend side
 
