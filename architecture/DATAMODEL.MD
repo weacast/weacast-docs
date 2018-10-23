@@ -97,11 +97,11 @@ The properties of a probe result object are described by the following data mode
 
 This data model is instanciated when forecast data are probed by the [Probe plugin](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html) and manipulated through the [Probe results API](https://weacast.gitbooks.io/weacast-docs/api/PROBE.html#probe-results-api).
 
-The common model for probe results is a [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2). Each result contains an additional property per probed element, according to its [configured name](../guides/BASICS.MD#configuring), storing the target element value. It also contains the following:
+The common model for probe results is a [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2). Each result contains an additional property per probed element (in the `properties` field), according to its [configured name](../guides/BASICS.MD#configuring), storing the target element value. It also contains the following:
 * **runTime**: the date/time of the model run that produced the forecast data that has been used to produce the probe result
 * **forecastTime** : the date/time of the forecast data that has been used to produce the probe result
 
-> When performing probe results aggregation all values such as probed elements, runTime and forecastTime will be arrays ordered according to ascending time
+> When performing probe results aggregation probed value, runTime and forecastTime will be arrays ordered according to ascending time and stored in an additional property per probed element according to its [configured name](../guides/BASICS.MD#configuring)
 
 ## Alert data model
 
