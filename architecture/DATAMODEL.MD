@@ -22,6 +22,8 @@ The details of each property are the following:
 * **origin** : the geographical origin of the data grid as an array of decimal values `[longitude origin, latitude origin]`
 * **size** : the size of the data grid as an array of integer values `[width, height]`
 * **resolution** : the geographical resolution of the data grid as an array of decimal values `[longitude resolution, latitude resolution]`
+* **tileResolution** : the geographical resolution of the data tiles as an array of decimal values `[longitude resolution, latitude resolution]`, if not given will not produce tiles
+* **timeseries** : if true will also generate tiles with aggregated data over all forecast times
 * **runInterval** : the period between two forecast runs (in seconds) - it also defines at which hours of the day the forecast data are produced (e.g. `00:00 - 06:00 - 12:00 - 18:00` for a `3600` seconds period)
 * **oldestRunInterval** : how long do the server go back in time when harvesting forecast data (in seconds)
 * **interval** : the period between two forecast time steps (in seconds)
@@ -33,10 +35,13 @@ The details of each property are the following:
   * if `> 0` an update every N seconds will be performed as long as the server runs
 * **elements** : an array of forecast elements that will be managed for this model, the common properties are the following
   * **name** : internal element name that will be used in path to reach the underlying service
+  * **bucket** : download bucket ID
   * **dataStore** : data store to be used for the forecast data, could be
-    * `db` to store it directly in database
+    * `db` to store it directly in database (default if not given)
     * `fs` to store it on the file system
     * `gridfs` to store it using [GrigFS](https://docs.mongodb.com/manual/core/gridfs/)
+
+> By default all elements of a forecast model are downloaded sequentially unless you specify some buckets. If so, buckets are downloaded sequentially but all elements belonging to the same bucket will be downloaded in parallel.
 
 ## Element data model
 
@@ -72,6 +77,7 @@ The common model for on-demand or stream mode is a [GeoJSON feature collection](
 The following additional properties of the GeoJSON collection allows to configure the probe:
 * **forecast**: the forecast model instance name to be probed according to the [configuration](../guides/BASICS.MD#configuring),
 * **elements**: array of names corresponding to the forecast element values to be probed in the forecast data (each element has to be declared in the the [configuration](../guides/BASICS.MD#configuring))
+* **featureId**: only useful for streamed probes, indicates which field(s) can be used as unique identifier of your features (support dot notation)
 
 > Features of the collection are usually numerous so they are not returned by default, you have to explicitely ask for using [`$select`](https://docs.feathersjs.com/api/databases/querying.html#select)
 
