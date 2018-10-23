@@ -23,7 +23,8 @@ Each configured forecast model instance output hundreds of **forecast elements**
 While on-demand probing directly returns the results you asked for, probing streams generates the results continuously without your intervention. We thus need a way to query the persisted results on-demand using:
 * **selectors**: to find all results where an attribute has (or does not have) the specified value (e.g. forecast time);
 * **comparison operators**: to find all results where the target element value is less, less or equal, greater, greater or equal than a given value;
-* **spatial operators**: to find all results located within a given geometry on the ground (e.g. in a given radius around a point).
+* **spatial operators**: to find all results located within a given geometry on the ground (e.g. in a given radius around a point),
+* **aggregation operators**: to aggregate all target element values for a set of forecast times.
 
 ## Alert
 
