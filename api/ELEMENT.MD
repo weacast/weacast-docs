@@ -140,6 +140,12 @@ where:
 * **origin** is the geographical origin of the target data grid as an array of decimal values `[longitude origin, latitude origin]`,
   * **size** is the size of the target data grid as an array of integer values `[width, height]`,
   * **resolution** is the geographical resolution of the target data grid as an array of decimal values `[longitude resolution, latitude resolution]`
+  
+## Tiles
+
+When [tiling](https://github.com/perliedman/tiled-maps) is enabled you can retrieve element tiles instead of the whole forecast data when you'd like to know what occurs in a given area or at a given location. Because tiles have an indexed geometry property you can perform a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query-geospatial/).
+
+If you also configured your element services to generate tiles with aggregated data over all forecast times you can select it by querying with the following additional field: `{ timeseries: true }`.
 
 ## Base element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
