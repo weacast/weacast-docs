@@ -62,6 +62,14 @@ A forecast element will cover the period until the start of the next available f
 
 If the data store of the element in the forecast model configuration is the database then the **data** property containing forecast data is stored in the model, otherwise if the data store is the file system it has an additional **convertedFilePath** (respectively **filePath**) property only used internally to retrieve the JSON converted (respectively source) data on-the-fly.
 
+> When tiling is configured each forecast element generate an additional tile set with the following additional properties:
+* **x/y** : coordinate of the tile in the tile set grid
+* **bounds** : the geographical bounds covered by the tile as an array of decimal values `[min longitude, min latitude, max longitude, max latitude]`
+* **origin** : the geographical origin of the tile data grid as an array of decimal values `[longitude origin, latitude origin]`
+* **size** : the size of the tile data grid as an array of integer values `[width, height]`
+* **resolution** : the geographical resolution of the tile data grid as an array of decimal values `[longitude resolution, latitude resolution]`
+* **geometry**: GeoJSON geometry of the tile
+
 ## Probe data model
 
 The properties of a probe object are described by the following data model:
@@ -92,6 +100,8 @@ This data model is instanciated when forecast data are probed by the [Probe plug
 The common model for probe results is a [GeoJSON feature](https://tools.ietf.org/html/rfc7946#section-3.2) with [GeoJSON point geometry](https://tools.ietf.org/html/rfc7946#section-3.1.2). Each result contains an additional property per probed element, according to its [configured name](../guides/BASICS.MD#configuring), storing the target element value. It also contains the following:
 * **runTime**: the date/time of the model run that produced the forecast data that has been used to produce the probe result
 * **forecastTime** : the date/time of the forecast data that has been used to produce the probe result
+
+> When performing probe results aggregation all values such as probed elements, runTime and forecastTime will be arrays ordered according to ascending time
 
 ## Alert data model
 
