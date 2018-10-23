@@ -105,7 +105,7 @@ query: {
   }
 }
 ```
-In this case the feature properties in the response will be arrays of value ordered by ascending forecast times instead of single values.
+In this case the feature probed value, runTime and forecastTime will be arrays ordered by ascending time and stored in an additional property per probed element according to its [configured name](../guides/BASICS.MD#configuring)
 
 > Take care that querying a large range of forecast is a time and memory consuming operation. If you'd like to leverage performance you should enable [tiling](https://github.com/perliedman/tiled-maps) in [configuration](../guides/BASICS.MD#configuring) and only request data at a specific location using a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query-geospatial/) like this (in this case you do not need to provide GeoJSON features as input):
 ```
