@@ -105,8 +105,32 @@ query: {
   }
 }
 ```
+In this case the feature properties in the response will be arrays of value ordered by ascending forecast times instead of single values.
 
-> In this case the feature properties in the response will be arrays of value ordered by forecast times instead of single values.
+> Take care that querying a large range of forecast is a time and memory consuming operation. If you'd like to leverage performance you should enable [tiling](https://github.com/perliedman/tiled-maps) in [configuration](../guides/BASICS.MD#configuring) and only request data at a specific location using a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query-geospatial/) like this (in this case you do not need to provide GeoJSON features as input):
+```
+api.getService('probes').create(
+{
+  "forecast": "arpege-europe",
+  "elements": ["u-wind", "v-wind"],
+},
+{
+  query: {
+    forecastTime: {
+      $gte: '2017-05-24T12:00:00.000Z',
+      $lte: '2017-05-25T12:00:00.000Z'
+    },
+    geometry: {
+      $geoIntersects: {
+        $geometry: {
+          type: 'Point',
+          coordinates: [ long, lat ]
+        }
+      }
+    }
+  }
+})
+```
 
 A streamed probe is automatically created if you do not provide the `forecastTime` in the query, you then have to use the [probe results API](./PROBE.html#probe-results) to retrieve element values.
 
@@ -304,7 +328,7 @@ Response:
 
 ### Advanced probe results filtering
 
-Probe results are spatially indexed based on [MongoDB capabilities](https://docs.mongodb.com/manual/applications/geospatial-indexes/). So you can perform a spatial filter on your results like this:
+Probe results are spatially indexed based on [MongoDB capabilities](https://docs.mongodb.com/manual/applications/geospatial-indexes/). So you can perform a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query-geospatial/) on your results like this:
 ```javascript
 import api from 'src/api'
 
@@ -329,7 +353,6 @@ api.getService('probe-results').find({
 
 Such a complex query is fine when using the [Feathers isomorphic API](https://docs.feathersjs.com/api/client.html#universal-isomorphic-api) but if to be expressed manually as REST you have to convert nested objects to array notation like this: `/api/probe-results?probeId=59248de38bb91d28d8155b3c&forecastTime=2017-05-27T07:00:00.000Z&geometry[$near][$maxDistance]=1000000&geometry[$near][$geometry][type]=Point&geometry[$near][$geometry][coordinates][]=5&geometry[$near][$geometry][coordinates][]=43`.
 
-
 You can also filter results according to the computed element values by using the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html), e.g. to get results with a wind speed between 2 m/s and 5 m/s:
 ```javascript
 import api from 'src/api'
@@ -341,6 +364,29 @@ api.getService('probe-results').find({
       $gte: 2,
       $lte: 5
     }
+  }
+})
+.then(response => {
+  // Do something with the probe results
+})
+```
+
+### Probe results aggregation
+
+Sometimes it is better to retrieve a single result aggregating all the requested forecast times for a given features instead of multiple single results (ie one per forcast time). You can perform such an aggregation based on [MongoDB capabilities](https://docs.mongodb.com/manual/core/aggregation-pipeline/) like this:
+```javascript
+import api from 'src/api'
+
+api.getService('probe-results').find({
+  query: {
+    probeId: '59248de38bb91d28d8155b3c',
+    forecastTime: { // Target time range
+      $gte: '2017-05-24T12:00:00.000Z',
+      $lte: '2017-05-25T12:00:00.000Z'
+    },
+    $groupBy: 'properties.iata_code', // Will perform aggregation based on this unique feature identifier
+    'properties.iata_code': 'LFBO', // The target feature to aggregate, if omit all will be
+    $aggregate: ['windDirection', 'windSpeed', 'gust'] // List of elements to aggregate over time
   }
 })
 .then(response => {
