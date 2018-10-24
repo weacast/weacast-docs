@@ -40,6 +40,7 @@ The details of each property are the following:
     * `db` to store it directly in database (default if not given)
     * `fs` to store it on the file system
     * `gridfs` to store it using [GrigFS](https://docs.mongodb.com/manual/core/gridfs/)
+  * **interval**, **lowerLimit**, **upperLimit** to override on a per-element basis the default forecast options (see description before)
 
 > By default all elements of a forecast model are downloaded sequentially unless you specify some buckets. If so, buckets are downloaded sequentially but all elements belonging to the same bucket will be downloaded in parallel.
 
