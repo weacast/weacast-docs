@@ -28,7 +28,7 @@ While on-demand probing directly returns the results you asked for, probing stre
 
 ## Alert
 
-**Alerts** are user-defined conditions automatically and continuously evaluated on streamed probe results as new forecast data are gathered. It can be viewed as an automated query of the results that will raise an event whenever a matching result is found. 
+**Alerts** are user-defined conditions automatically and continuously evaluated on streamed probe results as new forecast data are gathered. It can be viewed as an automated query of the probe results that will raise an event whenever a matching result is found. With alert you can create triggers which will fire on an occurrence of the selected weather conditions (temperature, humidity, pressure, etc.) in a specified period of time and area. 
 
 # Domain model
 
