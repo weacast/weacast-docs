@@ -106,4 +106,21 @@ The common model for probe results is a [GeoJSON feature](https://tools.ietf.org
 
 ## Alert data model
 
-Coming soon !
+The properties of an alert object are described by the following data model:
+
+![Alert data model](https://cdn.rawgit.com/weacast/weacast-docs/57126420183e20132ff262a3eff4cc910d57b92e/images/Alert%20Data%20Model%20Diagram.svg)
+
+This data model is instanciated and manipulated through the [Alert API](https://weacast.gitbooks.io/weacast-docs/api/ALERT.html).
+
+The details of each property are the following:
+* **cron**: a [CRON pattern](https://github.com/kelektiv/node-cron) to schedule the alert check at regular intervals, e.g. `* 0 * * * *` will run it every minute
+* **probeId**: the ID of the probe to be checked by the alert
+* **elements**: array of names corresponding to the probed forecast element values to be checked by the alert (each element has to be declared in the the [configuration](../guides/BASICS.MD#configuring))
+* **featureId**: indicates which field(s) can be used as unique identifier of your probe features (support dot notation)
+* **period**: time interval used to do the matching between the forecast data and the trigger conditions
+  * **start**: offset which needs to be added to the current timestamp at the moment of validation to compute the beginning of the time interval used to check the conditions, specified as [moment.js duration object](https://momentjs.com/docs/#/manipulating/add/)
+  * **end**: offset which needs to be added to the current timestamp at the moment of validation to compute the end of the time interval used to check the conditions, specified as [moment.js duration object](https://momentjs.com/docs/#/manipulating/add/)
+  * **end**: 
+* **conditions**: query specification which contains nested objects:
+  * **[element]**: for each checked element a filter according to the computed element values specified using the [Feathers common database query API](https://docs.feathersjs.com/api/databases/querying.html)
+  * **geometry** specification of a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query/geoWithin/)
