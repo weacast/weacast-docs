@@ -15,6 +15,7 @@ You might read this [introduction article](https://blog.feathersjs.com/feathersj
 * Plugins
   * [Forecast models](/api/PLUGIN.MD)
   * [Probe](/api/PROBE.MD)
+  * [Alert](/api/ALERT.MD)
 * Client-specific
   * [Layers](/api/LAYERS.MD)
   * [Mixins](/api/MIXINS.MD)
