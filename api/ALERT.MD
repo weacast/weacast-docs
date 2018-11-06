@@ -12,6 +12,24 @@ The plugin exposes the available probes through the `alerts` service. Although o
 
 ### Data model
 
-The common data model of a probe as used by the API is [detailed here](../architecture/DATAMODEL.MD#alert-data-model).
+The common data model of an alert as used by the API is [detailed here](../architecture/DATAMODEL.MD#alert-data-model).
+
+### Create an alert
 
 **Coming soon !**
+
+### Remove an alert
+
+**Coming soon !**
+
+## Alert hooks
+
+The following hooks are executed on the alert service.
+
+### .marshallAlert(hook) [source](https://github.com/weacast/weacast-alert/blob/master/src/hooks/alerting.js)
+
+Convert from server side types (moment dates) to basic JS types when "writing" to DB adapters. Because conditions contains Mongo reserved keywords they will be serialized as well.
+
+### .unmarshallAlert(hook) [source](https://github.com/weacast/weacast-alert/blob/master/src/hooks/alerting.js)
+
+Convert back to server side types (moment dates) from basic JS types when "reading" from DB adapters. Will unserialize conditions as well.
