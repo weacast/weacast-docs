@@ -109,8 +109,8 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
   * **adapter** : the database adapter, only [`mongodb`](https://github.com/feathersjs/feathers-mongodb) is officially supported right now
   * **path** : folder where to store database data for embedded database such as [`nedb`](https://github.com/feathersjs/feathers-nedb) and [`levelup`](https://github.com/feathersjs/feathers-levelup)
   * **url** : database URL to access the Weacast database used by drivers such as [mongodb](https://github.com/mongodb/node-mongodb-native)
-* **probePath** : folder where default probe data files are stored
 * **defaultProbes** : the array of default probe streams to be created on launch (format `{ fileName, options }`)
+* **defaultAlerts** : the array of default alerts to be created on launch (format `{ fileName, options }`)
 * **forecastPath** : folder where temporary or persistent forecast data files are stored
 * **forecasts** : an array of configuration objects for each registered forecast, which common properties are defined by the [Forecast data model](../architecture/DATAMODEL.MD#forecast-data-model)
 * **proxyTable**: a set of proxy rules typically used for [scaling](./architecture/GLOBAL.MD#architecture-at-scale)
