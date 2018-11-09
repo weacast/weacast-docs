@@ -17,6 +17,10 @@ The XWind application has been deployed at [Airbus](http://www.airbus.com/) to s
 
 [Watch the video](https://drive.google.com/open?id=16_vEOtqmVVl-vE2bW9qYOLsF6Tar3t_S)
 
+### Kano
+
+The Kano application will be soon deployed at [IRSN](https://www.irsn.fr/EN/Pages/home.aspx) to support nuclear crisis management. This application aims at helping users to assess health risks optimally abased on weather forecast data.
+
 ## Starters, Examples and Tutorials
 
 Submit yours by creating a pull request.
