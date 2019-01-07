@@ -1,5 +1,5 @@
 module.exports = {
-  base: '/weacast/',
+  base: '/weacast-docs/',
   title: 'Weacast',
   description: 'An Open Source platform to gather, expose and make use of weather forecast data',
   head: [
