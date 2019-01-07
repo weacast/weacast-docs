@@ -25,9 +25,8 @@
     "node": ">= 0.12.0"
   },
   "scripts": {
-    "build": "gitbook build",
-    "build:diffs": "./examples/make-diffs.sh && npm run build",
-    "postinstall": "npm run build",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs",
     "publish": "git push origin && git push origin --tags",
     "release:patch": "npm version patch && npm run publish",
     "release:minor": "npm version minor && npm run publish",
@@ -44,6 +43,9 @@
     "gitbook-plugin-include-codeblock": "2.2.0"
   },
   "devDependencies": {
-    "gitbook-cli": "^2.3.0"
+    "@vuepress/plugin-pwa": "^1.0.0-alpha.0",
+    "gitbook-cli": "^2.3.0",
+    "vuepress": "^0.14.8",
+    "vuepress-theme-kalisio": "http://github.com/kalisio/vuepress-theme-kalisio"
   }
 }

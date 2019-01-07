@@ -1,6 +1,29 @@
-language: node_js
-node_js:
-  - "6.5"
-branches:
-  only:
-  - master
+notifications:
+  email: false
+  slack:
+    rooms:
+      secure: TY96ttTvyWlSTVJZ+1JL2isUaRCQK9SIV/5H4n1Nhipp8wWb9UAZyiNIrIkfhpQXo9AYIlai8nluzZh+5In1pxmHYlGj7R/JWJv0RxtGgNrr94kYn30/ehONGMuphuokmk+nTdnQfRGxmh21R0yw1n5XMnOcoJcIDPMsxv1k1hSiPbxztU8c72CzKdGXQQp4vi0k85yaEmABSXgVwwRKVPbsk2y1wvuJ5aPHwnbZ7beTfbBowZGpR4977v2neAKaJu5H7qTgvonA0myFZHhPvYV2wtxtZ9k7PmGMaZSB0XoVWa9btDgFrZBV7nprOowAJXgDe7t1niILmqJZ6ybHaR/kwDcTcC45u1K3gNrreUd2CbxJFfKP/0DtSewH7eN7D3ke08lCixw8Znww8G55P78XNl7cEoibfKkRiGOq2rY9peat0fGGo5HbyCfNz6qR6xj7+gppqlbMPkUhwLFXmxK0I8OF+vvzaY64OYiLeVsAxxthKDWV79E8mscOkzYG9pYwUwnBGkCRPxFVp0OvVumY7e5xY+KVO1Beb6QBXBSjLn0XZhvbfnjxhRhWJim5BnBRZdTyyjcIrW8HsVUD+d+nvINZ/fzqmqPlFQfEi3P6lJMDRxfAJvawCCSSkK6DwggoQU8Pt4EF9lTSBV11GQiv966j92jcNUwqnynsHHs=
+    on_success: always
+    on_failure: always
+
+stages:
+- name: PUBLISH
+
+jobs:
+  include:
+
+  - stage: PUBLISH
+    language: node_js
+    node_js:
+    - '8'
+    script:
+    - yarn install
+    - yarn docs:build
+    deploy:
+      provider: pages
+      local-dir: docs/.vuepress/dist
+      skip-cleanup: true
+      github-token: $GITHUB_TOKEN  # Set in the settings page of your repository, as a secure variable
+      keep-history: true
+      on:
+        branch: master
