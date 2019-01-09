@@ -2,17 +2,17 @@
 
 ## Live demo
 
-A live demo is usually running at [demo.weacast.xyz](http://demo.weacast.xyz). Have also a look to our list of known [production applications](https://weacast.gitbooks.io/weacast-docs/content/ecosystem/#production-applications).
+A live demo is usually running at [demo.weacast.xyz](http://demo.weacast.xyz). Have also a look to our list of known [production applications](./ecosystem.md#production-applications).
 
 On our demo weather data is gathered from the GFS (NCEP) and ARPEGE (Météo France) forecast models. The map shows:
-* wind u/v-components (i.e. speed and direction) using a [flow layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#flowlayer-source)
-* wind gust (i.e. max speed) using a [heat layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#heatlayer-source) or a [scalar layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#scalarlayer-source)
-* precipitations using an additional [scalar layer](https://weacast.gitbooks.io/weacast-docs/content/api/LAYERS.html#scalarlayer-source)
-* a worldwide set of airports used to [probe](https://weacast.gitbooks.io/weacast-docs/content/architecture/DOMAINMODEL.html#probe) forecast data at these locations
+* wind u/v-components (i.e. speed and direction) using a [flow layer](../api/layers.md#flowlayer-source)
+* wind gust (i.e. max speed) using a [heat layer](../api/layers.md#heatlayer-source) or a [scalar layer](../api/layers.md#scalarlayer-source)
+* precipitations using an additional [scalar layer](../api/layers.md#scalarlayer-source)
+* a worldwide set of airports used to [probe](../architecture/main-concepts.md#probe) forecast data at these locations
 
 Using the playback buttons at the bottom of the map you can navigate among available forecast times and see the map change. On the side menu you can select the currently visualized weather forecast model. Last but not least, using the search button on the map you will be able to find the airport matching best specific wind conditions (i.e. speed/direction) based on the probed data. The analysis uses the [same weight](https://github.com/weacast/weacast/blob/master/src/components/WindSeeker.vue#L125) for both speed and direction differences so that it might result in a good match on speed **and/or** direction depending on the weather. You can also probe your own data by importing a GeoJSON file containing a collection of points, each location will be probed for the current forecast time.
 
-You can also obtain a timeseries of forecast elements by either selecting one of the airports or double click on any location on the map. You will then see a timeseries button appear, which allow to open a popup displaying different graphs. Last but not least, you can activate an [alert zone](https://weacast.gitbooks.io/weacast-docs/content/architecture/DOMAINMODEL.html#alert) in the layer list to raise alerts in Paris whenever the wind speed is greater than 0 (this is of course unrealistic alert conditions to ensure it will always raises for demonstration purpose !).
+You can also obtain a timeseries of forecast elements by either selecting one of the airports or double click on any location on the map. You will then see a timeseries button appear, which allow to open a popup displaying different graphs. Last but not least, you can activate an [alert zone](../architecture/main-concepts.md#alert) in the layer list to raise alerts in Paris whenever the wind speed is greater than 0 (this is of course unrealistic alert conditions to ensure it will always raises for demonstration purpose !).
 
 ![Live demo](./../assets/demo-gui.png)
 

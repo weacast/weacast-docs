@@ -4,9 +4,9 @@ Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to help visual
 
 ## Feature Layers
 
-[Time-stamped GeoJson layers](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayergeojson) provide a generic way to visualize [GeoJSON features](https://geojson.org/geojson-spec.html#feature-objects) including temporal evolution. Because [probes](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-data-model) and [probe results](https://weacast.gitbooks.io/weacast-docs/architecture/DATAMODEL.html#probe-result-data-model) are internally modelled as GeoJSON features they can be used to visualize them. However Weacast does not make any assumption on how you want to visualize these data so you might have to manually process the retrieved probe results in order to add a `time` property on each feature corresponding to the `forecastTime` or the `runTime` for instance.
+[Time-stamped GeoJson layers](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayergeojson) provide a generic way to visualize [GeoJSON features](https://geojson.org/geojson-spec.html#feature-objects) including temporal evolution. Because [probes](../architecture/data-model-view.md#probe-data-model) and [probe results](../architecture/data-model-view.md#probe-result-data-model) are internally modelled as GeoJSON features they can be used to visualize them. However Weacast does not make any assumption on how you want to visualize these data so you might have to manually process the retrieved probe results in order to add a `time` property on each feature corresponding to the `forecastTime` or the `runTime` for instance.
 
-Using [map mixins](https://github.com/weacast/weacast-docs/blob/master/api/MIXINS.MD#map-mixins) configuration options you can easily customize your probe results visualization to get something like this:
+Using [map mixins](https://github.com/weacast/weacast-docs/blob/master/api/mixins.md#map-mixins) configuration options you can easily customize your probe results visualization to get something like this:
 
 ![Weacast feature layer](./../assets/feature-layer.png)
 
@@ -22,7 +22,7 @@ Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to manage the 
 
 Forecast layer interface implemented by all other types of layer, based on [leaflet-timedimension](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayer). 
 
-A Weacast layer of type `ClassName` are created like this (where app is the Weacast [client app](./APPLICATION.MD#client) instance):
+A Weacast layer of type `ClassName` are created like this (where app is the Weacast [client app](./application.md#client) instance):
 ```javascript
 let layer = new L.Weacast.ClassName(app, {
   // Forecast element to be managed
@@ -66,7 +66,7 @@ To visualize forecast element scalar values (e.g. temperature) as a heatmap, bas
 
 ### ColorLayer [source](https://github.com/weacast/weacast-client/blob/master/src/layers/color-layer.js)
 
-> DEPRECATED: use the [ScalarLayer](./LAYERS#scalarlayer-source)
+> DEPRECATED: use the [ScalarLayer](./layers.md#scalarlayer-source)
 
 To visualize forecast element scalar values (e.g. temperature) as a color image using [color maps](http://gka.github.io/chroma.js/#color-scales), based on [leaflet-canvaslayer-field](https://github.com/IHCantabria/Leaflet.CanvasLayer.Field).
 

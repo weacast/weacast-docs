@@ -19,13 +19,13 @@ Weather prediction data are now available from the major meteorological agencies
 Weacast is **weather forecast model agnostic**, i.e. it mainly exposes a minimalistic framework where forecast data sources can be added on-demand to extend its capabilities in a plugin-like architecture. These data are then available in Weacast through simple REST/Websocket services in JSON format and can be visualized using the built-in web app.
 
 Currently supported plugins are the following:
-* [ARPEGE](../api/PLUGIN.MD#arpege) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
-* [AROME](../api/PLUGIN.MD#arome) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
-* [GFS](../api/PLUGIN.MD#gfs) model from [NOAA](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
+* [ARPEGE](../api/plugin.md#arpege) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
+* [AROME](../api/plugin.md#arome) model from [Meteo France](http://www.meteofrance.com/simulations-numeriques-meteorologiques/monde)
+* [GFS](../api/plugin.md#gfs) model from [NOAA](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
 
 Weacast aims at going beyond providing crude forecast data and includes tools to derive your own business focussed data by:
-* [Probing](../api/PROBE.MD#probe-plugin) forecast data to extract or analyze relevant data for your locations of interest (e.g. airports, cities, stores, etc.)
-* [Querying](../api/PROBE.MD#probe-results) your probed data to find which locations match specific weather conditions
+* [Probing](../api/probe.md#probe-plugin) forecast data to extract or analyze relevant data for your locations of interest (e.g. airports, cities, stores, etc.)
+* [Querying](../api/probe.md#probe-results) your probed data to find which locations match specific weather conditions
 
 ## What is inside ?
 

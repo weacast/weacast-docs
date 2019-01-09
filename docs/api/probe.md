@@ -5,7 +5,7 @@ Probes are virtual sensors used to derive your own business focused data by prob
 * **probing stream**, which allow to make the Weacast server automatically and continuously compute forecast element values for a set of locations as new forecast data are gathered and then retrieve results *on-demand* (e.g. by a request to the server).
 
 ::: tip
-Probed values are computed using [interpolation](./GRID.MD#interpolatelongitude-latitude) of the forecast data.
+Probed values are computed using [interpolation](./grid.md#interpolatelongitude-latitude) of the forecast data.
 :::
 
 On-demand probing is limited to a **small number of locations** (typically several hundreds) because results are directly returned in the request response. When you have a **large number of locations** (typically thousands) you have to use probing streams. Indeed, it allows to paginate and filter the probe results according to various parameters such as spatial locations, forecast times, element values, etc. thus limiting the size of the data to be managed.
@@ -42,7 +42,7 @@ The plugin exposes the available probes through the `probes` service. Although o
 
 ### Data model
 
-The common data model of a probe as used by the API is [detailed here](../architecture/DATAMODEL.MD#probe-data-model).
+The common data model of a probe as used by the API is [detailed here](../architecture/data-model-view.md#probe-data-model).
 
 ### Create probes
 
@@ -118,7 +118,7 @@ query: {
 ```
 In this case the feature probed value, runTime and forecastTime will be arrays ordered by ascending time and stored in an additional property per probed element according to its [configured name](./../guides/basics.md#configuring)
 
-> Take care that querying a large range of forecast is a time and memory consuming operation. If you'd like to leverage performance you should enable [tiling](https://github.com/perliedman/tiled-maps) in [configuration](../guides/BASICS.MD#configuring) and only request data at a specific location using a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query-geospatial/) like this (in this case you do not need to provide GeoJSON features as input):
+> Take care that querying a large range of forecast is a time and memory consuming operation. If you'd like to leverage performance you should enable [tiling](https://github.com/perliedman/tiled-maps) in [configuration](../guides/basics.md#configuring) and only request data at a specific location using a [geospatial query](https://docs.mongodb.com/manual/reference/operator/query-geospatial/) like this (in this case you do not need to provide GeoJSON features as input):
 > 
 ```
 api.getService('probes').create(

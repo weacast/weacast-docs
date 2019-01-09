@@ -1,6 +1,6 @@
 # [Alert plugin](https://github.com/weacast/weacast-alert)
 
-Alerts are user-defined conditions automatically and continuously evaluated on streamed probe results as new forecast data are gathered. It can be viewed as an automated query of the [Probe results API](./PROBE.MD) that will raise an event whenever a matching result is found. With alert you can create triggers which will fire on an occurrence of the selected weather conditions (temperature, humidity, pressure, etc.) in a specified period of time and area.
+Alerts are user-defined conditions automatically and continuously evaluated on streamed probe results as new forecast data are gathered. It can be viewed as an automated query of the [Probe results API](./probe.md) that will raise an event whenever a matching result is found. With alert you can create triggers which will fire on an occurrence of the selected weather conditions (temperature, humidity, pressure, etc.) in a specified period of time and area.
 
 ## Alerts API
 
@@ -16,7 +16,7 @@ The plugin exposes the available probes through the `alerts` service. Although o
 
 ### Data model
 
-The common data model of an alert as used by the API is [detailed here](../architecture/DATAMODEL.MD#alert-data-model).
+The common data model of an alert as used by the API is [detailed here](../architecture/data-model-view.md#alert-data-model).
 
 ### Create an alert
 

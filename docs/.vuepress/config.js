@@ -36,6 +36,7 @@ function getAboutSidebar () {
     '',
     'showcase',
     'roadmap',
+    'ecosystem',
     'license',
     'contact'
   ] 

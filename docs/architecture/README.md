@@ -1,6 +1,6 @@
 # Architecture
 
-Before jumping to the [global architecture view](./global-architecture.MD) we recommend to read about the [main concepts](./main-concepts.md) and the [domain model](./domain-model.md) of Weacast. 
+Before jumping to the [global architecture view](./global-architecture.md) we recommend to read about the [main concepts](./main-concepts.md) and the [domain model](./domain-model.md) of Weacast. 
 
 You can then have a look to:
 * the [component-oriented view](./component-view.md) of the architecture

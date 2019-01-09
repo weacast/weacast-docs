@@ -10,7 +10,7 @@ Each forecast model instance exposes each element service using a database adapt
 
 ## Data model
 
-The common data model of a forecast element as used by the API is [detailed here](../architecture/DATAMODEL.MD#element-data-model).
+The common data model of a forecast element as used by the API is [detailed here](../architecture/data-model-view.md#element-data-model).
 
 > Forecast element data are usually large so they are not returned by default, , you have to explicitely ask for using [`$select`](https://docs.feathersjs.com/api/databases/querying.html#select)
 

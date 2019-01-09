@@ -59,7 +59,7 @@ docker-compose up -d
 
 #### Using data loaders
 
-The demo app can either work as a monolithic application using [forecast model plugins](../api/PLUGIN.MD) (default mode) or with independent [data download services](../api/LOADER.MD) available as Docker containers, for more details see the [architecture section](../architecture/GLOBAL.MD). To deploy the download services set the `USE_LOADER` environment variable to `true` and use the additional [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.loader.yml):
+The demo app can either work as a monolithic application using [forecast model plugins](../api/plugin.md) (default mode) or with independent [data download services](../api/loader.md) available as Docker containers, for more details see the [architecture section](../architecture/global-architecture.md). To deploy the download services set the `USE_LOADER` environment variable to `true` and use the additional [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.loader.yml):
 
 ```bash
 // Pull generic download services images
@@ -83,7 +83,7 @@ docker-compose -f docker-compose.yml -f docker-compose.loader.yml rm -f weacast-
 
 ### The hard way : from source code
 
-First you have to ensure the same [prerequisites](./DEVELOPMENT.MD#prerequisites) as for developing to build Weacast from source code. Then the following commands, assuming you have a MongoDB instance running on local host and default port (27017), should launch your local instance of Weacast:
+First you have to ensure the same [prerequisites](./development.md#prerequisites) as for developing to build Weacast from source code. Then the following commands, assuming you have a MongoDB instance running on local host and default port (27017), should launch your local instance of Weacast:
 
 ```bash
 // Clone Weacast
@@ -113,7 +113,7 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 
 * **host**: host name
 * **port**: port on which the app is running
-* **https**: object configuring [HTTPS](/guides/BASICS.MD#configuring) key file, certificate file and running port
+* **https**: object configuring [HTTPS](/guides/basics.md#configuring) key file, certificate file and running port
 * **apiPath** : the API path prefix
 * **authentication** : object configuring [Feathers authentication](https://github.com/feathersjs/feathers-authentication#default-options) plus custom weacast options, for OAuth2 providers add a `github`, `google`, `cognito` or `oidc` entry.
   * **defaultUsers** : the array of default users to be created on launch (format `{ email, password }`)
@@ -125,8 +125,8 @@ Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com
 * **defaultProbes** : the array of default probe streams to be created on launch (format `{ fileName, options }`)
 * **defaultAlerts** : the array of default alerts to be created on launch (format `{ fileName, options }`)
 * **forecastPath** : folder where temporary or persistent forecast data files are stored
-* **forecasts** : an array of configuration objects for each registered forecast, which common properties are defined by the [Forecast data model](../architecture/DATAMODEL.MD#forecast-data-model)
-* **proxyTable**: a set of proxy rules typically used for [scaling](./architecture/GLOBAL.MD#architecture-at-scale)
+* **forecasts** : an array of configuration objects for each registered forecast, which common properties are defined by the [Forecast data model](../architecture/data-model-view.md#forecast-data-model)
+* **proxyTable**: a set of proxy rules typically used for [scaling](./architecture/global-architecture.md#architecture-at-scale)
 
 ::: warning
 Only [MongoDB](https://docs.feathersjs.com/api/databases/mongodb.html) is officially supported right now although we had an experimental attempt with [LevelUP](https://github.com/feathersjs/feathers-levelup) as well. Please contact us if you'd like to support more adapters.
@@ -144,9 +144,9 @@ Weacast frontend configuration is based on the same underlying [tool](https://gi
   * **providers** : the array of OAuth2 providers to be used on the sign in screen, e.g. `['google', 'github']`
 * **map**
   * **seeker** : the name of the component to be used to look for weather conditions in the app
-  * **mixins** : the set of [mixins](../api/MIXINS.MD) to be applied to the map (could be `base`, `baseLayers`, `forecastLayers`, `geojsonLayers`, `fileLayers`, `fullscreen`, `measure`, `scalebar`, etc.)
+  * **mixins** : the set of [mixins](../api/mixins.md) to be applied to the map (could be `base`, `baseLayers`, `forecastLayers`, `geojsonLayers`, `fileLayers`, `fullscreen`, `measure`, `scalebar`, etc.)
   * **baseLayers** : the set of Leaflet layers to be shown in the base layer selector on the map
-  * **forecastLayers** : the set of Weacast [forecast layers](../api/LAYERS.MD) to be shown in the overlay layer selector on the map
+  * **forecastLayers** : the set of Weacast [forecast layers](../api/layers.md) to be shown in the overlay layer selector on the map
   * **featureStyle** : default style for GeoJson features in [Leaflet compatible format](http://leafletjs.com/reference-1.0.3.html#path-option)
   * **pointStyle** : default style for GeoJson points in [Leaflet compatible format](http://leafletjs.com/reference-1.0.3.html#marker-option)
   
