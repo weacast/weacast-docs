@@ -1,4 +1,4 @@
-# Weacast
+# Weacast documentation
 
 [![Weacast logo](./docs/assets/weacast-logo-256.png)](https://github.com/weacast)
 
