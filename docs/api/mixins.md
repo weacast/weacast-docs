@@ -1,6 +1,10 @@
 # Mixins
 
-[Mixins](https://vuejs.org/v2/guide/mixins.html) are a flexible way to distribute reusable functionalities for [Vue components](https://vuejs.org/v2/guide/components.html). A mixin object can contain any component options. When a component uses a mixin, all options in the mixin will be “mixed” into the component’s own options.
+[Mixins](https://vuejs.org/v2/guide/mixins.html) are a flexible way to distribute reusable functionalities for [Vue components](https://vuejs.org/v2/guide/components.html). A mixin object can contain any component options. When a component uses a mixin, all options in the mixin will be "mixed" into the component's own options.
+
+::: warning
+Mixins are only part of the legacy Weacast [client module](https://github.com/weacast/weacast-client), which will not evolve anymore (see discussion [here](https://github.com/weacast/weacast-client/issues/6)) and will only be maintained for the purpose of our [demo application](https://github.com/weacast/weacast). If you'd like to build client applications using Weacast you'd better have a look to our client API layer in [core module](https://github.com/weacast/weacast-core) and build your own map component using dedicated map engine modules like our [Leaflet plugin](https://github.com/weacast/weacast-leaflet).
+:::
 
 ## Map mixins
 

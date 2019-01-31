@@ -32,10 +32,14 @@ https: {
 
 ## Client setup
 
-Weacast [client module](https://github.com/weacast/weacast-client) provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
+The Weacast [core module](https://github.com/weacast/weacast-core) or the legacy Weacast [client module](https://github.com/weacast/weacast-client) provides a helper to quickly initialize what is required for your [client application](https://docs.feathersjs.com/api/client.html).
+
+::: warning
+Weacast [client module](https://github.com/weacast/weacast-client) will not evolve anymore (see discussion [here](https://github.com/weacast/weacast-client/issues/6)) and will only be maintained for the purpose of our [demo application](https://github.com/weacast/weacast). If you'd like to build client applications using Weacast you'd better use the client API layer in [core module](https://github.com/weacast/weacast-core).
+:::
 
 ```javascript
-import { weacast } from 'weacast-client'
+import { weacast } from 'weacast-core/client'
 
 // Initialize API wrapper
 let api = weacast()

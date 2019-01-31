@@ -1,6 +1,10 @@
 # Layers
 
-Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to help visualize forecast data or probe results. Each layer type implements the [TimeDimension Layer interface](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayer).
+Weacast includes a set of [Leaflet](http://leafletjs.com/) layers to help visualize forecast data or probe results.
+
+::: warning
+In the legacy Weacast [client module](https://github.com/weacast/weacast-client) each layer type implements the [TimeDimension Layer interface](https://github.com/socib/Leaflet.TimeDimension#ltimedimensionlayer). However, Weacast [client module](https://github.com/weacast/weacast-client) will not evolve anymore (see discussion [here](https://github.com/weacast/weacast-client/issues/6)) and will only be maintained for the purpose of our [demo application](https://github.com/weacast/weacast). If you'd like to build client applications using Weacast you'd better have a look to our client API layer in [core module](https://github.com/weacast/weacast-core) and dedicated map engine modules like our [Leaflet plugin](https://github.com/weacast/weacast-leaflet).
+:::
 
 ## Feature Layers
 
