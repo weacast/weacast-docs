@@ -149,7 +149,9 @@ When [tiling](https://github.com/perliedman/tiled-maps) is enabled you can retri
 
 If you also configured your element services to generate tiles with aggregated data over all forecast times you can select it by querying with the following additional field: `{ timeseries: true }`.
 
-## Base element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
+## Base element mixin
+
+[source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
 This mixin includes the most basic functions shared by all forecast elements
 
@@ -161,7 +163,9 @@ Returns the nearest weather prediction model run date/time for a given date/time
 
 Returns the nearest weather prediction model forecast date/time step for a given date/time, it basically rounds the hours according to the `interval ` value in the [model configuration](../guides/basics.mdbackend-side).
 
-## Refresh element mixin [source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
+## Refresh element mixin
+
+[source](https://github.com/weacast/weacast-core/blob/master/src/mixins/mixin.element.js)
 
 This mixin includes the most basic functions shared by all forecast elements to help updating forecast data from providers.
 

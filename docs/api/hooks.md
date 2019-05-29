@@ -6,7 +6,9 @@ Weacast [core module](https://github.com/weacast/weacast-core) and [client modul
 [Hooks](https://docs.feathersjs.com/api/hooks.html) are the main way to introduce business logic into applications and plugins so we recommend to understand them well first before reading this.
 :::
 
-## Data model management [source](https://github.com/weacast/weacast-core/blob/master/src/hooks/marshall.js)
+## Data model management
+
+[source](https://github.com/weacast/weacast-core/blob/master/src/hooks/marshall.js)
 
 ### .marshall(hook)
 
@@ -16,7 +18,9 @@ Converts from server side types (e.g. moment dates) to basic JS types, which is 
 
 Converts back to server side types (e.g. moment dates) from basic JS types, which is usually required when reading from the database.
 
-## Query management [source](https://github.com/weacast/weacast-core/blob/master/src/hooks/query.js)
+## Query management
+
+[source](https://github.com/weacast/weacast-core/blob/master/src/hooks/query.js)
 
 ### .marshallQuery(hook)
 
@@ -38,7 +42,9 @@ Find the nearest forecast date/time corresponding to a requested date/time or da
 
 Discard or retrieve forecast data when required depending on the query parameters.
 
-## Logging [core source](https://github.com/weacast/weacast-core/blob/master/src/hooks/logger.js), [client source](https://github.com/weacast/weacast-client/blob/master/src/hooks/logger.js)
+## Logging
+
+[core source](https://github.com/weacast/weacast-core/blob/master/src/hooks/logger.js), [client source](https://github.com/weacast/weacast-client/blob/master/src/hooks/logger.js)
 
 ### .log(hook)
 
@@ -46,7 +52,9 @@ Discard or retrieve forecast data when required depending on the query parameter
 * Log information for each hook ran with verbose (respectively debug for client) log level.
 * Log detailed information for each hook ran with debug (respectively trace for client) log level.
 
-## Events [source](https://github.com/weacast/weacast-client/blob/master/src/hooks/events.js)
+## Events
+
+[source](https://github.com/weacast/weacast-client/blob/master/src/hooks/events.js)
 
 ### .emit(hook)
 
