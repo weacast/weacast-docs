@@ -6,7 +6,7 @@ This [plugin](https://github.com/weacast/weacast-arpege) allows to gather data f
 
 Data are downloaded using the [INSPIRE services](https://donneespubliques.meteofrance.fr/client/gfx/utilisateur/File/documentation-webservices-inspire-en.pdf) of Météo France, and more specifically the [WCS](https://en.wikipedia.org/wiki/Web_Coverage_Service) interface generating data in the [GeoTIFF](https://en.wikipedia.org/wiki/GeoTIFF) file format then processed using the [weacast-gtiff2json](https://github.com/weacast/weacast-gtiff2json) tool.
 
-This plugin adds the following attributes to the [common Forecast data model](architecture/data-model-view.md#forecast-data-model):
+This plugin adds the following attributes to the [common Forecast data model](../architecture/data-model-view.md#forecast-data-model):
 * **token**: the provider API token (see below)
 * **wcsBaseUrl**: the URL of the WCS service providing forecast data
 * **elements*:
@@ -28,7 +28,7 @@ A reply will be sent with an account identifier (UID) and the associated passwor
 This [plugin](https://github.com/weacast/weacast-arome) allows to gather data from the AROME small scale numerical prediction model, operational at Météo-France since December 2008, which was designed to improve short range forecasts of severe events such as intense Mediterranean precipitations (Cévenole events), severe storms, fog, urban heat during heat waves. Five daily forecasts are made with AROME, thus helping to better predict meteorological events of the day and of the morrow (42h forecast range). The size of the mesh, many time smaller than previous models, is 1.3km against 7.5km for ARPEGE over France.
 
 ::: tip
-Technically this plugin is similar to the [ARPEGE](./plugin.md#arpege) plugin, so the same architectural patterns, policies, etc. apply.
+Technically this plugin is similar to the [ARPEGE](./plugin.md#arpege) plugin because the provider interface is similar as well, so the same architectural patterns, policies, etc. apply.
 :::
 
 ## [GFS](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)

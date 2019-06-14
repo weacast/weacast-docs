@@ -4,7 +4,7 @@ Weacast is powered by the following stack:
 * [Feathers](https://feathersjs.com/) on the backend side (version 2.x)
 * [Quasar](http://quasar-framework.org/) on the frontend side (version 0.13.x)
 
-If you are not familiar with those technologies and want to develop for Weacast, in addition to read the dedicated documentation, I recommand reading https://github.com/claustres/quasar-feathers-tutorial. Indeed, Weacast itself is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api), while Weacast plugins are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html). 
+If you are not familiar with those technologies and want to develop for Weacast, in addition to read the dedicated documentation, I recommand reading https://github.com/claustres/quasar-feathers-tutorial. Indeed, Weacast application demo is a template web application initially based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api), while Weacast plugins/modules are [Feathers plugins](https://docs.feathersjs.com/guides/advanced/creating-a-plugin.html). 
 
 ## Setup your environment
 
@@ -54,69 +54,89 @@ Due to some [changes](http://codetunnel.io/npm-5-changes-to-npm-link/) in the wa
 
 [Install Yarn](https://yarnpkg.com/en/docs/install) on your platform.
 
-#### Install Quasar CLI
-
-Install the Quasar CLI : `$ npm install -g quasar-cli`
-
-### Web app
+### Weacast
 
 While it is a WIP and not yet pushed to NPM, or when developing, please use the following process.
 
-First clone all the plugins you need and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make them globally available to your Node.js installation:
+First clone all the plugins you need and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make them globally available to your Node.js installation.
+
+::: danger
+Take care that a top-level plugin might depend on another plugin so you will have to link them together, for instance most forecast model plugins depend on the `weacast-core` plugin.
+:::
 
 ```bash
 // Clone and link the plugins
 git clone https://github.com/weacast/weacast-core.git
 cd weacast-core
-yarn/npm link
+yarn install
+yarn link
+
+git clone https://github.com/weacast/weacast-client.git
+cd weacast-client
+yarn install
+yarn link
 
 git clone https://github.com/weacast/weacast-arpege.git
 cd weacast-arpege
-yarn/npm link
+yarn install
+yarn link weacast-core
+yarn link
 
 git clone https://github.com/weacast/weacast-arome.git
 cd weacast-arome
-yarn/npm link
+yarn install
+yarn link weacast-core
+yarn link weacast-arpege
+yarn link
 
 git clone https://github.com/weacast/weacast-probe.git
 cd weacast-probe
-yarn/npm link
+yarn install
+yarn link weacast-core
+yarn link
 
 ...
 ```
 
-Then clone the main Weacast repository and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make Node.js pointing to the previously cloned modules instead of those installed by npm, e.g. :
+Then clone the Weacast API repository and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make Node.js pointing to the previously cloned modules instead of those installed by default, e.g. :
 ```bash
 // Clone and link plugins to weacast server
-git clone https://github.com/weacast/weacast.git
-cd weacast
-cd api
-yarn/npm link weacast-core
-yarn/npm link weacast-arpege
-yarn/npm link weacast-arome
-yarn/npm link weacast-probe
+git clone https://github.com/weacast/weacast-api.git
+cd weacast-api
+yarn install
+yarn link weacast-core
+yarn link weacast-arpege
+yarn link weacast-arome
+yarn link weacast-probe
 ...
 ```
 
-> **Take care that a top-level plugin might depend on another plugin so you will have to link them together, for instance most forecast model plugins depend on the weacast-core plugin.**
+Then clone the Weacast demo app repository and use [yarn/npm link](https://docs.npmjs.com/cli/link) to make Node.js pointing to the previously cloned client module instead of the one installed by npm, e.g. :
+```bash
+// Clone and link client to weacast app
+git clone https://github.com/weacast/weacast.git
+cd weacast
+yarn install
+yarn link weacast-client
+```
 
 ## Develop
 
-### Web app
-
-The default Weacast server is a template web application based on the [Quasar wrapper for Feathers](https://github.com/quasarframework/quasar-wrapper-feathersjs-api).
+### Weacast
 
 #### Running for development
-Run the frontend Quasar app (from root project folder): `$ quasar dev`
 
-Then from the backend `api` folder run the server-side Feathers app: `$ npm run dev`
+Run the the server-side Feathers app (from `weacast-api` root project folder): `$ npm run dev`
+
+Then run the frontend app (from `weacast` root project folder): `$ npm run dev`
 
 Then point your browser to [localhost:8080](http://localhost:8080).
 
 #### Building for production
-Build the frontend Quasar app (from root project folder): `$ quasar build`.
 
-Then from the backend `api` folder build the server-side Feathers app: `$ npm run build`
+Build the server-side Feathers app (from `weacast-api` root project folder): `$ npm run build`
+
+Then build the frontend app (from `weacast` root project folder): `$ npm run build`. This generates a `dist` folder to be copied into the `weacast-api` root project folder.
 
 #### Running in production
 
@@ -124,13 +144,13 @@ Then from the backend `api` folder build the server-side Feathers app: `$ npm ru
 Make sure you built your app first
 :::
 
-From the backend `api` folder run the server-side Feathers app, this will also serve the frontend Quasar app : `$ npm run prod`
+Run the server-side Feathers app (from `weacast-api` root project folder), this will also serve the frontend app : `$ npm run prod`
 
 Then point your browser to [localhost:8081](http://localhost:8081).
 
 #### Running test
 
-From the backend `api` folder run the server-side tests : `$ npm run test`
+Run the server-side tests (from `weacast-api` root project folder): `$ npm run test`
 This will lint and fix issues in the code according to [JS standard](https://github.com/feross/standard), then execute tests using [Mocha](https://mochajs.org/) and compute code coverage using [Istanbul](https://istanbul.js.org/).
 
 ::: tip
@@ -143,10 +163,10 @@ Use [Chrome DevTools](https://medium.com/@paul_irish/debugging-node-js-nightlies
 
 #### Testing Docker image
 
-Because Weacast web app is also released as a Docker image you can build it like this:
+Because Weacast web app is also released as a Docker image you can build it like this in development mode (i.e. with all modules linked to their `master` branch version):
 
 ```bash
-docker build -f dockerfile.dev -t weacast/weacast-dev .
+docker build -f dockerfile.dev -t weacast/weacast:dev .
 ```
 Then test it like it:
 
@@ -158,11 +178,12 @@ Then release it if you'd like as current dev version to share progress with othe
 
 ```bash
 docker login
-docker push weacast/weacast-dev
+docker push weacast/weacast:dev
 ```
 
 ::: tip
-When building the image all modules are retrieved from their respective repository (master branch), only the local source code of the web app is pushed into the image
+When building the image all modules are retrieved from their respective repository (`master` branch), only the local source code of the web app is pushed into the image.
+
 This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
 :::
 
@@ -192,7 +213,7 @@ To speed-up things even more run a single test suite with: `$ npm run mocha -- -
 
 This [gem](https://github.com/skywinder/github-changelog-generator) generates a change log file based on **tags**, **issues** and merged **pull requests** (and splits them into separate lists according to labels) from :octocat: GitHub Issue Tracker. This requires you to install (e.g. for Windows) [Ruby](http://rubyinstaller.org/downloads/) and its [DevKit](https://github.com/oneclick/rubyinstaller/wiki/Development-Kit).
 
-### Web app
+### Weacast
 
 The same process applies when releasing a patch, minor or major version, i.e. the following tasks are done:
 * increase the package version number in the **package.json** file (frontend and backend API)
@@ -200,7 +221,7 @@ The same process applies when releasing a patch, minor or major version, i.e. th
 * generates the changelog in the git repository and push it
 
 ::: warning
-Before you publish the web app take care of updating the version of all dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core weacast-arpege weacast-arome weacast-probe`
+Before you publish a release take care of updating the version of all dependent plugins to the latest version published, for example  perform `yarn upgrade weacast-core weacast-arpege weacast-arome weacast-probe`
 :::
 
 Depending on the release type the following command will do the job (where type is either `patch`, `minor`, `major`):
@@ -208,7 +229,7 @@ Depending on the release type the following command will do the job (where type 
 npm run release:type
 ```
 
-Because Weacast web app is also released as a Docker image you can build it like this:
+Because Weacast demo app is also released as a Docker image you can build it manually like this:
 ```bash
 docker build -t weacast/weacast .
 ```
@@ -227,14 +248,16 @@ docker push weacast/weacast:version_tag
 This requires you to have a DockerHub account and be a team member of the Weacast organization, if you'd like to become a maintainer please tell us
 :::
 
+**However, our Travis CI should build he image for you as you push the tag of the release**
+
 When testing in development you can build a Docker image that will automatically use the master branch of all modules like this:
 ```bash
-docker build -t weacast/weacast-dev -f dockerfile.dev .
+docker build -t weacast/weacast:dev -f dockerfile.dev .
 ```
 Then release it as latest dev version:
 ```bash
 docker login
-docker push weacast/weacast-dev
+docker push weacast/weacast:dev
 ```
 
 ### Plugins

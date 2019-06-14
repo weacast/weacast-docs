@@ -43,7 +43,7 @@ module.exports = {
 
 The above example will proxy the request `/api/service/1` to `http://my.service.com/api/1`.
 
-However, all of this requires manual work, creates a tight coupling with your underlying infrastructure and will not allow auto-scaling unless you have some discovery mechanism. You can make each instance automatically aware of others instances to distribute services and related events using [feathers-distributed](https://github.com/kalisio/feathers-distributed). 
+However, all of this requires manual work, creates a tight coupling with your underlying infrastructure and will not allow auto-scaling unless you have some discovery mechanism. You can make each instance automatically aware of others instances to distribute services and related events using [feathers-distributed](https://github.com/kalisio/feathers-distributed). This is the reason why the [weacast-api](https://github.com/weacast/weacast-api) module provides you with a ready-to-go microservice backend to expose the services you'd like to using [feathers-distributed](https://github.com/kalisio/feathers-distributed) by default.
 
 ### Distributed forecast data processing
 

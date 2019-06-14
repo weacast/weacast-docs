@@ -70,7 +70,7 @@ function getAPISidebar () {
     },
     {
       title: 'Plugins',
-      children: [ 'plugin', 'probe', 'alert' ]
+      children: [ 'plugin', 'loader', 'probe', 'alert' ]
     },
     {
       title: 'Client',
