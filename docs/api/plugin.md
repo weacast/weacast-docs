@@ -9,10 +9,10 @@ Data are downloaded using the [INSPIRE services](https://donneespubliques.meteof
 This plugin adds the following attributes to the [common Forecast data model](../architecture/data-model-view.md#forecast-data-model):
 * **token**: the provider API token (see below)
 * **wcsBaseUrl**: the URL of the WCS service providing forecast data
-* **elements*:
+* **elements**:
   * **coverageid**: the name of the WCS coverage for the forecast element
   * **subsets**: a map of entries/values to subset the forecast domain (e.g. height) until the request results in a [2D grid](./grid.md).
-  
+
 ::: tip
 The `time` subset entry is automatically added by Weacast to retrieve data only for the considered forecast time
 :::
@@ -39,7 +39,7 @@ Data are downloaded using the [Operational Model Archive and Distribution System
 
 This plugin adds the following attributes to the [common Forecast data model](./../architecture/data-model-view.md#forecast-data-model):
 * **baseUrl**: the URL of the [Grib Filter Service](http://nomads.ncep.noaa.gov/txt_descriptions/grib_filter_doc.shtml) providing forecast data
-* **elements*:
+* **elements**:
   * **variable**: the name of the GRIB variable corresponding to the forecast element (not necessarily prefixed by `var_`)
   * **levels**: an array of levels (not necessarily prefixed by `lev_`) to subset the forecast domain (e.g. height) until the request results in a [2D grid](./grid.md).
   
