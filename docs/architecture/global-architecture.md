@@ -4,6 +4,8 @@ The typical global architecture and the underlying technologies of Weacast are s
 
 ![Global architecture](./../assets/global-architecture.png)
 
+Typically, the Docker image of our [demo app](https://hub.docker.com/r/weacast/weacast/) is actually the [backend API module](https://github.com/weacast/weacast-api), configured with local [forecast model plugins](../api/plugin.md) and serving the [client demo app](https://github.com/weacast/weacast).
+
 ## Architecture at scale
 
 Although the typical architecture presented previously can be deployed in a single-server environment Weacast has been developed as a loosely coupled set of modules to prevent it being a [monolithic piece of software](http://whatis.techtarget.com/definition/monolithic-architecture). The built-in [service layer](https://docs.feathersjs.com/guides/about/philosophy.html#services) helps decoupling the business logic from how it is being accessed based on a [simple and unambiguous interface](https://docs.feathersjs.com/guides/about/philosophy.html#uniform-interfaces). Weacast can thus be deployed in a [microservice architectural style](http://searchmicroservices.techtarget.com/definition/microservices), which is typically used to provide high availability. The idea is to deploy different Weacast instances on different *logical hosts* (can be physical machines as well as containers or virtual machines) each running a different forecast model or the probe plugin for instance. However, you will have to face some [scaling configuration issues](https://docs.feathersjs.com/guides/advanced/scaling.html) first. You also have to setup the underlying logical infrastructure. To achieve high availability, different strategies may be used. 

@@ -109,7 +109,7 @@ Then point your browser to [localhost:8080](http://localhost:8080).
 
 ### Backend side
 
-Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `api/config` folder. The main properties are the following:
+Weacast backend configuration is based on [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `config` folder of the [backend API module](https://github.com/weacast/weacast-api). The main properties are the following:
 
 * **host** : host name
 * **port** : port on which the app is running
@@ -140,7 +140,7 @@ Only [MongoDB](https://docs.feathersjs.com/api/databases/mongodb.html) is offici
 
 ### Frontend side
 
-Weacast frontend configuration is based on the same underlying [tool](https://github.com/lorenwest/node-config) that powers [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `config` folder. The main properties are the following:
+Weacast frontend configuration is based on the same underlying [tool](https://github.com/lorenwest/node-config) that powers [Feathers](https://docs.feathersjs.com/guides/advanced/configuration.html) so the same guidelines are applicable, the default configuration can be found in the `config` folder of the [demo app](https://github.com/weacast/weacast). The main properties are the following:
 * **apiPath** : the API path prefix
 * **transport** : the transport to be used between frontend and backend, could be `http` for standard REST or `websocket` for WebSockets
 * **appName** : the name of the Weacast app
