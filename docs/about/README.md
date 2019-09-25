@@ -3,7 +3,7 @@
 **Weacast** is an Open Source platform to gather, expose and make use of weather forecast data.
 
 ::: tip Note
-Read our [introductory article](https://hackernoon.com/introducing-weacast-e6e98487b2a8) on Medium.
+Read our [introductory article](https://towardsdatascience.com/introducing-weacast-e6e98487b2a8) on Medium.
 :::
 
 ## Why Weacast ?

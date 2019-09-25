@@ -1,8 +1,14 @@
 # Showcase
 
-## Live demo
+## Demo application
 
-A live demo is usually running at [demo.weacast.xyz](http://demo.weacast.xyz). Have also a look to our list of known [production applications](./ecosystem.md#production-applications).
+You can find the source code of our web application demo in the [weacast](https://github.com/weacast/weacast) repository. It mainly depends on:
+* [weacast-api](https://github.com/weacast/weacast-api) module providing the backend API
+* [weacast-client](https://github.com/weacast/weacast-client) module providing the frontend objects for mapping
+
+::: warning
+[weacast-client](https://github.com/weacast/weacast-client) module will not evolve anymore (see discussion [here](https://github.com/weacast/weacast-client/issues/6)) and will only be maintained for the purpose of our [demo application](https://github.com/weacast/weacast). If you'd like to build client applications using Weacast you'd better use the client API layer in the [core module](https://github.com/weacast/weacast-core) and dedicated map engine modules like our [Leaflet plugin](https://github.com/weacast/weacast-leaflet).
+:::
 
 On our demo weather data is gathered from the GFS (NCEP) and ARPEGE (Météo France) forecast models. The map shows:
 * wind u/v-components (i.e. speed and direction) using a [flow layer](../api/layers.md#flowlayer-source)
@@ -15,6 +21,10 @@ Using the playback buttons at the bottom of the map you can navigate among avail
 You can also obtain a timeseries of forecast elements by either selecting one of the airports or double click on any location on the map. You will then see a timeseries button appear, which allow to open a popup displaying different graphs. Last but not least, you can activate an [alert zone](../architecture/main-concepts.md#alert) in the layer list to raise alerts in Paris whenever the wind speed is greater than 0 (this is of course unrealistic alert conditions to ensure it will always raises for demonstration purpose !).
 
 ![Live demo](./../assets/demo-gui.png)
+
+::: tip
+Be sure to also have a look to our list of known [production applications](./ecosystem.md#production-applications).
+:::
 
 ## Visualize forecast data
 
