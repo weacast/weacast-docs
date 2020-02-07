@@ -23,7 +23,7 @@ The following commands should do the job:
 docker run --name weacast-mongodb -v weacast_mongodb:/data/db -d mongo
 
 // Run the Weacast container
-docker run --name weacast -d -p 8081:8081 --link weacast-mongodb:mongodb weacast/weacast
+docker run --name weacast -d -p 8081:8081 --env LOADERS=gfs --link weacast-mongodb:mongodb weacast/weacast
 ```
 
 Then point your browser to [localhost:8081](http://localhost:8081).
