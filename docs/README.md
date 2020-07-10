@@ -3,7 +3,7 @@ home: true
 heroImage: https://s3.eu-central-1.amazonaws.com/kalisioscope/weacast/weacast-icon-256x256.png
 actionText: Discover Weacast
 actionLink: /about/
-footer: MIT Licensed | Copyright © 2017-2019 Kalisio
+footer: MIT Licensed | Copyright © 2017-20xx Kalisio
 ---
 
 <center>
