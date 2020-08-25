@@ -121,7 +121,7 @@ This data model is instantiated and manipulated through the [Alert API](./../api
 The details of each property are the following:
 * **cron**: a [CRON pattern](https://github.com/kelektiv/node-cron) to schedule the alert check at regular intervals, e.g. `* 0 * * * *` will run it every minute
 * **probeId**: the ID of the probe to be checked by the alert
-* **elements**: array of names corresponding to the probed forecast element values to be checked by the alert (each element has to be declared in the the [configuration](../guides/basics.md#configuring))
+* **elements**: array of names corresponding to the probed forecast element values to be checked by the alert (each element has to be declared in the [configuration](../guides/basics.md#configuring))
 * **featureId**: indicates which field(s) can be used as a unique identifier of your probe features (support dot notation)
 * **period**: time interval used to do the matching between the forecast data and the trigger conditions
   * **start**: offset which needs to be added to the current timestamp at the moment of validation to compute the beginning of the time interval used to check the conditions, specified as [moment.js duration object](https://momentjs.com/docs/#/manipulating/add/)
