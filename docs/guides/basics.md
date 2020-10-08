@@ -48,7 +48,7 @@ docker-compose down -v
 
 #### Domain binding
 
-In production for our [demo app](http://demo.weacast.xyz/) we use [nginx-proxy](https://github.com/jwilder/nginx-proxy) to help us mapping the domain to the web app. Using `docker-compose` this requires to connect the Weacast network to the reverse proxy (https://github.com/jwilder/nginx-proxy#multiple-networks) first.
+In production you can use [nginx-proxy](https://github.com/jwilder/nginx-proxy) to map the domain to the web app. Using `docker-compose` this requires to connect the Weacast network to the [reverse proxy](https://github.com/jwilder/nginx-proxy#multiple-networks) first.
 
 ```bash
 docker network create weacast_weacast
@@ -56,6 +56,8 @@ docker run -d -p 80:80 -v /var/run/docker.sock:/tmp/docker.sock:ro --name rproxy
 docker network connect weacast_weacast rproxy
 docker-compose up -d
 ```
+
+As stated in the documentation of the reverse proxy you app container should define the `VIRTUAL_HOST` and `VIRTUAL_PORT` environment variables with your domain and the port your application is running on. You can have a look to our [docker compose file](https://github.com/weacast/weacast/blob/master/docker-compose.yml) as an example.
 
 #### Using data loaders
 

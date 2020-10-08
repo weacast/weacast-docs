@@ -134,9 +134,11 @@ Then point your browser to [localhost:8080](http://localhost:8080).
 
 #### Building for production
 
-Build the server-side Feathers app (from `weacast-api` root project folder): `$ npm run build`
+Build the server-side Feathers app (from `weacast-api` root project folder): `$ npm run compile`
 
-Then build the frontend app (from `weacast` root project folder): `$ npm run build`. This generates a `dist` folder to be copied into the `weacast-api` root project folder.
+Then build the frontend app (from `weacast` root project folder): `$ npm run build`.
+
+This generates a `dist` folder **to be copied into** the `weacast-api` root project folder.
 
 #### Running in production
 
