@@ -26,6 +26,7 @@ The details of each property are the following:
 * **timeseries** : if true will also generate tiles with aggregated data over all forecast times
 * **runInterval** : the period between two forecast runs (in seconds) - it also defines at which hours of the day the forecast data are produced (e.g. `00:00 - 06:00 - 12:00 - 18:00` for a `3600` seconds period)
 * **oldestRunInterval** : how long do the server go back in time when harvesting forecast data (in seconds)
+* **keepPastForecasts** : by default the server will not gather forecast data older than the curent time, set this to `true` will you need to keep track of all forecast data even if it refers to past data
 * **interval** : the period between two forecast time steps (in seconds)
 * **lowerLimit** : the offset from run time for the first forecast time step to be gathered (in seconds)
 * **upperLimit** : the offset from run time for the last forecast time step to be gathered (in seconds)
