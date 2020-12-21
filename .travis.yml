@@ -12,7 +12,7 @@ jobs:
   - stage: PUBLISH
     language: node_js
     node_js:
-    - '8'
+    - '12'
     install: true
     script: cd docs && yarn install && yarn build
     deploy:
