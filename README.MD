@@ -2,7 +2,7 @@
 
 [![Weacast logo](./docs/assets/weacast-logo-256.png)](https://github.com/weacast)
 
-[![Build Status](https://travis-ci.com/weacast/weacast-docs.png?branch=master)](https://travis-ci.com/weacast/weacast-docs)
+[![Build Status](https://app.travis-ci.com/weacast/weacast-docs.svg?branch=master)](https://app.travis-ci.com/weacast/weacast-docs)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 > Open source platform to gather, expose and make use of weather forecast data
