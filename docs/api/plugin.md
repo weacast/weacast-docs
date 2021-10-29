@@ -17,18 +17,18 @@ This plugin adds the following attributes to the [common Forecast data model](..
 The `time` subset entry is automatically added by Weacast to retrieve data only for the considered forecast time
 :::
 
-::: warning
-Please note that to use this plugin you need to first get an account from Météo France: a request must be sent to support.inspire@meteo.fr.
-:::
-
-A reply will be sent with an account identifier (UID) and the associated password (pwd). You get an access token by making a request to an authentication web service giving this account ID (UID) and the associated password (pwd): https://geoservices.meteofrance.fr/services/GetAPIKey?username=ACCOUNT_UID&password=ACCOUNT_PASSWORD. The returned token is the one to be put in your Weacast [configuration](../guides/basics.md#configuring).
-
 ## [AROME](http://www.umr-cnrm.fr/spip.php?article120)
 
 This [plugin](https://github.com/weacast/weacast-arome) allows to gather data from the AROME small scale numerical prediction model, operational at Météo-France since December 2008, which was designed to improve short range forecasts of severe events such as intense Mediterranean precipitations (Cévenole events), severe storms, fog, urban heat during heat waves. Five daily forecasts are made with AROME, thus helping to better predict meteorological events of the day and of the morrow (42h forecast range). The size of the mesh, many time smaller than previous models, is 1.3km against 7.5km for ARPEGE over France.
 
 ::: tip
 Technically this plugin is similar to the [ARPEGE](./plugin.md#arpege) plugin because the provider interface is similar as well, so the same architectural patterns, policies, etc. apply.
+:::
+
+::: warning
+Please note that to use the ARPEGE/AROME plugin you need to first get an account from Météo France: refer to their [documentation](https://portail-api.meteofrance.fr/authenticationendpoint/aide_fr.do).
+
+Once you have created your application and subscribed it to the relevant APIs (ARPEGE and/or AROME) you need to generate a JWT API key. The generated token is the one to be put in your Weacast [configuration](../guides/basics.md#configuring).
 :::
 
 ## [GFS](https://www.ncdc.noaa.gov/data-access/model-data/model-datasets/global-forcast-system-gfs)
